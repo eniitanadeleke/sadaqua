@@ -1,0 +1,100 @@
+:root {
+  /* ---------- Fonts (loaded in app/layout.js) ---------- */
+  --font-heading: var(--font-fraunces);
+  --font-body: var(--font-nunito-sans);
+
+  /* ---------- Brand colours ---------- */
+  --color-primary: #1e8a3e;   /* Green */
+  --color-secondary: #145c2c; /* Deep Green */
+  --color-accent: #e3a417;    /* Gold */
+
+  /* Lighter shades from the Figma scales (used for badges, chips, highlights) */
+  --color-primary-100: #e8f2eb;
+  --color-primary-200: #d1e7d8;
+  --color-primary-300: #bbdbc4;
+  --color-secondary-100: #e7efea;
+  --color-secondary-200: #d0ded5;
+  --color-accent-100: #fcf6e8;
+  --color-accent-200: #f9edd1;
+  --color-accent-300: #f7e4b9;
+
+  /* ---------- Backgrounds ---------- */
+  --color-white: #ffffff;
+  --color-soft-cream: #fff8ef;
+  --color-brand-cream: #ffecd2;
+
+  /* ---------- Neutrals ---------- */
+  --color-border: #e7dbcb;
+  --color-warm-grey: #6b5d50;
+  --color-ink: #3a2617;
+
+  /* ---------- Feedback ---------- */
+  --color-error: #b3261e;
+  --color-urgent: #c4562a;
+
+  /* ---------- Heading sizes (Fraunces) ---------- */
+  --text-h1: 80px;  --leading-h1: 88px;
+  --text-h2: 72px;  --leading-h2: 80px;
+  --text-h3: 64px;  --leading-h3: 70px;
+  --text-h4: 56px;  --leading-h4: 62px;
+  --text-h5: 48px;  --leading-h5: 52px;
+  --text-h6: 40px;  --leading-h6: 48px;
+  --text-h7: 32px;  --leading-h7: 38px;
+  --text-h8: 24px;  --leading-h8: 28px;
+
+  /* ---------- Body sizes (Nunito Sans) ---------- */
+  --text-body-1: 24px; --leading-body-1: 36px;
+  --text-body-2: 20px; --leading-body-2: 32px;
+  --text-body-3: 16px; --leading-body-3: 24px;
+  --text-body-4: 14px; --leading-body-4: 20px;
+  --text-label-1: 12px; --leading-label-1: 16px;
+  --text-label-2: 10px; --leading-label-2: 14px;
+  --text-label-3: 8px;  --leading-label-3: 12px;
+
+  /* ---------- Font weights (B / SB / M / R in Figma) ---------- */
+  --weight-bold: 700;
+  --weight-semibold: 600;
+  --weight-medium: 500;
+  --weight-regular: 400;
+
+  /* ---------- Spacing ---------- */
+  --space-0: 2px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
+  --space-10: 56px;
+
+  /* ---------- Radius ---------- */
+  --radius-none: 0;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+  --radius-2xl: 12px;
+  --radius-3xl: 16px;
+  --radius-full: 999px;
+
+  /* ---------- Border widths (Stroke s / m / l / xl) ---------- */
+  --stroke-s: 1px;
+  --stroke-m: 2px;
+  --stroke-l: 4px;
+  --stroke-xl: 6px;
+
+  /* ---------- Shadows (Effect E0–E3) ----------
+     Approximate: the export doesn't show the exact values.
+     Replace with the designer's numbers when we get them. */
+  --shadow-e0: none;
+  --shadow-e1: 0 1px 2px rgba(58, 38, 23, 0.06);
+  --shadow-e2: 0 2px 8px rgba(58, 38, 23, 0.08);
+  --shadow-e3: 0 8px 24px rgba(58, 38, 23, 0.12);
+
+  /* ---------- Layout ---------- */
+  --mobile-max-width: 480px; /* centred column for giver/recipient on big screens */
+}

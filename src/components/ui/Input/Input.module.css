@@ -1,0 +1,106 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.label {
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+}
+
+.required {
+  color: var(--color-error);
+}
+
+/* The visible box. The real <input> sits inside it with no border of its own,
+   so a prefix (naira sign) or suffix (eye icon) can share the same outline. */
+.box {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 48px;
+  padding: 0 var(--space-4);
+  background-color: transparent; /* Figma: same cream as the page, not white */
+  border: var(--stroke-s) solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: border-color 0.15s ease;
+}
+
+/* Green outline while typing (the Figma "active" state) */
+.box:focus-within {
+  border-color: var(--color-primary);
+}
+
+/* Green outline once something has been typed (the Figma "filled" state) */
+.box:has(.input:not(:placeholder-shown)) {
+  border-color: var(--color-primary);
+}
+
+/* Greyed-out box for read-only fields (e.g. email that can't be changed) */
+.box:has(.input:disabled) {
+  background-color: var(--color-brand-cream);
+  border-color: var(--color-border);
+}
+
+/* Red outline when there is an error - must come last so it wins.
+   It checks aria-invalid on the input, so it is as specific as the green rules above. */
+.box:has(.input[aria-invalid="true"]) {
+  border-color: var(--color-error);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  height: 46px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--color-ink);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+}
+
+.input::placeholder {
+  color: var(--color-warm-grey);
+  opacity: 0.6; /* gives #a69b8f on cream, the exact Figma placeholder colour */
+}
+
+.input:disabled {
+  cursor: not-allowed;
+  color: var(--color-warm-grey);
+}
+
+.prefix,
+.suffix {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-ink);
+  font-weight: var(--weight-semibold);
+}
+
+.hint {
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.error {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-error);
+}
+
+.errorIcon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}

@@ -1,0 +1,120 @@
+/* ---------- Shared by every button ---------- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  font-family: var(--font-body);
+  font-weight: var(--weight-semibold);
+  text-align: center;
+  border: var(--stroke-s) solid transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* ---------- Sizes ---------- */
+.large {
+  min-height: 48px;
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  border-radius: var(--radius-3xl);
+}
+
+.medium {
+  min-height: 40px;
+  padding: var(--space-2) var(--space-5);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  border-radius: var(--radius-lg);
+}
+
+.small {
+  min-height: 32px;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  border-radius: var(--radius-md);
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* ---------- Filled (green) ---------- */
+.filled {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: var(--shadow-e2);
+}
+
+.filled:hover {
+  background-color: var(--color-secondary);
+}
+
+.filled:active {
+  background-color: var(--color-primary);
+  box-shadow: var(--shadow-e3);
+}
+
+/* ---------- Outlined (green border, see-through inside like Figma) ---------- */
+.outlined {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.outlined:hover {
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.outlined:active {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* ---------- Keyboard focus (visible only when using Tab) ---------- */
+.button:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+  outline-offset: var(--space-0);
+}
+
+/* ---------- Disabled (e.g. Continue before an option is picked) ---------- */
+.button:disabled {
+  background-color: var(--color-border);
+  color: var(--color-warm-grey);
+  border-color: transparent;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* ---------- Loading (must stay below Disabled so it wins) ---------- */
+.button.loading {
+  background-color: var(--color-primary-200);
+  color: var(--color-warm-grey);
+  border-color: transparent;
+  cursor: progress;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  border: var(--stroke-m) solid currentColor;
+  border-right-color: transparent;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation-duration: 2s;
+  }
+}
