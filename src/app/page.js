@@ -1,41 +1,41 @@
-import Link from "next/link";
+import Logo from "@/components/ui/Logo";
+import MobileScreen from "@/components/layout/MobileScreen";
+import PathCard from "@/components/onboarding/PathCard";
 import styles from "./page.module.css";
 
-export default function Home() {
+// Welcome screen: the first thing everyone sees.
+// The person chooses a path here, before signing up.
+export default function WelcomePage() {
   return (
-    <main className={styles.page}>
-      <section className={styles.hero}>
-        <div className={styles.brand}>
-          <h1>SADAQUA</h1>
-          <p>The Place for Help</p>
-        </div>
+    <MobileScreen>
+      <Logo size="lg" />
 
-        <div className={styles.content}>
-          <h2>
-            Give with purpose.
-            <span>Receive help with dignity.</span>
-          </h2>
+      <h1 className={styles.headline}>
+        Give with purpose.
+        <br />
+        Receive help with dignity.
+      </h1>
 
-          <p className={styles.description}>
-            A trusted place to give and ask for help in times of need.
-          </p>
-        </div>
+      <p className={styles.intro}>
+        A trusted place to give and
+        <br />
+        ask for help in times of need.
+      </p>
 
-        <div className={styles.actions}>
-          <Link href="/register?role=giver" className={styles.primaryCard}>
-            <strong>I want to give</strong>
-            <span>Find verified causes and make a contribution.</span>
-          </Link>
-
-          <Link
-            href="/register?role=recipient"
-            className={styles.secondaryCard}
-          >
-            <strong>I need help</strong>
-            <span>Request support and track your request.</span>
-          </Link>
-        </div>
-      </section>
-    </main>
+      <div className={styles.paths}>
+        <PathCard
+          href="/register?role=giver"
+          title="I want to give"
+          description="Find verified causes and make a contribution."
+          icon="/icons/give.svg"
+        />
+        <PathCard
+          href="/need-help"
+          title="I need help"
+          description="Request support and track your request."
+          icon="/icons/need-help.svg"
+        />
+      </div>
+    </MobileScreen>
   );
 }

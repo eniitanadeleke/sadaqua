@@ -1,0 +1,41 @@
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.wordmark {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+  letter-spacing: 0.02em;
+}
+
+.tagline {
+  color: var(--color-accent);
+}
+
+/* Welcome screen: large logo (measured from Figma) */
+.lg .wordmark {
+  margin-top: var(--space-1);
+  font-size: var(--text-h7);
+  line-height: var(--leading-h7);
+}
+
+.lg .tagline {
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+}
+
+/* Auth screens: smaller logo */
+.md .wordmark {
+  margin-top: var(--space-2);
+  font-size: 21px;
+  line-height: 24px;
+}
+
+.md .tagline {
+  font-size: 10.5px;
+  line-height: 14px;
+}

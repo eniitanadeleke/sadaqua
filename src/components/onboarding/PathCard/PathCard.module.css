@@ -1,0 +1,111 @@
+/* ---------- Normal state (white card) ---------- */
+.card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 122px;
+  padding: var(--space-5);
+  background-color: var(--color-white);
+  border-radius: 20px; /* Figma card corner; larger than the token scale */
+  box-shadow: 0 4px 10px rgba(58, 38, 23, 0.1);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.iconCircle {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-accent-200);
+  color: var(--color-accent);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* The SVG is used as a stencil and filled with the current text colour */
+.icon {
+  width: 42px;
+  height: 40px;
+  background-color: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+}
+
+.text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--text-body-2);
+  line-height: var(--leading-body-2);
+  font-weight: var(--weight-semibold);
+  color: var(--color-secondary);
+}
+
+.description {
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-ink);
+}
+
+.arrow {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.arrow svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+/* ---------- Hover / tap / keyboard focus (green card from Figma) ---------- */
+.card:hover,
+.card:active,
+.card:focus-visible {
+  background-color: var(--color-primary);
+  background-image: url("/images/card-texture.webp");
+  background-repeat: no-repeat;
+  background-position: right -40px center;
+  background-size: 240px auto;
+}
+
+.card:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+  outline-offset: var(--space-0);
+}
+
+.card:hover .iconCircle,
+.card:active .iconCircle,
+.card:focus-visible .iconCircle {
+  background-color: var(--color-white);
+  color: var(--color-secondary);
+}
+
+.card:hover .title,
+.card:hover .description,
+.card:active .title,
+.card:active .description,
+.card:focus-visible .title,
+.card:focus-visible .description {
+  color: var(--color-white);
+}
+
+.card:hover .arrow,
+.card:active .arrow,
+.card:focus-visible .arrow {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}

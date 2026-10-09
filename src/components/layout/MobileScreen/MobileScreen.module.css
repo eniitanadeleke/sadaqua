@@ -1,0 +1,18 @@
+.screen {
+  display: flex;
+  justify-content: center;
+  min-height: 100dvh;
+  background-color: var(--color-soft-cream);
+  /* Geometric band along the bottom, as in every Figma mobile screen */
+  background-image: url("/images/pattern.webp");
+  background-repeat: repeat-x;
+  background-position: center bottom;
+  background-size: 415px auto;
+}
+
+.content {
+  width: 100%;
+  max-width: var(--mobile-max-width);
+  /* Bottom padding keeps content clear of the pattern band */
+  padding: 36px var(--space-5) 160px; /* 36px top matches Figma under the status bar */
+}
