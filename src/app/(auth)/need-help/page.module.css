@@ -1,0 +1,55 @@
+/* Spacing and sizes measured from the Figma "I need help" screen */
+
+.greeting {
+  margin-top: var(--space-7);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-ink);
+  text-align: center;
+}
+
+.headline {
+  margin-top: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--text-body-1);
+  line-height: var(--leading-body-1);
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+  text-align: center;
+}
+
+.intro {
+  margin-top: var(--space-2);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-ink);
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.cta {
+  margin-top: var(--space-7);
+}
+
+.switch {
+  margin-top: var(--space-6);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-ink);
+  text-align: center;
+}
+
+.switch a {
+  color: var(--color-primary);
+  font-weight: var(--weight-semibold);
+}
+
+.switch a:hover {
+  text-decoration: underline;
+}

@@ -13,6 +13,7 @@
 .content {
   width: 100%;
   max-width: var(--mobile-max-width);
-  /* Bottom padding keeps content clear of the pattern band */
-  padding: 36px var(--space-5) 160px; /* 36px top matches Figma under the status bar */
+  /* 36px top matches Figma under the status bar. As in Figma, the last
+     line of a screen may sit over the pattern band, so the bottom stays small. */
+  padding: 36px var(--space-5) var(--space-9);
 }
