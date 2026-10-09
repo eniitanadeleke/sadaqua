@@ -1,0 +1,58 @@
+/* Spacing measured from the Figma Sign up screen */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--space-5);
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Each missing password rule on its own line under "Password strength" */
+.rule {
+  display: block;
+}
+
+.terms {
+  margin-top: var(--space-7);
+}
+
+.formError {
+  margin-top: var(--space-4);
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-brand-cream);
+  color: var(--color-error);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+}
+
+.submit {
+  margin-top: var(--space-8);
+}
+
+.switch {
+  margin-top: var(--space-6);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-ink);
+  text-align: center;
+}
+
+.switch a {
+  color: var(--color-primary);
+  font-weight: var(--weight-semibold);
+}
+
+.switch a:hover {
+  text-decoration: underline;
+}
+
+/* "Password strength:" is grey in Figma; the level and missing rules stay red */
+.strengthLabel {
+  color: var(--color-warm-grey);
+}

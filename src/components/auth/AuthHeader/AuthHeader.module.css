@@ -1,0 +1,31 @@
+.header {
+  position: relative;
+}
+
+/* Back arrow: 16px arrow, top-left, level with the logo (from Figma) */
+.back {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  color: var(--color-warm-grey);
+}
+
+.back:hover {
+  background-color: var(--color-secondary-100);
+}
+
+.back:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+}
+
+.back svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}

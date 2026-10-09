@@ -30,7 +30,7 @@
 
 /* Auth screens: smaller logo */
 .md .wordmark {
-  margin-top: var(--space-2);
+  margin-top: 0;
   font-size: 21px;
   line-height: 24px;
 }

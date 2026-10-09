@@ -1,0 +1,15 @@
+/* Sizes measured from the Figma Sign up screen */
+
+.title {
+  margin-top: var(--space-7);
+  font-size: var(--text-h7);
+  line-height: var(--leading-h7);
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+}
+
+.subtitle {
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-ink);
+}

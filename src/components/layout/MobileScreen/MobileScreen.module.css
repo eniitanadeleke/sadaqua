@@ -17,3 +17,8 @@
      line of a screen may sit over the pattern band, so the bottom stays small. */
   padding: 36px var(--space-5) var(--space-9);
 }
+
+/* Screens with the small logo header start closer to the top (from Figma) */
+.compact {
+  padding-top: var(--space-1);
+}
