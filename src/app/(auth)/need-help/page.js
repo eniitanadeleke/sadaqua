@@ -40,7 +40,7 @@ export default function NeedHelpPage() {
       </Button>
 
       <p className={styles.switch}>
-        Already have an account? <Link href="/login">Log in</Link>
+        Already have an account? <Link href="/login?role=recipient">Log in</Link>
       </p>
     </MobileScreen>
   );

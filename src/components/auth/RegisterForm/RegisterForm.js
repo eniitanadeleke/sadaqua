@@ -163,7 +163,7 @@ export default function RegisterForm({ role }) {
       </Button>
 
       <p className={styles.switch}>
-        Already have an account? <Link href="/login">Log in</Link>
+        Already have an account? <Link href={`/login?role=${role}`}>Log in</Link>
       </p>
     </form>
   );

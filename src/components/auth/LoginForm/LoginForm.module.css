@@ -1,0 +1,62 @@
+/* Spacing measured from the Figma Log in screen */
+
+.form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-top: var(--space-8);
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.forgot {
+  align-self: flex-end;
+  margin-top: var(--space-2);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-primary);
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+.formError {
+  margin-top: var(--space-4);
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-brand-cream);
+  color: var(--color-error);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+}
+
+/* margin-top: auto pushes the button to the bottom of the screen.
+   padding-top keeps a gap on short phones. padding-bottom matches Figma,
+   where the last line sits 93px above the bottom edge. */
+.actions {
+  margin-top: auto;
+  padding-top: var(--space-8);
+  padding-bottom: 45px;
+}
+
+.switch {
+  margin-top: var(--space-5);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-ink);
+  text-align: center;
+}
+
+.switch a {
+  color: var(--color-primary);
+  font-weight: var(--weight-semibold);
+}
+
+.switch a:hover {
+  text-decoration: underline;
+}

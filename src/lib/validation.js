@@ -66,6 +66,19 @@ export function validateSignUp(values) {
       ? null
       : "Please agree to the Terms of Service and Privacy Policy",
   };
-  // Keep only the fields that actually have a problem.
+  return onlyProblems(errors);
+}
+
+/** Checks the log-in form. Only checks that both are filled in sensibly;
+ *  whether the password is right is the server's job. */
+export function validateLogIn(values) {
+  return onlyProblems({
+    email: validateEmail(values.email),
+    password: values.password ? null : "Please enter your password",
+  });
+}
+
+// Keep only the fields that actually have a problem.
+function onlyProblems(errors) {
   return Object.fromEntries(Object.entries(errors).filter(([, e]) => e));
 }
