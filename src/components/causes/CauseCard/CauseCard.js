@@ -40,7 +40,10 @@ export default function CauseCard({ cause, variant = "wide" }) {
   const header = (
     <div className={styles.header}>
       {cause.verified ? <Badge variant="verified" size={compact ? "sm" : "md"} /> : <span />}
-      <SaveButton causeTitle={cause.title} size={compact ? 20 : 24} />
+      <div className={styles.headerEnd}>
+        {cause.fulfilled && <Badge variant="fulfilled" size={compact ? "sm" : "md"} />}
+        <SaveButton causeTitle={cause.title} size={compact ? 20 : 24} />
+      </div>
     </div>
   );
 
@@ -65,9 +68,15 @@ export default function CauseCard({ cause, variant = "wide" }) {
           {/* Pinned to the bottom so cards with short titles still line up */}
           <div className={styles.footer}>
             <CauseProgress raised={cause.raised} goal={cause.goal} size="sm" />
-            <Button href={giveHref} variant="outlined" fullWidth className={styles.give}>
-              Give
-            </Button>
+            {cause.fulfilled ? (
+              <Button disabled fullWidth className={styles.give}>
+                Fulfilled
+              </Button>
+            ) : (
+              <Button href={giveHref} variant="outlined" fullWidth className={styles.give}>
+                Give
+              </Button>
+            )}
           </div>
         </div>
       </article>
@@ -90,9 +99,16 @@ export default function CauseCard({ cause, variant = "wide" }) {
       </div>
       <CauseProgress raised={cause.raised} goal={cause.goal} className={styles.progress} />
       <div className={styles.actions}>
-        <Button href={giveHref} className={styles.give}>
-          Give now
-        </Button>
+        {cause.fulfilled ? (
+          // Goal reached: no more giving (Figma: Cause details - Fulfilled)
+          <Button disabled className={styles.give}>
+            Fulfilled
+          </Button>
+        ) : (
+          <Button href={giveHref} className={styles.give}>
+            Give now
+          </Button>
+        )}
       </div>
     </article>
   );

@@ -1,11 +1,22 @@
-import { MdOutlineSearch } from "react-icons/md";
+import Link from "next/link";
+import { MdClose, MdOutlineSearch } from "react-icons/md";
 import styles from "./CauseSearch.module.css";
 
 /**
- * Rounded search box. It is a plain form, so it works without JavaScript:
+ * Rounded search box. A plain form, so it works without JavaScript:
  * pressing Enter opens the causes list with ?q=what-was-typed.
+ *
+ * keep:     other filters to carry along, e.g. { category: "feeding" }
+ * clearHref: when given (and there is a search), shows an X that clears it
  */
-export default function CauseSearch({ action = "/giver/causes", defaultValue = "", className = "" }) {
+export default function CauseSearch({
+  action = "/giver/causes",
+  defaultValue = "",
+  placeholder = "Search causes by name, category or location...",
+  keep = {},
+  clearHref,
+  className = "",
+}) {
   return (
     <form action={action} role="search" className={`${styles.search} ${className}`}>
       <MdOutlineSearch className={styles.icon} aria-hidden="true" />
@@ -13,10 +24,18 @@ export default function CauseSearch({ action = "/giver/causes", defaultValue = "
         type="search"
         name="q"
         defaultValue={defaultValue}
-        placeholder="Search causes by name, category or location..."
+        placeholder={placeholder}
         aria-label="Search causes"
         className={styles.input}
       />
+      {Object.entries(keep).map(([name, value]) => (
+        <input key={name} type="hidden" name={name} value={value} />
+      ))}
+      {defaultValue && clearHref && (
+        <Link href={clearHref} className={styles.clear} aria-label="Clear search">
+          <MdClose aria-hidden="true" />
+        </Link>
+      )}
     </form>
   );
 }

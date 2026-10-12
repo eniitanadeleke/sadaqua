@@ -13,6 +13,12 @@
   justify-content: space-between;
 }
 
+.headerEnd {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
 /* Heart: gold, above the stretched title link */
 .save {
   position: relative;

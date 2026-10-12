@@ -1,0 +1,48 @@
+/* Measured from the Figma "Browse causes" category row: 36px pills, 7px apart */
+
+/* Runs to the screen edge and scrolls sideways */
+.wrapper {
+  margin: 0 calc(-1 * var(--space-5));
+}
+
+.tabs {
+  display: flex;
+  gap: 7px;
+  margin: 0;
+  padding: 0 var(--space-5);
+  list-style: none;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.tab:hover {
+  border-color: var(--color-primary);
+}
+
+.tab:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+}
+
+.active {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  font-weight: var(--weight-bold);
+  color: var(--color-white);
+}

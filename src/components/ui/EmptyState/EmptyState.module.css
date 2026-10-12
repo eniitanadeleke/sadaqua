@@ -1,0 +1,38 @@
+/* Measured from the Figma "No causes found" and "Couldn't load causes" frames */
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+.title {
+  margin-top: 28px;
+  font-size: var(--text-h8);
+  line-height: var(--leading-h8);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+.message {
+  max-width: 200px;
+  margin-top: var(--space-1);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.empty .button {
+  min-height: 40px;
+  margin-top: var(--space-7);
+  padding: 0 58px;
+  border-radius: var(--radius-2xl);
+}

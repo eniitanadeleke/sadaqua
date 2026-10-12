@@ -1,0 +1,33 @@
+/* Measured from the Figma "Browse causes" title row */
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 24px;
+}
+
+.back {
+  display: flex;
+  margin-left: -6px;
+  padding: 3px;
+  border-radius: var(--radius-full);
+  color: var(--color-warm-grey);
+  font-size: 26px;
+}
+
+.back:hover {
+  background-color: var(--color-secondary-100);
+}
+
+.back:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+}
+
+.title {
+  font-family: var(--font-body);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}

@@ -1,0 +1,202 @@
+/* Measured from the Figma "Browse causes - Filter" frame */
+
+/* ---------- The Filter button beside the search box ---------- */
+.trigger {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--space-1);
+  height: 40px;
+  padding: 0 11px 0 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: none;
+  font-family: var(--font-body);
+  font-size: var(--text-body-4);
+  font-weight: var(--weight-medium);
+  color: var(--color-warm-grey);
+  cursor: pointer;
+}
+
+.trigger:hover {
+  border-color: var(--color-primary);
+}
+
+.trigger:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+}
+
+.triggerIcon {
+  width: 21px;
+  height: 21px;
+}
+
+/* ---------- The sheet ---------- */
+/* Tapping outside the sheet closes it (Figma shows no dimming, so it stays clear) */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+}
+
+.sheet {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  z-index: 31;
+  width: 100%;
+  max-width: var(--mobile-max-width);
+  max-height: 100dvh;
+  overflow-y: auto;
+  /* 52px at the bottom: Figma has 56px, but our two 50px buttons are 2px taller each */
+  padding: var(--space-2) var(--space-5) 52px;
+  border-radius: 20px 20px 0 0;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-e3);
+  transform: translateX(-50%);
+  outline: none;
+}
+
+.handle {
+  display: block;
+  width: 40px;
+  height: 6px;
+  margin: 0 auto;
+  border-radius: var(--radius-full);
+  background-color: #d2d4d6;
+}
+
+.group {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.group:first-of-type {
+  margin-top: var(--space-5);
+}
+
+.group + .group,
+.selectBox + .group {
+  margin-top: var(--space-4);
+}
+
+.legend {
+  display: block;
+  padding: 0;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+/* "Areas" label comes after the Urgency group */
+.group + .legend {
+  margin-top: var(--space-4);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+/* Location scope: three pills spread across the full width, as in Figma */
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.row .choice {
+  padding: 0 var(--space-3);
+}
+
+/* A pill: the round radio button itself is hidden, the whole pill is the target */
+.choice {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.choice:has(.radio:checked) {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  font-weight: var(--weight-bold);
+  color: var(--color-white);
+}
+
+.choice:has(.radio:focus-visible) {
+  outline: var(--stroke-m) solid var(--color-accent);
+}
+
+.radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---------- Areas dropdown ---------- */
+.selectBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: var(--space-3);
+}
+
+.select {
+  width: 100%;
+  height: 40px;
+  padding: 0 40px 0 44px;
+  appearance: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: #fbfaf8;
+  font-family: var(--font-body);
+  font-size: var(--text-body-4);
+  color: var(--color-warm-grey);
+  cursor: pointer;
+}
+
+.select:focus-visible {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.pin,
+.chevron {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  color: var(--color-warm-grey);
+  pointer-events: none;
+}
+
+.pin {
+  left: 14px;
+}
+
+.chevron {
+  right: 14px;
+}
+
+/* ---------- Buttons ---------- */
+.actions {
+  margin-top: var(--space-8);
+}
+
+.actions .close {
+  margin-top: var(--space-3);
+}

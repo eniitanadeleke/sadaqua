@@ -19,6 +19,11 @@
   font-weight: var(--weight-semibold);
 }
 
+.fulfilled {
+  background-color: #ebe8e5;
+  color: #a39a92;
+}
+
 /* Big card: 28px tall pill, 12px text, 20px shield */
 .md {
   height: 28px;

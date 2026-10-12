@@ -79,6 +79,14 @@
   scroll-snap-align: start;
 }
 
+/* Urgent cards keep Figma's height: a long title stays on one line and ends in "..."
+   (the full title shows in Browse causes and on the cause page) */
+.wideCards h3 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .wideCards > li {
   display: flex;
   width: 350px;

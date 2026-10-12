@@ -1,0 +1,70 @@
+/* Spacing measured from the Figma "Browse causes" frames */
+
+.title {
+  margin-top: var(--space-5);
+}
+
+.searchRow {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.search {
+  flex: 1;
+  min-width: 0;
+}
+
+.tabs {
+  margin-top: var(--space-4);
+}
+
+/* "Search results for 'Healthcare'" replaces the category row */
+.results {
+  margin-top: var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-warm-grey);
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.summaryAfterResults {
+  margin-top: 7px;
+}
+
+.count {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.shield {
+  width: 20px;
+  height: 20px;
+  color: var(--color-secondary);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* "No causes found" / "Couldn't load causes": picture starts 52px under the search row */
+.empty {
+  margin-top: 52px;
+}

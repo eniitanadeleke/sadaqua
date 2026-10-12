@@ -6,7 +6,7 @@ import styles from "./CategoryChips.module.css";
 export default function CategoryChips({ baseHref = "/giver/causes" }) {
   return (
     <ul className={styles.chips}>
-      {CATEGORIES.map(({ key, label, Icon, color, background }) => (
+      {CATEGORIES.filter((category) => category.onHome).map(({ key, label, Icon, color, background }) => (
         <li key={key}>
           <Link
             href={`${baseHref}?category=${key}`}
