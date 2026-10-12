@@ -1,0 +1,204 @@
+/* Measured from the Figma Giver Home cause cards */
+
+.card {
+  position: relative;
+  background-color: var(--color-white);
+  border-radius: var(--radius-3xl);
+  box-shadow: var(--shadow-e2);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Heart: gold, above the stretched title link */
+.save {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-accent);
+  cursor: pointer;
+}
+
+.save:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+  border-radius: var(--radius-sm);
+}
+
+.title {
+  font-family: var(--font-body);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+/* The title link covers the whole card */
+.stretched::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.stretched:focus-visible {
+  outline: none;
+}
+
+.stretched:focus-visible::after {
+  outline: var(--stroke-m) solid var(--color-accent);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--color-warm-grey);
+}
+
+.meta li {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.photo {
+  position: relative;
+  overflow: hidden;
+}
+
+.photo img {
+  object-fit: cover;
+}
+
+.card .give {
+  position: relative;
+  z-index: 1;
+  font-weight: var(--weight-medium);
+}
+
+/* ---------- Wide card (Urgent needs): 350 x 236 ---------- */
+/* A column, so cards in the same row share one height and any extra
+   space goes under the summary, keeping the progress and button at the bottom */
+.wide {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-2);
+}
+
+.top {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: var(--space-2);
+}
+
+.wide .photo {
+  height: 144px;
+  border-radius: var(--radius-2xl);
+}
+
+.urgent {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
+
+.wide .title {
+  margin-top: 3px;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+}
+
+.wide .meta {
+  column-gap: var(--space-4);
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+}
+
+.wide .metaIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.summary {
+  margin-top: var(--space-3);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.wide .progress {
+  margin-top: 12px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.wide .give {
+  min-height: 29px;
+  width: 100px;
+  padding: 0;
+  border-radius: var(--radius-lg);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+}
+
+/* ---------- Compact card (Featured causes): 167 wide ---------- */
+.compact {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--radius-2xl);
+}
+
+.compact .photo {
+  flex-shrink: 0;
+  height: 66px;
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: var(--space-2);
+}
+
+.compact .title {
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+}
+
+.compact .meta {
+  column-gap: var(--space-2);
+  font-size: 10.75px;
+  line-height: 14px;
+}
+
+.compact .metaIcon {
+  width: 14px;
+  height: 14px;
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.compact .give {
+  min-height: 29px;
+  margin-top: 13px;
+  padding: 0;
+  border-radius: var(--radius-lg);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+}

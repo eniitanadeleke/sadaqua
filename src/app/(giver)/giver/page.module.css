@@ -1,0 +1,150 @@
+/* Spacing measured from the Figma "Giver Home" frame (390 x 1834) */
+
+/* ---------- Greeting, headline and the hands drawing ---------- */
+.hero {
+  position: relative;
+  margin-top: var(--space-5);
+}
+
+.greeting {
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-ink);
+}
+
+.heading {
+  font-size: var(--text-h8);
+  line-height: var(--leading-h8);
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+}
+
+.tagline {
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+/* Sits top-right and runs off the right edge, as in Figma */
+.hands {
+  position: absolute;
+  top: 10px;
+  right: -20px;
+  width: 171px;
+  height: auto;
+}
+
+.search {
+  margin-top: var(--space-4);
+}
+
+.summary {
+  margin-top: var(--space-5);
+}
+
+/* ---------- Sections ---------- */
+.section {
+  margin-top: 22px;
+}
+
+/* The carousels keep 12px of room under the cards for their shadows,
+   so the section after one needs 12px less margin */
+.categories {
+  margin-top: 9px;
+}
+
+.sectionBody {
+  margin-top: 10px;
+}
+
+/* Horizontal scrolling rows of cards that run to the screen edge */
+.carousel {
+  display: flex;
+  gap: var(--space-4);
+  margin: 10px calc(-1 * var(--space-5)) 0;
+  padding: 0 var(--space-5) 12px;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 var(--space-5);
+  scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel > li {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+.wideCards > li {
+  display: flex;
+  width: 350px;
+  max-width: calc(100vw - 40px);
+}
+
+.compactCards {
+  gap: var(--space-2);
+}
+
+.compactCards > li {
+  display: flex;
+  width: 167px;
+}
+
+.carousel > li > * {
+  flex: 1;
+}
+
+.impact {
+  margin-top: 11px;
+}
+
+.impactBody {
+  margin-top: 7px;
+}
+
+.notice {
+  margin-top: 18px;
+}
+
+.noticeNoImpact {
+  margin-top: 9px;
+}
+
+/* ---------- White "Explore more causes" band, edge to edge ---------- */
+.explore {
+  display: flex;
+  flex-direction: column;
+  /* Figma leaves 143px of cream (with the pattern) under this band;
+     MobileScreen already adds 48px, so 95px more here */
+  margin: 21px calc(-1 * var(--space-5)) 95px;
+  padding: 7px var(--space-5) 8px;
+  background-color: var(--color-white);
+  color: var(--color-warm-grey);
+}
+
+.exploreTitle {
+  font-family: var(--font-body);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-bold);
+}
+
+.exploreText {
+  margin-top: 5px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+}
+
+.explore .exploreButton {
+  align-self: center;
+  width: 248px;
+  min-height: 40px;
+  padding: 0;
+  margin-top: var(--space-4);
+  border-radius: var(--radius-2xl);
+  font-weight: var(--weight-medium);
+}

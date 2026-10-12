@@ -78,6 +78,17 @@ export function validateLogIn(values) {
   });
 }
 
+/** Checks the reset-password form: same password rules as sign up. */
+export function validateResetPassword(values) {
+  return onlyProblems({
+    password: checkPassword(values.password),
+    confirmPassword: validateConfirmPassword(
+      values.password,
+      values.confirmPassword
+    ),
+  });
+}
+
 // Keep only the fields that actually have a problem.
 function onlyProblems(errors) {
   return Object.fromEntries(Object.entries(errors).filter(([, e]) => e));

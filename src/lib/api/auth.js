@@ -79,3 +79,29 @@ export async function logIn({ email, password }) {
 
   return { user: publicUser(user) };
 }
+
+/**
+ * Ask for a password reset link by email.
+ * It always "succeeds", whether or not the email has an account,
+ * so nobody can use this form to find out who is registered.
+ * Later: return fetch("/api/auth/forgot-password", { method: "POST", body: ... })
+ */
+export async function requestPasswordReset({ email }) {
+  await wait(FAKE_DELAY_MS);
+  return { sent: true, email };
+}
+
+/**
+ * Set a new password. The token comes from the link in the reset email
+ * (/reset-password?token=...). Test: token "expired" shows the expired-link error.
+ * Later: return fetch("/api/auth/reset-password", { method: "POST", body: ... })
+ */
+export async function resetPassword({ token, password }) {
+  await wait(FAKE_DELAY_MS);
+
+  if (!token || token === "expired") {
+    throw new Error("This reset link has expired or is not valid.");
+  }
+
+  return { ok: Boolean(password) };
+}

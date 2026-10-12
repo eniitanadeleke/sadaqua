@@ -1,0 +1,35 @@
+/* Measured from the Figma Giver Home section titles */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.title {
+  font-family: var(--font-body);
+  font-size: var(--text-body-2);
+  line-height: 28px;
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+}
+
+.subtitle {
+  margin-top: -2px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.action {
+  flex-shrink: 0;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-medium);
+  color: var(--color-primary);
+}
+
+.action:hover {
+  text-decoration: underline;
+}

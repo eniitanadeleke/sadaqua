@@ -1,0 +1,32 @@
+/* Measured from the Figma Giver Home header */
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 40px circle: deep green at 10% over the cream, like the success circle */
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background-color: color-mix(in srgb, var(--color-secondary) 10%, transparent);
+  color: var(--color-secondary);
+  font-size: 26px;
+}
+
+.avatar:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+}

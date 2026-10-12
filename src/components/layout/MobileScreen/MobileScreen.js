@@ -6,9 +6,10 @@ import styles from "./MobileScreen.module.css";
  * and a centred phone-width column on larger screens.
  *
  * top: "default" (Welcome screens) | "compact" (screens with the small header)
+ *      | "flush" (app screens whose header starts right at the top)
  */
 export default function MobileScreen({ children, top = "default", className = "" }) {
-  const topClass = top === "compact" ? styles.compact : "";
+  const topClass = styles[top] || "";
   return (
     <div className={styles.screen}>
       <main className={`${styles.content} ${topClass} ${className}`}>{children}</main>

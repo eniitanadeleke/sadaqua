@@ -1,0 +1,5 @@
+/* A column, so the form can stretch and push the button down */
+.screen {
+  display: flex;
+  flex-direction: column;
+}

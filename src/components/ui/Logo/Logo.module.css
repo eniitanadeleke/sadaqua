@@ -39,3 +39,20 @@
   font-size: 10.5px;
   line-height: 14px;
 }
+
+/* App header: small mark with the words beside it (measured from Figma Giver Home) */
+.sm {
+  flex-direction: row;
+  gap: var(--space-1);
+  text-align: left;
+}
+
+.sm .wordmark {
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.sm .tagline {
+  font-size: 8.5px;
+  line-height: 10px;
+}

@@ -1,0 +1,59 @@
+/* Measured from the Figma cause cards */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.verified {
+  background-color: var(--color-secondary-100);
+  color: var(--color-secondary);
+}
+
+.urgent {
+  background-color: #eed0cf;
+  color: var(--color-error);
+  font-weight: var(--weight-semibold);
+}
+
+/* Big card: 28px tall pill, 12px text, 20px shield */
+.md {
+  height: 28px;
+  padding: 0 var(--space-2);
+  font-size: var(--text-label-1);
+}
+
+.md .icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Small card: 23px tall pill, 10.5px text, 16px shield */
+.sm {
+  height: 23px;
+  padding: 0 var(--space-2) 0 6px;
+  font-size: 10.5px;
+  font-weight: var(--weight-medium);
+}
+
+.sm .icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* "URGENT" sits on the photo; Figma uses ~8.7px text, raised to 10px to stay readable */
+.urgent.sm,
+.urgent.md {
+  height: 16px;
+  padding: 0 var(--space-1);
+  gap: 2px;
+  font-size: var(--text-label-2);
+}
+
+.urgent .icon {
+  width: 11px;
+  height: 11px;
+}

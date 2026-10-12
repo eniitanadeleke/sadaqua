@@ -1,0 +1,99 @@
+/* Measured from the Figma Giver Home "Your impact" card (350 x 170) */
+
+.card {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  border-radius: var(--radius-3xl);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-e2);
+}
+
+.photo {
+  position: relative;
+  min-height: 154px;
+  overflow: hidden;
+  border-radius: var(--radius-2xl);
+}
+
+.photo img {
+  object-fit: cover;
+}
+
+.title {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: var(--weight-regular);
+  color: var(--color-ink);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 10.75px;
+  line-height: 14px;
+  color: var(--color-warm-grey);
+}
+
+.meta li {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.metaIcon {
+  width: 14px;
+  height: 14px;
+}
+
+.progress {
+  margin-top: 8px;
+}
+
+.update {
+  margin-top: var(--space-2);
+  padding: var(--space-2);
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-accent-100);
+}
+
+.updateLabel {
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-secondary);
+}
+
+.updateTitle {
+  margin-top: 4px;
+  font-size: 11px;
+  line-height: 14px;
+  color: var(--color-ink);
+}
+
+/* Figma uses ~8.5px; raised to 10px to stay readable */
+.updateDate {
+  font-size: var(--text-label-2);
+  line-height: 12px;
+  color: var(--color-warm-grey);
+}
+
+.updateLink {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: var(--space-1);
+  margin-top: 4px;
+  font-size: 10.5px;
+  line-height: 14px;
+  color: var(--color-primary);
+}
+
+.updateLink:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,53 @@
+/* Measured from the Figma cause cards */
+
+.text {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-1);
+  color: var(--color-warm-grey);
+  white-space: nowrap;
+}
+
+/* Very large amounts are cut with "..." rather than pushing the percentage out */
+.text > span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text strong,
+.percent {
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+}
+
+/* Big card: 12px text */
+.md .text {
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+}
+
+.md .bar {
+  margin-top: 2px;
+}
+
+/* Small card: Figma uses ~8.5px; 9.5px is as large as fits the card width */
+.sm .text {
+  font-size: 9.5px;
+  line-height: 14px;
+  font-weight: var(--weight-medium);
+  color: var(--color-ink);
+}
+
+.sm .bar {
+  margin-top: 1px;
+}
+
+/* Impact card: 10.5px text */
+.xs .text {
+  font-size: 10.5px;
+  line-height: 14px;
+}
+
+.xs .bar {
+  margin-top: 3px;
+}

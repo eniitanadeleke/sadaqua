@@ -5,8 +5,9 @@ import styles from "./Logo.module.css";
  * Sadaqua logo: the orange mark, the SADAQUA wordmark and the tagline.
  *
  * size: "lg" (Welcome screen) | "md" (sign up, log in and other auth screens)
+ *       | "sm" (app header: mark on the left, words on the right)
  */
-const MARK_WIDTH = { lg: 98, md: 52 };
+const MARK_WIDTH = { lg: 98, md: 52, sm: 40 };
 
 export default function Logo({ size = "lg", className = "" }) {
   const width = MARK_WIDTH[size];
@@ -22,8 +23,10 @@ export default function Logo({ size = "lg", className = "" }) {
         height={height}
         loading="eager"
       />
-      <p className={styles.wordmark}>SADAQUA</p>
-      <p className={styles.tagline}>The Place for Help</p>
+      <div className={styles.words}>
+        <p className={styles.wordmark}>SADAQUA</p>
+        <p className={styles.tagline}>The Place for Help</p>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,45 @@
+/* Measured from the Figma "Password Reset Successful" screen */
+
+.status {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* 72px circle: deep green at 10% over the cream background */
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  margin-top: 44px;
+  border-radius: var(--radius-full);
+  background-color: color-mix(in srgb, var(--color-secondary) 10%, transparent);
+  color: var(--color-secondary);
+}
+
+.title {
+  margin-top: var(--space-4);
+  font-size: var(--text-h7);
+  line-height: var(--leading-h7);
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+}
+
+.message {
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-ink);
+}
+
+/* margin-top: auto pushes the button down; padding-bottom puts it
+   where Figma has it (its bottom edge 262px above the screen bottom). */
+.action {
+  width: 100%;
+  margin-top: auto;
+  padding-top: var(--space-8);
+  padding-bottom: 214px;
+}

@@ -1,0 +1,48 @@
+/* Measured from the Figma Giver Home "Every cause is verified" card (350 x 104) */
+
+.notice {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-primary-100);
+  color: var(--color-warm-grey);
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-secondary-200);
+  color: var(--color-secondary);
+  font-size: 24px;
+}
+
+.title {
+  white-space: nowrap;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+}
+
+.text {
+  margin-top: var(--space-1);
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+}
+
+/* 11px side padding keeps it at Figma's 134px so the title fits on one line */
+.notice .button {
+  min-height: 26px;
+  padding: 0 11px;
+  white-space: nowrap;
+  border-radius: var(--radius-lg);
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  font-weight: var(--weight-regular);
+}
