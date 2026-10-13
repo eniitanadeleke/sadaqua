@@ -19,12 +19,15 @@
   padding: 36px var(--space-5) var(--space-9);
 }
 
-/* Screens with the small logo header start closer to the top (from Figma) */
+/* Screens with the small logo header (sign up, log in, password screens).
+   Figma puts the logo 4px under the status bar; on real phones that looked cramped,
+   so it gets 16px of breathing room (more on phones with a notch). */
 .compact {
-  padding-top: var(--space-1);
+  padding-top: max(var(--space-4), env(safe-area-inset-top));
 }
 
-/* App screens (Giver Home and the rest): the header starts right at the top */
+/* App screens (Giver Home and the rest): Figma puts the header right under the
+   status bar; on real phones that looked cramped, so it gets 16px of breathing room. */
 .flush {
-  padding-top: 0;
+  padding-top: max(var(--space-4), env(safe-area-inset-top));
 }
