@@ -28,3 +28,21 @@ export function formatDate(isoDate) {
   const [year, month, day] = isoDate.split("-").map(Number);
   return `${day} ${months[month - 1]} ${year}`;
 }
+
+/** "2026-08-18T10:30" -> "18 Aug 2026, 10:30 AM" (Figma: "Last updated") */
+export function formatDateTime(isoDateTime) {
+  const [date, time = "00:00"] = isoDateTime.split("T");
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const [year, month, day] = date.split("-").map(Number);
+  const [hours, minutes] = time.split(":").map(Number);
+  const suffix = hours >= 12 ? "PM" : "AM";
+  const hour12 = hours % 12 || 12;
+  return `${day} ${months[month - 1]} ${year}, ${hour12}:${String(minutes).padStart(2, "0")} ${suffix}`;
+}
+
+/** "2026-08-27" -> "27 Aug 2026" (short month, as on the Cause details screen) */
+export function formatShortDate(isoDate) {
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const [year, month, day] = isoDate.split("-").map(Number);
+  return `${day} ${months[month - 1]} ${year}`;
+}

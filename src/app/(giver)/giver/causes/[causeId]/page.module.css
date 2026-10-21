@@ -1,0 +1,212 @@
+/* Spacing measured from the Figma "Cause details" frames */
+
+/* Figma leaves 86px under the last card */
+.screen {
+  padding-bottom: 86px;
+}
+
+.backRow {
+  margin-top: var(--space-5);
+}
+
+/* 350 x 144 photo, 12px corners, 35px under the title row */
+.photo {
+  position: relative;
+  height: 144px;
+  margin-top: 35px;
+  overflow: hidden;
+  border-radius: var(--radius-2xl);
+}
+
+.photo img {
+  object-fit: cover;
+}
+
+.urgent {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
+
+.badges {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 28px;
+  margin-top: 12px;
+}
+
+.badges > button {
+  margin-top: -2px;
+}
+
+.title {
+  margin-top: 19px;
+  font-family: var(--font-body);
+  font-size: var(--text-body-2);
+  line-height: 28px;
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+.meta {
+  display: flex;
+  gap: var(--space-4);
+  margin: 2px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.meta li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.metaIcon {
+  width: 16px;
+  height: 16px;
+}
+
+/* "N180,000 raised / of N300,000 needed" and "60% / funded" */
+.raised {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-ink);
+}
+
+.raised strong {
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+}
+
+.goal {
+  display: block;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+/* The percentage and "funded" are centred on one column at the right */
+.percent {
+  width: 78px;
+  text-align: center;
+}
+
+.percent strong {
+  color: var(--color-secondary);
+}
+
+.bar {
+  margin-top: 1px;
+  background-color: #d4d6d7;
+}
+
+.stillNeeded {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  margin-top: var(--space-2);
+  padding-left: 18px;
+  border-radius: var(--radius-lg);
+  background-color: #e9edde;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.stillIcon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-secondary);
+}
+
+.give {
+  margin-top: 20px;
+}
+
+/* ---------- Fully funded / Fulfilled ---------- */
+.closed {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.closedButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  border-radius: var(--radius-3xl);
+  background-color: #f0e9e0;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-semibold);
+  color: var(--color-warm-grey);
+}
+
+.closedNote,
+.closedNoteSecond {
+  margin-top: 8px;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.closedNoteSecond {
+  margin-top: 0;
+}
+
+.viewUpdates {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  width: fit-content;
+  margin: 9px auto 0;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+}
+
+.viewUpdates svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ---------- Sections ---------- */
+/* "About this cause" sits 21px under the button or note above it (20px under "View updates") */
+.about_open,
+.about_funded {
+  margin-top: 21px;
+}
+
+.about_fulfilled {
+  margin-top: 20px;
+}
+
+.facts {
+  margin-top: 19px;
+}
+
+.share {
+  margin-top: 20px;
+}
+
+.fundingAfterShare {
+  margin-top: 21px;
+}
+
+.fundingAfterAbout {
+  margin-top: 20px;
+}
+
+.updates {
+  margin-top: 21px;
+}

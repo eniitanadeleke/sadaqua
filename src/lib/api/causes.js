@@ -2,7 +2,7 @@
 // later they will call the backend. Only the inside of each function changes.
 
 import { CATEGORIES } from "@/lib/categories";
-import { CAUSES } from "@/lib/mock/causes";
+import { CAUSE_DETAILS, CAUSES } from "@/lib/mock/causes";
 
 const FAKE_DELAY_MS = 300;
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -15,6 +15,30 @@ export async function getUrgentCauses() {
 export async function getFeaturedCauses() {
   await wait(FAKE_DELAY_MS);
   return CAUSES.filter((cause) => cause.featured);
+}
+
+/**
+ * One cause with everything the Cause details screen shows, or null if not found.
+ * Later: return fetch(`/api/causes/${id}`)
+ */
+export async function getCause(id) {
+  await wait(FAKE_DELAY_MS);
+  const cause = CAUSES.find((item) => item.id === id);
+  if (!cause) return null;
+  const extra = CAUSE_DETAILS[id] || {};
+  return {
+    donors: 0,
+    beneficiaries: "",
+    startedOn: cause.createdAt,
+    campaignId: `#SADA-${cause.createdAt.slice(0, 4)}-${cause.id.length}`,
+    story: [cause.summary],
+    provides: [],
+    disbursed: 0,
+    lastUpdated: null,
+    updates: [],
+    ...cause,
+    ...extra,
+  };
 }
 
 export async function getCausesByIds(ids) {

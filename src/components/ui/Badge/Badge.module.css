@@ -24,6 +24,19 @@
   color: #a39a92;
 }
 
+/* Cause details: 28px tall pill, 14px bold text, 20px shield */
+.lg {
+  height: 28px;
+  padding: 0 var(--space-2);
+  font-size: var(--text-body-4);
+  font-weight: var(--weight-bold);
+}
+
+.lg .icon {
+  width: 20px;
+  height: 20px;
+}
+
 /* Big card: 28px tall pill, 12px text, 20px shield */
 .md {
   height: 28px;

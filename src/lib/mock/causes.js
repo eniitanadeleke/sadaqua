@@ -29,7 +29,7 @@ export const CAUSES = [
     category: "healthcare",
     location: "Abuja, FCT",
     state: "FCT",
-    summary: "Help pay for Amina's chemotherapy so she can finish her leukemia treatment",
+    summary: "Help provide dialysis sessions for patients who cannot afford life-saving treatments",
     image: "/images/causes/leukemia.webp",
     raised: 180000,
     goal: 300000,
@@ -159,9 +159,127 @@ export const CAUSES = [
     createdAt: "2026-08-30",
     latestUpdate: null,
   },
+  {
+    id: "accident-victims",
+    title: "Support for accident victim",
+    category: "healthcare",
+    location: "Abuja, FCT",
+    state: "FCT",
+    summary: "Help provide dialysis sessions for patients who cannot afford life-saving treatments",
+    image: "/images/causes/accident.webp",
+    raised: 180000,
+    goal: 300000,
+    urgent: true,
+    featured: false,
+    fulfilled: false,
+    verified: true,
+    createdAt: "2026-08-28",
+    latestUpdate: null,
+  },
+  {
+    id: "accident-victims-funded",
+    title: "Support for accident victim",
+    category: "healthcare",
+    location: "Abuja, FCT",
+    state: "FCT",
+    summary: "Help provide dialysis sessions for patients who cannot afford life-saving treatments",
+    image: "/images/causes/accident.webp",
+    raised: 300000,
+    goal: 300000,
+    urgent: false,
+    featured: false,
+    fulfilled: false,
+    verified: true,
+    createdAt: "2026-08-27",
+    latestUpdate: null,
+  },
+  {
+    id: "accident-victims-fulfilled",
+    title: "Support for accident victim",
+    category: "healthcare",
+    location: "Abuja, FCT",
+    state: "FCT",
+    summary: "Help provide dialysis sessions for patients who cannot afford life-saving treatments",
+    image: "/images/causes/accident.webp",
+    raised: 300000,
+    goal: 300000,
+    urgent: false,
+    featured: false,
+    fulfilled: true,
+    verified: true,
+    createdAt: "2026-08-20",
+    latestUpdate: null,
+  },
 ];
 
 // The logged-in giver (Ahmed in the designs). city/state drive "Local causes".
+// Extra information shown on the Cause details screen (Figma: Cause details).
+// Causes not listed here get sensible defaults from getCauseDetails().
+const STORY =
+  "Help provide dialysis sessions for patients who cannot afford life-saving treatments, " +
+  "Help provide dialysis sessions for patients who cannot afford life-saving treatments. " +
+  "Help provide dialysis sessions for patients who cannot afford life-saving treatments.";
+const STORY_2 =
+  "Help provide dialysis sessions for patients who cannot afford life-saving treatments, " +
+  "Help provide dialysis sessions for patients who cannot afford life-saving treatments.";
+const UPDATE = {
+  title: "Treatment update",
+  date: "2026-08-18",
+  text: "Help provide dialysis sessions for patients who cannot afford life-saving treatments",
+};
+
+export const CAUSE_DETAILS = {
+  "amina-leukemia": {
+    donors: 12,
+    beneficiaries: "Amina.O",
+    startedOn: "2026-08-27",
+    campaignId: "#SADA-2026-27",
+    story: [STORY, STORY_2],
+    provides: [
+      "Chemotherapy sessions for Amina",
+      "Essential medication and medical supplies",
+      "Transport support for hospital visit",
+      "Follow up care and monitoring",
+    ],
+    disbursed: 60000,
+    lastUpdated: "2026-08-18T10:30",
+    updates: [UPDATE],
+  },
+  "accident-victims": {
+    donors: 12,
+    beneficiaries: "12+ Victims",
+    startedOn: "2026-08-27",
+    campaignId: "#SADA-2026-27",
+    story: [STORY, STORY_2],
+    provides: [],
+    disbursed: 60000,
+    lastUpdated: "2026-08-18T10:30",
+    updates: [UPDATE],
+  },
+  "accident-victims-funded": {
+    donors: 12,
+    beneficiaries: "12+ Victims",
+    startedOn: "2026-08-27",
+    campaignId: "#SADA-2026-27",
+    story: [STORY, STORY_2],
+    provides: [],
+    disbursed: 160000,
+    lastUpdated: "2026-08-18T10:30",
+    updates: [UPDATE],
+  },
+  "accident-victims-fulfilled": {
+    donors: 12,
+    beneficiaries: "12+ Victims",
+    startedOn: "2026-08-27",
+    campaignId: "#SADA-2026-27",
+    story: [STORY, STORY_2],
+    provides: [],
+    disbursed: 300000,
+    lastUpdated: "2026-08-18T10:30",
+    updates: [UPDATE],
+  },
+};
+
 export const GIVER = {
   id: "user-giver-1",
   firstName: "Ahmed",

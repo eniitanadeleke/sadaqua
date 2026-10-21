@@ -1,0 +1,363 @@
+/* Measured from the Figma "Cause details" frames (default, -1, Urgent, Fully Funded, Fulfilled) */
+
+/* ---------- Donors pill on the photo: 28px tall, 8px from the photo's corner ---------- */
+.donors {
+  position: absolute;
+  right: var(--space-2);
+  bottom: var(--space-2);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  height: 28px;
+  padding: 0 var(--space-1);
+  border-radius: var(--radius-full);
+  background-color: var(--color-white);
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-ink);
+}
+
+.faces {
+  display: flex;
+}
+
+/* 20px faces, each overlapping the one before by 6px */
+.face {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.12);
+}
+
+.face + .face {
+  margin-left: -6px;
+}
+
+/* ---------- "Save cause" ---------- */
+.saveCause {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-right: 4px;
+  padding: 0;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-warm-grey);
+}
+
+.saveIcon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-accent);
+}
+
+.saveCause:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+  border-radius: var(--radius-sm);
+}
+
+/* ---------- Section headings ("About this cause", "Funding", "Recent updates") ---------- */
+.heading {
+  font-family: var(--font-body);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+/* ---------- About ---------- */
+.summary,
+.story {
+  margin-top: var(--space-1);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+/* A blank line between paragraphs, as in Figma */
+.story + .story {
+  margin-top: 20px;
+}
+
+.providesTitle {
+  margin-top: 20px;
+  font-family: var(--font-body);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+}
+
+.provides {
+  padding-left: 21px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.readMore {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-top: var(--space-1);
+  padding: 0;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+}
+
+.readMore svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ---------- Facts box (cream) ---------- */
+.facts {
+  margin: 0;
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-2xl);
+  background-color: #fcf0da;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+}
+
+.facts dd {
+  margin: 0;
+}
+
+.factsTop {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 60px;
+}
+
+.factHalf {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-top: 9px;
+}
+
+/* Thin line between Beneficiaries and Location (3px from the top, 10px from the bottom) */
+.factHalfRight {
+  position: relative;
+  padding-left: 24px;
+}
+
+.factHalfRight::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  bottom: 10px;
+  left: 0;
+  width: 1px;
+  background-color: var(--color-border);
+}
+
+.factHalf dd,
+.factRow dt {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.factRow dt {
+  gap: var(--space-2);
+}
+
+.factRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 41px;
+  padding-top: 9px;
+  border-top: 1px solid var(--color-border);
+}
+
+.factIcon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* ---------- Share card ---------- */
+.share {
+  padding: 9px var(--space-2) var(--space-2);
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-white);
+}
+
+.shareTitle {
+  font-family: var(--font-body);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-warm-grey);
+}
+
+.shareText {
+  margin-top: -1px;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+/* Five 40px circles, 32px apart */
+.shareButtons {
+  display: flex;
+  gap: 32px;
+  margin-top: 8px;
+}
+
+.shareButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  color: var(--color-white);
+  font-size: 24px;
+}
+
+.shareButton:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.whatsapp {
+  background-color: #44c654;
+}
+
+.facebook {
+  background-color: #1877f2;
+}
+
+.x {
+  background-color: #000000;
+}
+
+.instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+}
+
+/* The link button sits 1px outside its circle with a beige ring, as in Figma */
+.copy {
+  width: 42px;
+  height: 42px;
+  margin: -1px 0 -1px -1px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-white);
+  color: var(--color-ink);
+}
+
+/* ---------- Funding and updates ---------- */
+.funding {
+  margin: 3px 0 0;
+  padding: var(--space-2) var(--space-2) 15px;
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-white);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+}
+
+.fundingRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fundingRow + .fundingRow {
+  margin-top: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border);
+}
+
+.fundingRow dt {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+}
+
+.fundingRow dd {
+  margin: 0;
+  color: var(--color-secondary);
+}
+
+/* 32px circle: deep green at 10% */
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background-color: #e8efea;
+  color: var(--color-secondary);
+  font-size: 20px;
+}
+
+.lastUpdated {
+  margin-top: 4px;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.update {
+  margin-top: 3px;
+  padding: 9px var(--space-2) 7px;
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-white);
+}
+
+.updateTitle {
+  font-family: var(--font-body);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+.updateDate {
+  margin-top: -1px;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.updateText {
+  margin-top: 9px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  width: fit-content;
+  margin-top: var(--space-2);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+}
+
+.link svg {
+  width: 18px;
+  height: 18px;
+}
+
+.link:hover,
+.readMore:hover {
+  text-decoration: underline;
+}
