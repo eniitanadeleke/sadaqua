@@ -12,8 +12,14 @@ import styles from "./DonationFlow.module.css";
  *
  * show: "progress" - amount needed / raised and the bar (Choose an option screen)
  *       "type"     - the "Sadaqah" chip and a "Change" link (amount and review screens)
+ * label: "Giving to", or "Gave to" on the Donation successful screen
  */
-export default function GivingToCard({ cause, show = "progress", changeHref }) {
+export default function GivingToCard({
+  cause,
+  show = "progress",
+  changeHref,
+  label = "Giving to",
+}) {
   const category = getCategory(cause.category);
   const CategoryIcon = category.Icon;
   const percent = percentRaised(cause.raised, cause.goal);
@@ -24,7 +30,7 @@ export default function GivingToCard({ cause, show = "progress", changeHref }) {
       aria-labelledby="giving-to"
     >
       <h3 id="giving-to" className={styles.givingLabel}>
-        Giving to
+        {label}
       </h3>
 
       <div className={styles.givingRow}>

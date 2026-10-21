@@ -2,7 +2,11 @@
 // values, later they will call the backend (which also talks to Paystack).
 // Only the inside of each function changes.
 
+import { getCause } from "@/lib/api/causes";
+import { DONATIONS, GIVER_EMAIL } from "@/lib/mock/donations";
+
 const FAKE_DELAY_MS = 300;
+const feeFor = (amount) => Math.round(amount * 0.029);
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 /** The quick-pick amounts under "Your contribution" (Figma: 100k, 50k, 20k, 10k) */
@@ -38,7 +42,7 @@ export async function getGeneralFund() {
  */
 export async function getDonationQuote(amount) {
   await wait(FAKE_DELAY_MS);
-  const fee = Math.round(amount * 0.029);
+  const fee = feeFor(amount);
   return { amount, fee, total: amount + fee };
 }
 
@@ -60,7 +64,7 @@ export async function checkDonationAmount({ amount }) {
  */
 export async function startPayment({ type, causeId, amount }) {
   await wait(1500);
-  const reference = `SADA-${Date.now().toString(36).toUpperCase()}`;
+  const reference = `SADQ-${Date.now().toString(36).toUpperCase()}`;
   const params = new URLSearchParams({
     ref: reference,
     type,
@@ -68,4 +72,37 @@ export async function startPayment({ type, causeId, amount }) {
   });
   if (causeId) params.set("cause", causeId);
   return { reference, checkoutUrl: `/giver/donate/success?${params}` };
+}
+
+/**
+ * A finished donation, with its cause (null for a General donation).
+ * Paystack sends the giver back with the payment reference; the backend
+ * checks it and returns the donation. Until then, a reference we do not
+ * know is built from the details in the link (draft: { type, causeId, amount }).
+ * Later: return fetch(`/api/donations/${reference}`)
+ */
+export async function getDonation(reference, draft = {}) {
+  await wait(FAKE_DELAY_MS);
+  let donation = DONATIONS.find((item) => item.reference === reference);
+  if (!donation) {
+    const amount = Number(draft.amount);
+    if (!reference || !(amount > 0)) return null;
+    const fee = feeFor(amount);
+    donation = {
+      id: reference,
+      reference,
+      type: draft.type === "general" ? "general" : "sadaqah",
+      causeId: draft.type === "general" ? null : draft.causeId,
+      amount,
+      fee,
+      total: amount + fee,
+      paidAt: new Date().toISOString().slice(0, 16),
+      status: "completed",
+      paymentStatus: "successful",
+      receiptEmail: GIVER_EMAIL,
+      hasNewUpdates: false,
+    };
+  }
+  const cause = donation.causeId ? await getCause(donation.causeId) : null;
+  return { ...donation, cause };
 }

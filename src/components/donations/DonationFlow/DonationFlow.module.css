@@ -463,6 +463,7 @@
   font-family: var(--font-body);
   font-size: var(--text-body-3);
   line-height: 22px;
+  font-weight: var(--weight-medium);
   color: var(--color-warm-grey);
   cursor: pointer;
 }
@@ -620,6 +621,11 @@
   margin-top: var(--space-2);
 }
 
+/* Figma: the amounts are semibold (measured from how heavy the digits are) */
+.summaryRow dd {
+  font-weight: var(--weight-semibold);
+}
+
 .summaryRow dt {
   display: flex;
   align-items: center;
@@ -664,6 +670,7 @@
 }
 
 .totalRow dd {
+  font-weight: var(--weight-bold);
   color: var(--color-secondary);
 }
 

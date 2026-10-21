@@ -9,8 +9,8 @@ import {
 import ImagePlaceholderIcon from "@/components/icons/ImagePlaceholderIcon";
 import Button from "@/components/ui/Button";
 import { startPayment } from "@/lib/api/donations";
-import { formatNaira } from "@/lib/format";
 import BusyButton from "./BusyButton";
+import DonationSummary from "./DonationSummary";
 import SecureNote from "./SecureNote";
 import styles from "./DonationFlow.module.css";
 
@@ -56,33 +56,11 @@ export default function DonationReview({ type, causeId, card, quote }) {
       {card}
 
       <h3 className={styles.sectionTitle}>Donation summary</h3>
-      <div className={styles.summary}>
-        <dl>
-          <div className={styles.summaryRow}>
-            <dt>Donation</dt>
-            <dd>{formatNaira(quote.amount)}</dd>
-          </div>
-          <div className={styles.summaryRow}>
-            <dt>
-              Processing Fee
-              <button
-                type="button"
-                className={styles.feeInfo}
-                aria-label="About the processing fee"
-                title="Charged by the payment provider to process your payment"
-              >
-                <RiInformationLine aria-hidden="true" />
-              </button>
-            </dt>
-            <dd>{formatNaira(quote.fee)}</dd>
-          </div>
-        </dl>
-        <hr className={styles.divider} />
-        <dl className={styles.totalRow}>
-          <dt>Total</dt>
-          <dd>{formatNaira(quote.total)}</dd>
-        </dl>
-      </div>
+      <DonationSummary
+        amount={quote.amount}
+        fee={quote.fee}
+        total={quote.total}
+      />
 
       <h3 className={styles.sectionTitle}>Payment</h3>
       <div className={styles.payCard}>
