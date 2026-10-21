@@ -1,0 +1,844 @@
+/* Donation flow, measured from the 12 Figma donation screens (390 wide).
+   Every margin below is the gap in Figma between one item and the one above it. */
+
+/* ---------- Shared top: back row, heading, subtitle ---------- */
+.backRow {
+  margin-top: var(--space-5);
+}
+
+.heading {
+  font-family: var(--font-body);
+  margin-top: var(--space-4);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-medium);
+  color: var(--color-secondary);
+}
+
+.subtitle {
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+/* Section titles: "Choose an option", "Your contribution", "Donation summary", "Payment" */
+.sectionTitle {
+  font-family: var(--font-body);
+  margin-top: 21px;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+/* ---------- "Giving to" card (green 10%, 350 wide, 12px corners) ---------- */
+.givingCard {
+  margin-top: 15px;
+  padding: 9px var(--space-2) var(--space-3);
+  border-radius: var(--radius-2xl);
+  background-color: #e9edde; /* green at 10% on cream, solid so the page pattern never shows through */
+}
+
+/* On the amount and review screens the card ends 16px under the photo */
+.givingCardType {
+  padding-bottom: var(--space-4);
+}
+
+.givingLabel {
+  font-family: var(--font-body);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-semibold);
+  color: var(--color-secondary);
+}
+
+.givingRow {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  column-gap: var(--space-2);
+  margin-top: 7px;
+}
+
+/* 112 x 82 photo with 12px corners */
+.photo {
+  position: relative;
+  height: 82px;
+  overflow: hidden;
+  border-radius: var(--radius-2xl);
+}
+
+.photo img {
+  object-fit: cover;
+}
+
+.causeTitle {
+  margin-top: 1px;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--space-4);
+  margin: -1px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.meta li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-0);
+}
+
+.metaIcon {
+  width: 16px;
+  height: 16px;
+}
+
+/* "Amount needed / Amount raised" on the left, "60%" on the right */
+.amounts {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: var(--space-2);
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.amountsPercent {
+  margin-bottom: -1px;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+.cardBar {
+  margin-top: var(--space-0);
+  background-color: #d4d6d7;
+}
+
+/* "Sadaqah" chip + "Change ->" */
+.typeRow {
+  display: flex;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.typeChip {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 3px;
+  height: 24px;
+  padding: 3px var(--space-2) 0 7px;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-accent-200);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-accent);
+}
+
+.typeChip svg {
+  flex-shrink: 0;
+  margin-top: 1.6px;
+}
+
+.change {
+  display: inline-flex;
+  align-items: center;
+  gap: 4.5px;
+  margin-left: var(--space-2);
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+}
+
+.change svg {
+  width: 14px;
+  height: 14px;
+}
+
+.change:hover {
+  color: var(--color-secondary);
+}
+
+/* ---------- "General donation" card (white, 350 x 98) ---------- */
+.generalCard {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  column-gap: var(--space-2);
+  margin-top: 15px;
+  padding: var(--space-2) var(--space-2) 7px;
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-white);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+}
+
+.generalCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-accent-300);
+  color: var(--color-accent);
+}
+
+/* The designer's General donation icon, coloured with currentColor */
+.generalIcon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-color: currentColor;
+  -webkit-mask: url("/icons/general-donation-mask.png") center / contain
+    no-repeat;
+  mask: url("/icons/general-donation-mask.png") center / contain no-repeat;
+}
+
+.generalTitle {
+  font-family: var(--font-body);
+  margin-top: 3px;
+  font-size: var(--text-body-2);
+  line-height: var(--leading-body-2);
+  font-weight: var(--weight-semibold);
+  color: var(--color-secondary);
+}
+
+.generalText {
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-ink);
+}
+
+/* ---------- Choose an option ---------- */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: 3px;
+  padding: 0;
+  border: none;
+}
+
+/* 350 x 122 card, 20px corners */
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  height: 122px;
+  padding: 0 28px 0 var(--space-5);
+  border: none;
+  border-radius: 20px;
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.option:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+  outline-offset: var(--space-0);
+}
+
+.optionCircle {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-accent-200);
+  color: var(--color-accent);
+}
+
+.optionCircle .generalIcon {
+  width: 24px;
+  height: 24px;
+}
+
+/* The text sits 2px below the middle, as in Figma */
+.optionText {
+  max-width: 192px;
+  margin-top: var(--space-1);
+}
+
+.optionTitle {
+  display: block;
+  font-size: var(--text-body-2);
+  line-height: var(--leading-body-2);
+  font-weight: var(--weight-semibold);
+  color: var(--color-secondary);
+}
+
+.optionDescription {
+  display: block;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-ink);
+}
+
+.optionMark {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-left: auto;
+  color: var(--color-warm-grey);
+}
+
+/* Picked: green card with the designer's pattern, white circle, white text */
+.optionSelected {
+  background: var(--color-primary) url("/images/donate/option-pattern.webp")
+    center / 100% 100% no-repeat;
+}
+
+.optionSelected .optionCircle {
+  background-color: var(--color-white);
+  color: var(--color-secondary);
+}
+
+.optionSelected .optionTitle,
+.optionSelected .optionDescription,
+.optionSelected .optionMark {
+  color: var(--color-white);
+}
+
+/* ---------- Green 10% notes ---------- */
+.infoBox {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+  padding: var(--space-1) var(--space-4);
+  border-radius: var(--radius-lg);
+  background-color: #e9edde; /* green at 10% on cream, solid so the page pattern never shows through */
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.infoIcon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-top: var(--space-1);
+  color: var(--color-secondary);
+}
+
+.goalNote {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-lg);
+  background-color: #e9edde; /* green at 10% on cream, solid so the page pattern never shows through */
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.goalNote p {
+  max-width: 301px;
+}
+
+.goalIcon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--color-secondary);
+}
+
+/* White note: "A processing fee will be charge at the point of payment." */
+.feeNote {
+  margin-top: var(--space-4);
+  padding: 9px var(--space-2) 7px;
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-white);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+/* ---------- Your contribution ---------- */
+.amountField {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  margin-top: 3px;
+  padding: 0 15px; /* + the 1px border: the naira sign starts 16px in, as in Figma */
+  border: var(--stroke-s) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-secondary);
+  transition: border-color 0.15s ease;
+}
+
+.amountField:focus-within,
+.amountFieldFilled {
+  border-color: var(--color-primary);
+}
+
+/* The naira sign: 12px wide in Figma, so the placeholder starts at 58 */
+.naira {
+  flex-shrink: 0;
+  width: 12px;
+  font-size: var(--text-body-2);
+  line-height: 28px;
+  position: relative;
+  top: 1px;
+  overflow: visible;
+  white-space: nowrap;
+}
+
+/* The typed amount: 24px bold, starting at x154 like Figma (106px after the naira sign).
+   The font stays 24px so phones do not zoom in when it is tapped. */
+.amountInput {
+  flex: 1;
+  min-width: 0;
+  height: 46px;
+  padding: 0 0 0 106px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: var(--text-h8);
+  line-height: 32px;
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+  caret-color: var(--color-ink);
+}
+
+/* Empty: "Enter Amount" in 14px grey, 10px after the naira sign */
+.amountInput:placeholder-shown {
+  padding-left: 10px;
+  padding-bottom: 6px; /* the 14px placeholder sits 3px higher, as in Figma */
+}
+
+.amountInput::placeholder {
+  font-size: var(--text-body-4);
+  font-weight: var(--weight-regular);
+  color: var(--color-warm-grey);
+  opacity: 1;
+}
+
+/* Quick amounts: one row that runs past the right margin to the screen edge,
+   as in Figma (it scrolls sideways if more amounts are added) */
+.chips {
+  display: flex;
+  gap: 10px;
+  margin: 15px calc(-1 * var(--space-5)) 0 -1px;
+  padding-right: var(--space-5);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.chips::-webkit-scrollbar {
+  display: none;
+}
+
+/* 28px tall; Figma widths: 91 for N100,000 and 82 for the others */
+.chip {
+  flex: none;
+  min-width: 82px;
+  height: 28px;
+  padding: 0 9px;
+  border: var(--stroke-s) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: transparent;
+  font-family: var(--font-body);
+  font-size: var(--text-body-3);
+  line-height: 22px;
+  color: var(--color-warm-grey);
+  cursor: pointer;
+}
+
+.chip:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+}
+
+.chipSelected {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* "N180,000 raised of N300,000 ... 60%" and its bar end 16px short of the edge */
+.fundRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: calc(100% - var(--space-4));
+  margin-top: var(--space-4);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.fundRow strong {
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+.fundPercent {
+  margin-top: -2px;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+.fundBar {
+  width: calc(100% - var(--space-4));
+  margin-top: 1px;
+  background-color: #d4d6d7;
+}
+
+.stillNeeded {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.stillNeeded svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Processing: the field and chips turn pale while we check the amount */
+.processing .amountField {
+  border-color: var(--color-border);
+  color: var(--color-border);
+}
+
+.processing .amountInput {
+  color: var(--color-border);
+}
+
+.processing .chip {
+  color: var(--color-border);
+  cursor: default;
+}
+
+.processing .chipSelected {
+  border-color: var(--color-border);
+  background-color: var(--color-border);
+  color: var(--color-soft-cream);
+}
+
+/* ---------- Buttons ---------- */
+.continue {
+  margin-top: var(--space-7);
+}
+
+.continueAfterNote {
+  margin-top: var(--space-8);
+}
+
+/* Disabled Continue: warm grey at 10% (choose) or 20% (amount) on cream, grey text */
+.continue.continue:disabled {
+  background-color: #f0e8df;
+}
+
+.continueAfterNote.continueAfterNote:disabled {
+  background-color: #e1d9cf;
+}
+
+/* "Processing" / "Preparing payment": pale green with the dotted spinner, 40px apart */
+.busyButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  width: 100%;
+  height: 48px;
+  border-radius: var(--radius-3xl);
+  background-color: var(--color-primary-200);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-semibold);
+  color: var(--color-warm-grey);
+}
+
+/* ---------- Secured and encrypted ---------- */
+.secure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.secure svg {
+  width: 16px;
+  height: 16px;
+}
+
+.secureLarge {
+  margin-top: 9px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+}
+
+/* ---------- Review: Donation summary ---------- */
+.summary {
+  margin: 11px 0 0;
+  padding: 0 9px 0 var(--space-2);
+}
+
+.summaryRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-ink);
+}
+
+.summaryRow + .summaryRow {
+  margin-top: var(--space-2);
+}
+
+.summaryRow dt {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: var(--weight-semibold);
+}
+
+.feeInfo {
+  display: flex;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--color-warm-grey);
+  cursor: help;
+}
+
+.feeInfo svg {
+  position: relative;
+  top: -1px;
+  width: 16px;
+  height: 16px;
+}
+
+.divider {
+  height: 1px;
+  margin: 7px -1px 0 0;
+  border: none;
+  background-color: var(--color-border);
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 9px;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+}
+
+.totalRow dt {
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+.totalRow dd {
+  color: var(--color-secondary);
+}
+
+/* ---------- Review: Payment card ---------- */
+.payCard {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  column-gap: var(--space-2);
+  margin-top: 3px;
+  padding: var(--space-2) var(--space-2) 7px;
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-white);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+}
+
+.payLock {
+  width: 24px;
+  height: 24px;
+  color: var(--color-secondary);
+}
+
+.payText {
+  margin-top: 1px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.payLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+}
+
+.payLink svg {
+  width: 20px;
+  height: 20px;
+}
+
+.payLink:hover {
+  color: var(--color-secondary);
+}
+
+.makePayment {
+  margin-top: var(--space-8);
+}
+
+.payError {
+  margin-top: var(--space-3);
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-error);
+  text-align: center;
+}
+
+/* ---------- Make Payment Loading (skeleton of the Review screen) ---------- */
+.bone {
+  display: block;
+  height: 18px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-border);
+}
+
+.skHeading {
+  width: 157px;
+  margin-top: 15px;
+}
+
+.skSubtitle {
+  width: 346px;
+  max-width: 100%;
+  margin-top: var(--space-2);
+}
+
+.skCard {
+  margin-top: var(--space-4);
+  padding: var(--space-2);
+  height: 138px;
+  border-radius: var(--radius-2xl);
+  background-color: #f5ece0; /* border colour at 40% on cream */
+}
+
+.skCardGeneral {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  column-gap: var(--space-2);
+  height: 98px;
+}
+
+.skCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-border);
+}
+
+.skPhoto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 82px;
+  border-radius: var(--radius-lg);
+  background-color: #d5cabf;
+  color: var(--color-border);
+}
+
+.skRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skPair {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.skSummaryTitle {
+  width: 142px;
+  margin-top: 20px;
+}
+
+.skSummary {
+  padding: 0 var(--space-2);
+  margin-top: 18px;
+}
+
+.skPayTitle {
+  width: 66px;
+  margin-top: 27px;
+}
+
+.skPayCard {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  column-gap: var(--space-2);
+  height: 82px;
+  margin-top: var(--space-1);
+  padding: var(--space-2);
+  border-radius: var(--radius-lg);
+  background-color: #f5ece0; /* border colour at 40% on cream */
+}
+
+.skPayCard svg {
+  width: 24px;
+  height: 24px;
+  color: var(--color-border);
+}
+
+.skButton {
+  margin-top: var(--space-8);
+}
+
+/* ---------- Text nudge ----------
+   Figma draws 16px and 20px text slightly higher in its line than the browser does
+   (measured: 1px for 16px lines, 2px for 20px lines). The lines keep their Figma
+   spacing; only the letters move up. */
+.heading,
+.sectionTitle,
+.givingLabel,
+.causeTitle,
+.amountsPercent,
+.optionDescription,
+.generalText,
+.totalRow {
+  position: relative;
+  top: -1px;
+}
+
+.optionTitle,
+.generalTitle {
+  position: relative;
+  top: -2px;
+}
