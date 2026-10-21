@@ -5,7 +5,7 @@
   grid-template-columns: 112px 1fr;
   gap: var(--space-2);
   padding: var(--space-2);
-  border-radius: var(--radius-3xl);
+  border-radius: var(--radius-2xl); /* 12px, as in Figma */
   background-color: var(--color-white);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Figma card shadow */
 }
