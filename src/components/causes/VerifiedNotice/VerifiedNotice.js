@@ -1,4 +1,4 @@
-import { MdVerifiedUser } from "react-icons/md";
+import { RiShieldCheckFill } from "react-icons/ri";
 import Button from "@/components/ui/Button";
 import styles from "./VerifiedNotice.module.css";
 
@@ -7,7 +7,7 @@ export default function VerifiedNotice({ learnMoreHref = "/giver/support" }) {
   return (
     <aside className={styles.notice}>
       <span className={styles.circle} aria-hidden="true">
-        <MdVerifiedUser />
+        <RiShieldCheckFill />
       </span>
       <div>
         <p className={styles.title}>Every cause is verified</p>

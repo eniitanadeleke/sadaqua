@@ -9,6 +9,7 @@
 .greeting {
   font-size: var(--text-body-4);
   line-height: var(--leading-body-4);
+  font-weight: var(--weight-medium);
   color: var(--color-ink);
 }
 
@@ -35,7 +36,7 @@
 }
 
 .search {
-  margin-top: var(--space-4);
+  margin-top: 15px;
 }
 
 .summary {
@@ -50,7 +51,18 @@
 /* The carousels keep 12px of room under the cards for their shadows,
    so the section after one needs 12px less margin */
 .categories {
-  margin-top: 9px;
+  margin-top: 10px;
+}
+
+/* General donation card: 20px under the urgent cards, which keep
+   12px of room for their shadows, so 8px here */
+.general {
+  margin-top: 8px;
+}
+
+/* "Browse by category" after the General donation card */
+.afterCard {
+  margin-top: 22px;
 }
 
 .sectionBody {
@@ -115,11 +127,11 @@
 }
 
 .notice {
-  margin-top: 18px;
+  margin-top: 17px;
 }
 
 .noticeNoImpact {
-  margin-top: 9px;
+  margin-top: 8px;
 }
 
 /* ---------- White "Explore more causes" band, edge to edge ---------- */
@@ -127,8 +139,8 @@
   display: flex;
   flex-direction: column;
   /* Figma leaves 143px of cream (with the pattern) under this band;
-     MobileScreen already adds 48px, so 95px more here */
-  margin: 21px calc(-1 * var(--space-5)) 95px;
+     MobileScreen already adds 48px, so 78px more here (updated Figma) */
+  margin: 21px calc(-1 * var(--space-5)) 78px;
   padding: 7px var(--space-5) 8px;
   background-color: var(--color-white);
   color: var(--color-warm-grey);
@@ -152,7 +164,7 @@
   width: 248px;
   min-height: 40px;
   padding: 0;
-  margin-top: var(--space-4);
+  margin-top: 15px;
   border-radius: var(--radius-2xl);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-semibold);
 }

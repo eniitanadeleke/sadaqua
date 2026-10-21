@@ -9,13 +9,15 @@
 .title {
   margin-top: var(--space-7);
   font-size: var(--text-h7);
+  letter-spacing: -0.01em; /* Figma headings are set 1% tighter */
   line-height: var(--leading-h7);
   font-weight: var(--weight-bold);
   color: var(--color-secondary);
 }
 
 .subtitle {
+  margin-top: -1px;
   font-size: var(--text-body-3);
   line-height: var(--leading-body-3);
-  color: var(--color-ink);
+  color: var(--color-warm-grey);
 }

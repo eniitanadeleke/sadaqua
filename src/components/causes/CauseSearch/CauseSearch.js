@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { MdClose, MdOutlineSearch } from "react-icons/md";
+import { MdOutlineSearch } from "react-icons/md";
+import { RiCloseLine } from "react-icons/ri";
 import styles from "./CauseSearch.module.css";
 
 /**
@@ -33,7 +34,7 @@ export default function CauseSearch({
       ))}
       {defaultValue && clearHref && (
         <Link href={clearHref} className={styles.clear} aria-label="Clear search">
-          <MdClose aria-hidden="true" />
+          <RiCloseLine aria-hidden="true" />
         </Link>
       )}
     </form>

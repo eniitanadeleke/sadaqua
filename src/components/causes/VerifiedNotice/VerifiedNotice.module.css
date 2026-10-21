@@ -24,6 +24,7 @@
 }
 
 .title {
+  padding-top: 1px;
   white-space: nowrap;
   font-size: var(--text-body-4);
   line-height: var(--leading-body-4);
@@ -31,7 +32,7 @@
 }
 
 .text {
-  margin-top: var(--space-1);
+  margin-top: 3px;
   font-size: var(--text-label-1);
   line-height: var(--leading-label-1);
 }

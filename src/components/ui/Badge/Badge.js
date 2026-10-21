@@ -1,4 +1,4 @@
-import { MdVerifiedUser, MdWarningAmber } from "react-icons/md";
+import { RiAlertLine, RiShieldCheckFill } from "react-icons/ri";
 import styles from "./Badge.module.css";
 
 /**
@@ -7,7 +7,7 @@ import styles from "./Badge.module.css";
  * size:    "md" (big cards) | "sm" (small cards)
  */
 export default function Badge({ variant = "verified", size = "md", className = "" }) {
-  const Icon = { verified: MdVerifiedUser, urgent: MdWarningAmber }[variant];
+  const Icon = { verified: RiShieldCheckFill, urgent: RiAlertLine }[variant];
   const text = { verified: "VERIFIED", urgent: "URGENT", fulfilled: "FULFILLED" }[variant];
   return (
     <span className={`${styles.badge} ${styles[variant]} ${styles[size]} ${className}`}>

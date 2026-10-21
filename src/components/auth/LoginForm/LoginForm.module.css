@@ -15,9 +15,10 @@
 
 .forgot {
   align-self: flex-end;
-  margin-top: var(--space-2);
+  margin-top: 12px;
   font-size: var(--text-body-3);
   line-height: var(--leading-body-3);
+  font-weight: var(--weight-medium);
   color: var(--color-primary);
 }
 
@@ -41,11 +42,11 @@
 .actions {
   margin-top: auto;
   padding-top: var(--space-8);
-  padding-bottom: 45px;
+  padding-bottom: 42px;
 }
 
 .switch {
-  margin-top: var(--space-5);
+  margin-top: 23px;
   font-size: var(--text-body-3);
   line-height: var(--leading-body-3);
   color: var(--color-ink);

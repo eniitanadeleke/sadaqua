@@ -47,7 +47,15 @@
   border-radius: var(--radius-full);
   background-color: var(--color-secondary-200);
   color: var(--color-secondary);
-  font-size: 28px;
+}
+
+/* 26 x 25 icon, deep green (measured from the updated Figma) */
+.icon {
+  width: 26px;
+  height: 25px;
+  background-color: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
 }
 
 .value {
@@ -69,14 +77,14 @@
 }
 
 .nudge {
-  margin-top: var(--space-4);
+  margin-top: 17px;
   font-size: var(--text-body-4);
   line-height: var(--leading-body-4);
   font-weight: var(--weight-bold);
 }
 
 .hint {
-  margin-top: var(--space-1);
+  margin-top: 3px;
   font-size: var(--text-label-1);
   line-height: var(--leading-label-1);
 }

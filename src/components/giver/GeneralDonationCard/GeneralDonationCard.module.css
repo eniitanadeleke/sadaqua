@@ -1,0 +1,65 @@
+/* Measured from the updated Figma Giver Home: card 350 x 136 */
+
+.card {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  column-gap: var(--space-2);
+  padding: var(--space-2);
+  border-radius: 12px;
+  background-color: var(--color-accent-200);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.055); /* Figma: y 2, blur 2, black 5.5% */
+}
+
+/* 40px white circle with the 24px gold icon in the middle */
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-white);
+  color: var(--color-accent);
+}
+
+/* The designer's own icon image, taken from the Figma file */
+.icon {
+  width: 24px;
+  height: 24px;
+  background: url("/icons/general-donation.png") center / contain no-repeat;
+}
+
+.title {
+  font-family: var(--font-body);
+  font-size: var(--text-body-2);
+  line-height: var(--leading-body-2);
+  font-weight: var(--weight-semibold);
+  color: var(--color-secondary);
+  margin-top: 1px;
+}
+
+.description {
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  margin-top: 1px;
+  color: var(--color-ink);
+}
+
+/* Button on its own row, against the right edge */
+.actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+/* Two classes so this wins over the shared button size */
+.actions .donate {
+  min-height: 30px;
+  width: 87px;
+  padding: 0;
+  border-radius: var(--radius-lg);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-medium);
+}

@@ -115,7 +115,7 @@ export default function RegisterForm({ role }) {
             errors.password && (
               <span>
                 <span className={styles.strengthLabel}>Password strength:</span>{" "}
-                <strong>{errors.password.strength}</strong>
+                <span>{errors.password.strength}</span>
                 {errors.password.missing.map((message) => (
                   <span key={message} className={styles.rule}>
                     {message}

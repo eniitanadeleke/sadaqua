@@ -2,26 +2,32 @@ import Image from "next/image";
 import styles from "./Logo.module.css";
 
 /**
- * Sadaqua logo: the orange mark, the SADAQUA wordmark and the tagline.
+ * Sadaqua logo: the green mark (the designer's own image, taken from the Figma file), the gold SADAQUA wordmark and the
+ * deep green tagline (colours from the updated Figma).
  *
  * size: "lg" (Welcome screen) | "md" (sign up, log in and other auth screens)
  *       | "sm" (app header: mark on the left, words on the right)
  */
-const MARK_WIDTH = { lg: 98, md: 52, sm: 40 };
+
+// Size of the mark's box in px, as placed in Figma (the image has a little
+// transparent space around the circle, exactly like the designer's file).
+const MARK_SIZE = { lg: 102, md: 56, sm: 40 };
 
 export default function Logo({ size = "lg", className = "" }) {
-  const width = MARK_WIDTH[size];
-  // The source image is 115 x 113, so keep that shape.
-  const height = Math.round((width * 113) / 115);
+  const width = MARK_SIZE[size];
+  const height = width;
 
   return (
     <div className={`${styles.logo} ${styles[size]} ${className}`}>
       <Image
-        src="/images/logo-mark.png"
+        src="/images/logo-mark.webp"
         alt=""
         width={width}
         height={height}
+        className={styles.mark}
+        style={{ width, height }}
         loading="eager"
+        unoptimized
       />
       <div className={styles.words}>
         <p className={styles.wordmark}>SADAQUA</p>

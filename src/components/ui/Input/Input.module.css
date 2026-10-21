@@ -83,16 +83,17 @@
 }
 
 .hint {
-  font-size: var(--text-label-1);
-  line-height: var(--leading-label-1);
+  /* 10px, as in Figma */
+  font-size: var(--text-label-2);
+  line-height: var(--leading-label-2);
   color: var(--color-warm-grey);
 }
 
 .error {
   display: flex;
   align-items: flex-start;
-  gap: var(--space-2);
-  margin-top: var(--space-1);
+  gap: 11px;
+  margin: 2px 0 1px; /* puts the message and the next field where Figma has them */
   font-size: var(--text-body-4);
   line-height: var(--leading-body-4);
   color: var(--color-error);
@@ -100,7 +101,8 @@
 
 .errorIcon {
   flex-shrink: 0;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
+  margin-top: -1px; /* centred on the first line of the message */
   fill: currentColor;
 }

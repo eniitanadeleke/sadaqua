@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { MdKeyboardArrowDown } from "react-icons/md";
+import { RiArrowDownSLine } from "react-icons/ri";
 import { SORT_OPTIONS, causesHref } from "@/lib/causeFilters";
 import styles from "./SortSelect.module.css";
 
@@ -22,7 +22,7 @@ export default function SortSelect({ filters }) {
           </option>
         ))}
       </select>
-      <MdKeyboardArrowDown className={styles.icon} aria-hidden="true" />
+      <RiArrowDownSLine className={styles.icon} aria-hidden="true" />
     </label>
   );
 }

@@ -1,0 +1,69 @@
+/* Measured from the Figma Giver Home-1 frame: 76px tall white bar,
+   20px rounded top corners, five equal columns 75px apart */
+
+.nav {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  width: 100%;
+  max-width: var(--mobile-max-width);
+  margin: 0 auto;
+  border-radius: 20px 20px 0 0;
+  background-color: var(--color-white);
+  box-shadow: 0 -4px 10px rgba(58, 38, 23, 0.06);
+  /* Room for the home bar on phones without a home button */
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  height: 76px;
+  padding: 0 7.5px;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding-top: 12px;
+  color: var(--color-warm-grey); /* icon colour */
+}
+
+.item:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+  outline-offset: -4px;
+}
+
+.active {
+  color: var(--color-primary);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Hand drawing used as a stencil, filled with the current colour.
+   Drawn 22px wide inside the 24px row, as in Figma. */
+.maskIcon {
+  width: 22px;
+  height: 24px;
+  background-color: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+}
+
+.label {
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-ink);
+}
+
+.active .label {
+  color: var(--color-primary);
+}

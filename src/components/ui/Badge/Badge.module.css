@@ -36,12 +36,11 @@
   height: 20px;
 }
 
-/* Small card: 23px tall pill, 10.5px text, 16px shield */
+/* Small card: 23px tall pill, 10px text, 16px shield */
 .sm {
   height: 23px;
   padding: 0 var(--space-2) 0 6px;
-  font-size: 10.5px;
-  font-weight: var(--weight-medium);
+  font-size: var(--text-label-2);
 }
 
 .sm .icon {
@@ -49,13 +48,13 @@
   height: 16px;
 }
 
-/* "URGENT" sits on the photo; Figma uses ~8.7px text, raised to 10px to stay readable */
+/* "URGENT" sits on the photo: 8px text, as in Figma */
 .urgent.sm,
 .urgent.md {
   height: 16px;
   padding: 0 var(--space-1);
   gap: 2px;
-  font-size: var(--text-label-2);
+  font-size: 8px;
 }
 
 .urgent .icon {

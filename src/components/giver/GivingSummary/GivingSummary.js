@@ -1,4 +1,4 @@
-import { MdErrorOutline, MdOutlineAccountBalanceWallet } from "react-icons/md";
+import { RiErrorWarningLine } from "react-icons/ri";
 import Button from "@/components/ui/Button";
 import { formatNaira } from "@/lib/format";
 import styles from "./GivingSummary.module.css";
@@ -10,7 +10,7 @@ export default function GivingSummary({ totalDonated, causesSupported }) {
     <section className={styles.card} aria-labelledby="your-giving">
       <h2 id="your-giving" className={styles.title}>
         Your Giving
-        <MdErrorOutline
+        <RiErrorWarningLine
           className={styles.info}
           role="img"
           aria-label="Totals from donations you have made on Sadaqua"
@@ -18,9 +18,9 @@ export default function GivingSummary({ totalDonated, causesSupported }) {
       </h2>
 
       <div className={styles.stats}>
-        <Stat value={formatNaira(totalDonated)} label="Total donated" />
+        <Stat value={formatNaira(totalDonated)} label="Total donated" icon="/icons/give.svg" />
         <span className={styles.divider} aria-hidden="true" />
-        <Stat value={causesSupported} label="Causes supported" />
+        <Stat value={causesSupported} label="Causes supported" icon="/icons/need-help.svg" />
       </div>
 
       <p className={styles.nudge}>
@@ -37,11 +37,13 @@ export default function GivingSummary({ totalDonated, causesSupported }) {
   );
 }
 
-function Stat({ value, label }) {
+// icon: an SVG in /public/icons used as a stencil, so CSS sets its colour
+// (the same hand-and-heart and open-hands icons as the Welcome cards).
+function Stat({ value, label, icon }) {
   return (
     <div className={styles.stat}>
       <span className={styles.circle} aria-hidden="true">
-        <MdOutlineAccountBalanceWallet />
+        <span className={styles.icon} style={{ "--icon": `url(${icon})` }} />
       </span>
       <p>
         <span className={styles.value}>{value}</span>

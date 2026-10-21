@@ -18,7 +18,7 @@
 }
 
 .terms {
-  margin-top: var(--space-7);
+  margin-top: 28px;
 }
 
 .formError {
@@ -32,7 +32,7 @@
 }
 
 .submit {
-  margin-top: var(--space-8);
+  margin-top: 44px;
 }
 
 .switch {

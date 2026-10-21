@@ -5,6 +5,7 @@ import CauseCard from "@/components/causes/CauseCard";
 import CauseSearch from "@/components/causes/CauseSearch";
 import CategoryChips from "@/components/causes/CategoryChips";
 import VerifiedNotice from "@/components/causes/VerifiedNotice";
+import GeneralDonationCard from "@/components/giver/GeneralDonationCard";
 import GivingSummary from "@/components/giver/GivingSummary";
 import ImpactCard from "@/components/giver/ImpactCard";
 import MobileHeader from "@/components/layout/MobileHeader";
@@ -32,7 +33,8 @@ export default async function GiverHomePage({ searchParams }) {
 
   return (
     <MobileScreen top="flush">
-      <MobileHeader homeHref="/giver" profileHref="/giver/profile" menuItems={GIVER_MENU} />
+      {/* Home uses the bottom bar instead of the hamburger (Figma: Giver Home-1) */}
+      <MobileHeader homeHref="/giver" profileHref="/giver/profile" menuItems={GIVER_MENU} nav="bottom" />
 
       <section className={styles.hero}>
         <p className={styles.greeting}>Assalamu alaikum, {giver.firstName}</p>
@@ -69,7 +71,18 @@ export default async function GiverHomePage({ searchParams }) {
         </ul>
       </section>
 
-      <section className={`${styles.section} ${styles.categories}`} aria-labelledby="categories">
+      {/* Figma shows this card to givers who have donated before,
+          not on "Giver Home - new user". */}
+      {giver.causesSupported > 0 && (
+        <div className={styles.general}>
+          <GeneralDonationCard />
+        </div>
+      )}
+
+      <section
+        className={`${styles.section} ${giver.causesSupported > 0 ? styles.afterCard : styles.categories}`}
+        aria-labelledby="categories"
+      >
         <SectionHeader id="categories" title="Browse by category" />
         <div className={styles.sectionBody}>
           <CategoryChips />
@@ -111,7 +124,7 @@ export default async function GiverHomePage({ searchParams }) {
         <h2 id="explore" className={styles.exploreTitle}>
           Explore more causes
         </h2>
-        <p className={styles.exploreText}>Find more verified causes to support</p>
+        <p className={styles.exploreText}>Find more verified causes to Support</p>
         <Button href="/giver/causes" className={styles.exploreButton}>
           Browse all causes
         </Button>

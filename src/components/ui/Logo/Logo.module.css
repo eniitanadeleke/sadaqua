@@ -8,39 +8,55 @@
 .wordmark {
   font-family: var(--font-heading);
   font-weight: var(--weight-bold);
-  color: var(--color-secondary);
-  letter-spacing: 0.02em;
+  color: var(--color-accent); /* gold in the updated Figma */
 }
 
 .tagline {
-  color: var(--color-accent);
+  color: var(--color-secondary); /* deep green in the updated Figma */
 }
 
-/* Welcome screen: large logo (measured from Figma) */
+
+/* Welcome screen: large logo (re-measured from the updated Figma) */
+.lg .mark {
+  margin-top: -4px;
+}
+
 .lg .wordmark {
-  margin-top: var(--space-1);
+  margin-top: 5px;
   font-size: var(--text-h7);
+  letter-spacing: -0.01em; /* Figma headings are set 1% tighter */
   line-height: var(--leading-h7);
 }
 
 .lg .tagline {
+  margin-top: -1px;
   font-size: var(--text-body-3);
+  font-weight: var(--weight-medium);
   line-height: var(--leading-body-3);
 }
 
 /* Auth screens: smaller logo */
+.md .mark {
+  margin-top: -2px;
+}
+
 .md .wordmark {
   margin-top: 0;
-  font-size: 21px;
+  font-size: 20px;
+  letter-spacing: -0.01em;
   line-height: 24px;
 }
 
 .md .tagline {
-  font-size: 10.5px;
+  margin-top: 0;
+  margin-bottom: 1px;
+  font-size: 10px;
+  font-weight: var(--weight-semibold);
   line-height: 14px;
 }
 
-/* App header: small mark with the words beside it (measured from Figma Giver Home) */
+/* App header: small mark with the words beside it
+   (re-measured from the updated Figma Giver Home) */
 .sm {
   flex-direction: row;
   gap: var(--space-1);
@@ -48,11 +64,12 @@
 }
 
 .sm .wordmark {
-  font-size: 15px;
-  line-height: 18px;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0;
 }
 
 .sm .tagline {
-  font-size: 8.5px;
+  font-size: 8px;
   line-height: 10px;
 }

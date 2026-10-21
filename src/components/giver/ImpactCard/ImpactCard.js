@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { TbArrowRight, TbMapPin } from "react-icons/tb";
+import { RiArrowRightLine, RiMapPinLine } from "react-icons/ri";
 import CauseProgress from "@/components/causes/CauseProgress";
 import { getCategory } from "@/lib/categories";
 import { formatDate } from "@/lib/format";
@@ -25,7 +25,7 @@ export default function ImpactCard({ cause }) {
             </li>
           )}
           <li>
-            <TbMapPin className={styles.metaIcon} aria-hidden="true" />
+            <RiMapPinLine className={styles.metaIcon} aria-hidden="true" />
             {cause.location}
           </li>
         </ul>
@@ -38,7 +38,7 @@ export default function ImpactCard({ cause }) {
             <p className={styles.updateTitle}>{cause.latestUpdate.title}</p>
             <p className={styles.updateDate}>{formatDate(cause.latestUpdate.date)}</p>
             <Link href={`/giver/impact?cause=${cause.id}`} className={styles.updateLink}>
-              View updates <TbArrowRight aria-hidden="true" />
+              View updates <RiArrowRightLine aria-hidden="true" />
             </Link>
           </div>
         )}

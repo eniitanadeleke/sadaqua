@@ -7,7 +7,7 @@
   padding: var(--space-2);
   border-radius: var(--radius-3xl);
   background-color: var(--color-white);
-  box-shadow: var(--shadow-e2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Figma card shadow */
 }
 
 .photo {
@@ -23,9 +23,9 @@
 
 .title {
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: var(--text-body-4);
   line-height: 22px;
-  font-weight: var(--weight-regular);
+  font-weight: var(--weight-medium);
   color: var(--color-ink);
 }
 
@@ -36,7 +36,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 10.75px;
+  font-size: var(--text-label-2);
   line-height: 14px;
   color: var(--color-warm-grey);
 }
@@ -71,14 +71,15 @@
 
 .updateTitle {
   margin-top: 4px;
-  font-size: 11px;
+  font-size: var(--text-label-2);
+  font-weight: var(--weight-semibold);
   line-height: 14px;
   color: var(--color-ink);
 }
 
-/* Figma uses ~8.5px; raised to 10px to stay readable */
+/* 8px, as in Figma */
 .updateDate {
-  font-size: var(--text-label-2);
+  font-size: 8px;
   line-height: 12px;
   color: var(--color-warm-grey);
 }
@@ -89,8 +90,9 @@
   align-items: center;
   gap: var(--space-1);
   margin-top: 4px;
-  font-size: 10.5px;
+  font-size: var(--text-label-2);
   line-height: 14px;
+  font-weight: var(--weight-semibold);
   color: var(--color-primary);
 }
 

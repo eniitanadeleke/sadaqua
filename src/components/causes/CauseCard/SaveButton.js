@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { TbHeart, TbHeartFilled } from "react-icons/tb";
+import { RiHeartFill, RiHeartLine } from "react-icons/ri";
 import styles from "./CauseCard.module.css";
 
 /**
@@ -10,7 +10,7 @@ import styles from "./CauseCard.module.css";
  */
 export default function SaveButton({ causeTitle, size = 24 }) {
   const [saved, setSaved] = useState(false);
-  const Icon = saved ? TbHeartFilled : TbHeart;
+  const Icon = saved ? RiHeartFill : RiHeartLine;
   return (
     <button
       type="button"

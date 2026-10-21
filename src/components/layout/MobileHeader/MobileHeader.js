@@ -1,7 +1,9 @@
 import Link from "next/link";
-import { IoPerson } from "react-icons/io5";
+import { RiUserFill } from "react-icons/ri";
 import Logo from "@/components/ui/Logo";
+import BottomNav from "@/components/layout/BottomNav";
 import MobileMenu from "@/components/layout/MobileMenu";
+import { NAV_STYLE } from "@/lib/navigation";
 import styles from "./MobileHeader.module.css";
 
 /**
@@ -10,9 +12,14 @@ import styles from "./MobileHeader.module.css";
  *
  * homeHref:    where the logo goes
  * profileHref: where the person button goes
- * menuItems:   [{ label, href }] for the menu
+ * menuItems:   [{ label, href, icon }] for the menu or the bottom bar
+ *
+ * nav:         "menu" (hamburger) | "bottom" (bar along the bottom).
+ *              Defaults to NAV_STYLE in lib/navigation.js; a screen can choose
+ *              its own (Giver Home uses the bottom bar, as in Figma Giver Home-1).
+ *              With the bottom bar, the profile button moves to the right edge.
  */
-export default function MobileHeader({ homeHref, profileHref, menuItems }) {
+export default function MobileHeader({ homeHref, profileHref, menuItems, nav = NAV_STYLE }) {
   return (
     <header className={styles.header}>
       <Link href={homeHref} aria-label="Sadaqua home">
@@ -21,10 +28,12 @@ export default function MobileHeader({ homeHref, profileHref, menuItems }) {
 
       <div className={styles.actions}>
         <Link href={profileHref} className={styles.avatar} aria-label="Your profile">
-          <IoPerson aria-hidden="true" />
+          <RiUserFill aria-hidden="true" />
         </Link>
-        <MobileMenu items={menuItems} />
+        {nav === "menu" && <MobileMenu items={menuItems} />}
       </div>
+
+      {nav === "bottom" && <BottomNav items={menuItems} />}
     </header>
   );
 }

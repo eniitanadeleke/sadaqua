@@ -7,7 +7,7 @@
 
 .tabs {
   display: flex;
-  gap: 7px;
+  gap: var(--space-2);
   margin: 0;
   padding: 0 var(--space-5);
   list-style: none;
@@ -23,8 +23,9 @@
   display: flex;
   align-items: center;
   height: 36px;
-  padding: 0 var(--space-4);
-  border: 1px solid var(--color-border);
+  padding: 0 15.3px; /* + 1px border: text 16.3px from the edge, as in Figma */
+  /* Unselected tabs are plain text in the updated Figma */
+  border: 1px solid transparent;
   border-radius: var(--radius-full);
   white-space: nowrap;
   font-size: var(--text-body-4);
@@ -33,7 +34,7 @@
 }
 
 .tab:hover {
-  border-color: var(--color-primary);
+  background-color: var(--color-secondary-100);
 }
 
 .tab:focus-visible {

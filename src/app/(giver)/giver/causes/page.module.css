@@ -7,7 +7,7 @@
 .searchRow {
   display: flex;
   gap: var(--space-2);
-  margin-top: var(--space-4);
+  margin-top: 15px;
 }
 
 .search {
@@ -16,12 +16,12 @@
 }
 
 .tabs {
-  margin-top: var(--space-4);
+  margin-top: 16px;
 }
 
 /* "Search results for 'Healthcare'" replaces the category row */
 .results {
-  margin-top: var(--space-4);
+  margin-top: 17px;
   font-family: var(--font-body);
   font-size: var(--text-body-4);
   line-height: var(--leading-body-4);
@@ -33,11 +33,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 15px;
+  margin-top: 17px;
 }
 
 .summaryAfterResults {
-  margin-top: 7px;
+  margin-top: 8px;
 }
 
 .count {
@@ -59,12 +59,12 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-  margin: var(--space-2) 0 0;
+  margin: 7px 0 0;
   padding: 0;
   list-style: none;
 }
 
 /* "No causes found" / "Couldn't load causes": picture starts 52px under the search row */
 .empty {
-  margin-top: 52px;
+  margin-top: 53px;
 }

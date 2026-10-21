@@ -31,3 +31,8 @@
 .flush {
   padding-top: max(var(--space-4), env(safe-area-inset-top));
 }
+
+/* With the bottom bar switched on, keep the end of the page clear of it */
+.content:has([data-bottom-nav]) {
+  padding-bottom: calc(var(--space-9) + 76px + env(safe-area-inset-bottom));
+}

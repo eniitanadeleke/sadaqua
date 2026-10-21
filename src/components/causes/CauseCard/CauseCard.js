@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { TbMapPin } from "react-icons/tb";
+import { RiMapPinLine } from "react-icons/ri";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import CauseProgress from "@/components/causes/CauseProgress";
@@ -31,7 +31,7 @@ export default function CauseCard({ cause, variant = "wide" }) {
         </li>
       )}
       <li>
-        <TbMapPin className={styles.metaIcon} aria-hidden="true" />
+        <RiMapPinLine className={styles.metaIcon} aria-hidden="true" />
         {cause.location}
       </li>
     </ul>

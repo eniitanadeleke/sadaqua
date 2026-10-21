@@ -2,8 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { MdFilterList, MdKeyboardArrowDown } from "react-icons/md";
-import { TbMapPin } from "react-icons/tb";
+import { RiArrowDownSLine, RiFilter3Line, RiMapPinLine } from "react-icons/ri";
 import Button from "@/components/ui/Button";
 import { CATEGORIES } from "@/lib/categories";
 import { URGENCY_OPTIONS, causesHref } from "@/lib/causeFilters";
@@ -69,7 +68,7 @@ export default function CauseFilters({ filters, areas, localCity }) {
         aria-expanded={open}
         onClick={openSheet}
       >
-        <MdFilterList className={styles.triggerIcon} aria-hidden="true" />
+        <RiFilter3Line className={styles.triggerIcon} aria-hidden="true" />
         Filter
       </button>
 
@@ -93,7 +92,7 @@ export default function CauseFilters({ filters, areas, localCity }) {
               Areas
             </label>
             <div className={styles.selectBox}>
-              <TbMapPin className={styles.pin} aria-hidden="true" />
+              <RiMapPinLine className={styles.pin} aria-hidden="true" />
               <select id="filter-area" value={draft.area} onChange={set("area")} className={styles.select}>
                 <option value="all">All areas</option>
                 {areas.map((area) => (
@@ -102,7 +101,7 @@ export default function CauseFilters({ filters, areas, localCity }) {
                   </option>
                 ))}
               </select>
-              <MdKeyboardArrowDown className={styles.chevron} aria-hidden="true" />
+              <RiArrowDownSLine className={styles.chevron} aria-hidden="true" />
             </div>
 
             <Choices legend="Location scope" name="scope" options={scopeOptions} value={draft.scope} onChange={set("scope")} layout="row" />

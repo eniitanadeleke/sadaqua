@@ -7,7 +7,7 @@
   padding: var(--space-5);
   background-color: var(--color-white);
   border-radius: 20px; /* Figma card corner; larger than the token scale */
-  box-shadow: 0 4px 10px rgba(58, 38, 23, 0.1);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1); /* Figma: y 4, blur 4, black 10% */
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -26,8 +26,8 @@
 
 /* The SVG is used as a stencil and filled with the current text colour */
 .icon {
-  width: 42px;
-  height: 40px;
+  width: 26px; /* smaller in the updated Figma (was 42 x 40) */
+  height: 25px;
   background-color: currentColor;
   -webkit-mask: var(--icon) center / contain no-repeat;
   mask: var(--icon) center / contain no-repeat;

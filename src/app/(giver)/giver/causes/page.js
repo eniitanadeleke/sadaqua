@@ -1,4 +1,4 @@
-import { MdVerifiedUser } from "react-icons/md";
+import { RiShieldCheckFill } from "react-icons/ri";
 import CauseCard from "@/components/causes/CauseCard";
 import CauseFilters from "@/components/causes/CauseFilters";
 import CauseSearch from "@/components/causes/CauseSearch";
@@ -61,7 +61,7 @@ export default async function BrowseCausesPage({ searchParams }) {
         <div className={styles.empty}>
           <EmptyState
             role="alert"
-            image={{ src: "/images/illustrations/connection-error.webp", width: 95, height: 100 }}
+            image={{ src: "/images/illustrations/connection-error.webp", width: 99, height: 104 }}
             title={"Couldn\u2019t load causes"}
             actionLabel="Try again"
             actionHref={causesHref(filters)}
@@ -96,7 +96,7 @@ export default async function BrowseCausesPage({ searchParams }) {
 
           <div className={`${styles.summary} ${searching ? styles.summaryAfterResults : ""}`}>
             <p className={styles.count}>
-              <MdVerifiedUser className={styles.shield} aria-hidden="true" />
+              <RiShieldCheckFill className={styles.shield} aria-hidden="true" />
               {causes.length} verified {causes.length === 1 ? "cause" : "causes"}
             </p>
             <SortSelect filters={filters} />
