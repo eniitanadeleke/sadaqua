@@ -20,9 +20,20 @@ export const metadata = {
   description: "The Place for Help",
 };
 
+// Sadaqua has one look (Figma's light design). "only light" tells phone and
+// desktop browsers not to repaint it in their automatic dark mode.
+export const viewport = {
+  colorScheme: "only light",
+  themeColor: "#fff8ef",
+};
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${nunitoSans.variable}`}>
+    <html
+      lang="en"
+      className={`${fraunces.variable} ${nunitoSans.variable}`}
+      data-scroll-behavior="smooth"
+    >
       <body>
         {children}
       </body>

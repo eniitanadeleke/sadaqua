@@ -5,6 +5,11 @@
   padding: 0;
 }
 
+/* Always the light design, even when the phone or computer is in dark mode */
+:root {
+  color-scheme: only light;
+}
+
 html {
   scroll-behavior: smooth;
 }
