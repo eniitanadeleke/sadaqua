@@ -297,3 +297,11 @@
 .give {
   margin-top: var(--space-7);
 }
+
+/* No donations yet: placed like the other empty screens (Giving History - Empty) */
+.nothing {
+  --title-gap: 26px;
+  --message-gap: 2px;
+  --button-gap: 59px;
+  margin-top: 171px;
+}

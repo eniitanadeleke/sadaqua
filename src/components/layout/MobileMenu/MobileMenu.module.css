@@ -2,9 +2,13 @@
 
 .wrapper {
   position: relative;
+  display: flex; /* no extra line space under the button */
 }
 
+/* Figma puts the three lines 1px above the middle of the header */
 .toggle {
+  position: relative;
+  top: -1px;
   display: flex;
   align-items: center;
   justify-content: center;

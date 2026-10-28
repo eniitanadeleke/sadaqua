@@ -97,3 +97,13 @@ export function formatDaysAgo(isoDate, now = new Date()) {
   if (days < 30) return `${days} days ago`;
   return formatShortDate(isoDate);
 }
+
+/** ("+234", "8012345678") -> "+234 801 234 5678" */
+export function formatPhone(countryCode, phone) {
+  const digits = String(phone).replace(/\D/g, "");
+  const groups =
+    digits.length === 10
+      ? [digits.slice(0, 3), digits.slice(3, 6), digits.slice(6)]
+      : [digits];
+  return `${countryCode} ${groups.join(" ")}`;
+}

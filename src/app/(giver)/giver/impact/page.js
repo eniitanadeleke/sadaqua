@@ -37,15 +37,21 @@ const STEP_ICONS = {
 // /giver/impact?cause=amina-leukemia                (updates, still receiving donations)
 // /giver/impact?cause=dialysis-support              (no updates yet)
 // /giver/impact?cause=accident-victims-fulfilled    (fulfilled)
-// Without ?cause it shows the cause the giver gave to most recently.
+// Without ?cause it shows the cause the giver gave to most recently,
+// or "No updates yet" with Browse causes for a giver who has not given yet.
 export default async function ImpactUpdatesPage({ searchParams }) {
   const params = await searchParams;
   let causeId = params.cause;
   if (!causeId) {
-    const [latest] = await getGivingHistory({ demo: true });
+    // No cause chosen: follow the cause the giver gave to most recently.
+    // A giver who has not given yet has nothing to follow (sample: ?preview=demo).
+    const [latest] = await getGivingHistory({
+      demo: params.preview === "demo",
+    });
     causeId = latest?.causeId;
+    if (!causeId) return <NothingToFollow />;
   }
-  const data = causeId ? await getImpactUpdates(causeId) : null;
+  const data = await getImpactUpdates(causeId);
   if (!data) notFound();
 
   const { cause, updates } = data;
@@ -206,6 +212,33 @@ export default async function ImpactUpdatesPage({ searchParams }) {
           Give Now
         </Button>
       )}
+    </MobileScreen>
+  );
+}
+
+/** For a giver with no donations: nothing to follow yet */
+function NothingToFollow() {
+  return (
+    <MobileScreen top="flush">
+      <MobileHeader
+        homeHref="/giver"
+        profileHref="/giver/profile"
+        menuItems={GIVER_MENU}
+      />
+      <BackHeader
+        title="Impact updates"
+        backHref="/giver"
+        className={styles.backRow}
+      />
+      <IconEmptyState
+        icon={<RiNotification2Line className={styles.bellIcon} />}
+        title="No updates yet"
+        actionLabel="Browse causes"
+        actionHref="/giver/causes"
+        className={styles.nothing}
+      >
+        <p>Give to a cause to follow its progress here.</p>
+      </IconEmptyState>
     </MobileScreen>
   );
 }

@@ -18,8 +18,15 @@ import styles from "./MobileHeader.module.css";
  *              Defaults to NAV_STYLE in lib/navigation.js; a screen can choose
  *              its own (Giver Home uses the bottom bar, as in Figma Giver Home-1).
  *              With the bottom bar, the profile button moves to the right edge.
+ * showProfile: false hides the profile button (Figma: on the Profile screens themselves)
  */
-export default function MobileHeader({ homeHref, profileHref, menuItems, nav = NAV_STYLE }) {
+export default function MobileHeader({
+  homeHref,
+  profileHref,
+  menuItems,
+  nav = NAV_STYLE,
+  showProfile = true,
+}) {
   return (
     <header className={styles.header}>
       <Link href={homeHref} aria-label="Sadaqua home">
@@ -27,9 +34,15 @@ export default function MobileHeader({ homeHref, profileHref, menuItems, nav = N
       </Link>
 
       <div className={styles.actions}>
-        <Link href={profileHref} className={styles.avatar} aria-label="Your profile">
-          <RiUserFill aria-hidden="true" />
-        </Link>
+        {showProfile && (
+          <Link
+            href={profileHref}
+            className={styles.avatar}
+            aria-label="Your profile"
+          >
+            <RiUserFill aria-hidden="true" />
+          </Link>
+        )}
         {nav === "menu" && <MobileMenu items={menuItems} />}
       </div>
 

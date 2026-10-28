@@ -11,6 +11,7 @@
 .actions {
   display: flex;
   align-items: center;
+  height: 40px; /* same even without the profile button */
   gap: 10px;
 }
 

@@ -3,6 +3,7 @@
 import { filterCauses, getCause } from "@/lib/api/causes";
 import { CAUSES, GIVER } from "@/lib/mock/causes";
 import { DONATIONS, IMPACT_UPDATES, SAVED_CAUSES } from "@/lib/mock/donations";
+import { GIVER_PROFILE } from "@/lib/mock/profile";
 
 const FAKE_DELAY_MS = 300;
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -75,4 +76,29 @@ export async function getImpactUpdates(causeId) {
   const cause = await getCause(causeId);
   if (!cause) return null;
   return { cause, updates: IMPACT_UPDATES[causeId] ?? [] };
+}
+
+/**
+ * The giver's name, email and phone for the Profile screens.
+ * Later: return fetch("/api/me")
+ */
+export async function getGiverProfile() {
+  await wait(FAKE_DELAY_MS);
+  return { ...GIVER_PROFILE };
+}
+
+/**
+ * Saves the name and phone (the email can only be changed by support).
+ * Throws an Error with a message the form can show.
+ * Later: return fetch("/api/me", { method: "PATCH", body: JSON.stringify(changes) })
+ */
+export async function updateGiverProfile({ fullName, phone }) {
+  await wait(800);
+  if (!fullName.trim()) throw new Error("Please enter your name");
+  const digits = phone.replace(/\D/g, "").replace(/^0/, "");
+  if (digits.length !== 10)
+    throw new Error("Enter a valid phone number, like 8123456789");
+  GIVER_PROFILE.fullName = fullName.trim();
+  GIVER_PROFILE.phone = digits;
+  return { ...GIVER_PROFILE };
 }

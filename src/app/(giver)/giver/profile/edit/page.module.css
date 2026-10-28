@@ -1,0 +1,22 @@
+/* Measured from the Figma "Giver Edit Profile" frame */
+
+.backRow {
+  margin-top: var(--space-5);
+}
+
+.heading {
+  position: relative;
+  top: -1px; /* Figma draws 16px text 1px higher in its line */
+  margin-top: var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-medium);
+  color: var(--color-secondary);
+}
+
+.subtitle {
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}

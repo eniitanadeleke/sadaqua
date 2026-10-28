@@ -1,0 +1,162 @@
+/* Measured from the Figma "Giver Edit Profile" frame */
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label 7px above each 48px box; fields 21px apart */
+.field {
+  gap: 7px;
+}
+
+/* The current details show in grey at 60%, as in Figma */
+.field input::placeholder {
+  color: rgba(107, 93, 80, 0.6);
+}
+
+.field + .field {
+  margin-top: 21px;
+}
+
+.form > .field:first-child {
+  margin-top: 31px;
+}
+
+.label {
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+}
+
+.emailField,
+.phoneField {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Read-only box with the support message in grey */
+.emailBox {
+  min-height: 48px;
+  padding: 4px 15px 2px;
+  border: var(--stroke-s) solid var(--color-border);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: rgba(107, 93, 80, 0.6);
+}
+
+.phoneRow {
+  display: flex;
+  gap: var(--space-2);
+}
+
+/* Country box: 108 wide, flag, +234 and a small arrow */
+.country {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  width: 108px;
+  height: 48px;
+  padding-left: 11px;
+  border: var(--stroke-s) solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.country:focus-within {
+  border-color: var(--color-primary);
+}
+
+/* Nigerian flag: green, white, green */
+.flag {
+  flex-shrink: 0;
+  width: 18px;
+  height: 13px;
+  background: linear-gradient(
+    90deg,
+    #009a49 33.3%,
+    #eeeeee 33.3% 66.6%,
+    #009a49 66.6%
+  );
+}
+
+.countrySelect {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0 24px 0 8px;
+  border: none;
+  outline: none;
+  background: transparent;
+  appearance: none;
+  font-family: var(--font-body);
+  font-size: var(--text-body-4);
+  color: rgba(107, 93, 80, 0.6);
+  cursor: pointer;
+}
+
+.chevron {
+  position: absolute;
+  right: 7px;
+  width: 16px;
+  height: 16px;
+  color: var(--color-warm-grey);
+  pointer-events: none;
+}
+
+.number {
+  flex: 1;
+  min-width: 0;
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/* Green note */
+.secure {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  align-items: center;
+  column-gap: var(--space-2);
+  margin-top: var(--space-5);
+  padding: 9px var(--space-2) var(--space-2);
+  border-radius: var(--radius-lg);
+  background-color: #e9edde;
+}
+
+.secureIcon {
+  position: relative;
+  top: -1px;
+  width: 24px;
+  height: 24px;
+  color: var(--color-secondary);
+}
+
+.secureTitle {
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-warm-grey);
+}
+
+.secureText {
+  margin-top: 3px;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.save {
+  margin-top: var(--space-7);
+}
+
+.cancel {
+  margin-top: var(--space-5);
+}
