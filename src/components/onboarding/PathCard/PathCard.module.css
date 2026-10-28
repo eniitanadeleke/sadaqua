@@ -8,7 +8,9 @@
   background-color: var(--color-white);
   border-radius: 20px; /* Figma card corner; larger than the token scale */
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1); /* Figma: y 4, blur 4, black 10% */
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .iconCircle {
@@ -21,7 +23,9 @@
   border-radius: var(--radius-full);
   background-color: var(--color-accent-200);
   color: var(--color-accent);
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 /* The SVG is used as a stencil and filled with the current text colour */
@@ -48,6 +52,8 @@
 }
 
 .description {
+  position: relative;
+  top: 1px; /* Figma sits this text 1px lower in its line */
   font-size: var(--text-body-3);
   line-height: var(--leading-body-3);
   color: var(--color-ink);

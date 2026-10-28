@@ -25,6 +25,8 @@
 }
 
 .back svg {
+  position: relative;
+  top: -1px; /* Figma draws the arrow 1px higher */
   width: 24px;
   height: 24px;
   fill: currentColor;

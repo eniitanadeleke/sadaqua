@@ -46,7 +46,7 @@
 }
 
 .switch {
-  margin-top: 23px;
+  margin-top: 24px; /* Figma: the button ends 25px above this line's letters */
   font-size: var(--text-body-3);
   line-height: var(--leading-body-3);
   color: var(--color-ink);
