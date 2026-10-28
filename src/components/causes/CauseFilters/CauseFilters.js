@@ -15,8 +15,16 @@ import styles from "./CauseFilters.module.css";
  * filters:   the filters now in the address
  * areas:     ["FCT", "Kaduna", ...] for the Areas dropdown
  * localCity: the giver's city, for "Local causes (Abuja)"
+ * basePath:  the list the filters apply to (Browse causes, or Saved causes)
+ * className: extra look for the Filter button (Saved causes draws it with an outline)
  */
-export default function CauseFilters({ filters, areas, localCity }) {
+export default function CauseFilters({
+  filters,
+  areas,
+  localCity,
+  basePath = "/giver/causes",
+  className = "",
+}) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [draft, setDraft] = useState(filters);
@@ -35,7 +43,9 @@ export default function CauseFilters({ filters, areas, localCity }) {
 
   function apply() {
     setOpen(false);
-    router.push(causesHref({ ...filters, ...draft }), { scroll: false });
+    router.push(causesHref({ ...filters, ...draft }, basePath), {
+      scroll: false,
+    });
   }
 
   // While open: move focus into the sheet, close on Escape
@@ -49,9 +59,13 @@ export default function CauseFilters({ filters, areas, localCity }) {
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
-  const set = (name) => (event) => setDraft((d) => ({ ...d, [name]: event.target.value }));
+  const set = (name) => (event) =>
+    setDraft((d) => ({ ...d, [name]: event.target.value }));
 
-  const categoryOptions = [{ value: "all", label: "All" }, ...CATEGORIES.map((c) => ({ value: c.key, label: c.label }))];
+  const categoryOptions = [
+    { value: "all", label: "All" },
+    ...CATEGORIES.map((c) => ({ value: c.key, label: c.label })),
+  ];
   const scopeOptions = [
     { value: "all", label: "All" },
     { value: "local", label: `Local causes (${localCity})` },
@@ -63,7 +77,7 @@ export default function CauseFilters({ filters, areas, localCity }) {
       <button
         ref={buttonRef}
         type="button"
-        className={styles.trigger}
+        className={`${styles.trigger} ${className}`}
         aria-haspopup="dialog"
         aria-expanded={open}
         onClick={openSheet}
@@ -74,7 +88,11 @@ export default function CauseFilters({ filters, areas, localCity }) {
 
       {open && (
         <>
-          <div className={styles.backdrop} onClick={closeSheet} aria-hidden="true" />
+          <div
+            className={styles.backdrop}
+            onClick={closeSheet}
+            aria-hidden="true"
+          />
           <div
             ref={sheetRef}
             role="dialog"
@@ -85,15 +103,34 @@ export default function CauseFilters({ filters, areas, localCity }) {
           >
             <span className={styles.handle} aria-hidden="true" />
 
-            <Choices legend="Category" name="category" options={categoryOptions} value={draft.category} onChange={set("category")} layout="grid" />
-            <Choices legend="Urgency" name="urgency" options={URGENCY_OPTIONS} value={draft.urgency} onChange={set("urgency")} layout="grid" />
+            <Choices
+              legend="Category"
+              name="category"
+              options={categoryOptions}
+              value={draft.category}
+              onChange={set("category")}
+              layout="grid"
+            />
+            <Choices
+              legend="Urgency"
+              name="urgency"
+              options={URGENCY_OPTIONS}
+              value={draft.urgency}
+              onChange={set("urgency")}
+              layout="grid"
+            />
 
             <label className={styles.legend} htmlFor="filter-area">
               Areas
             </label>
             <div className={styles.selectBox}>
               <RiMapPinLine className={styles.pin} aria-hidden="true" />
-              <select id="filter-area" value={draft.area} onChange={set("area")} className={styles.select}>
+              <select
+                id="filter-area"
+                value={draft.area}
+                onChange={set("area")}
+                className={styles.select}
+              >
                 <option value="all">All areas</option>
                 {areas.map((area) => (
                   <option key={area} value={area}>
@@ -104,13 +141,25 @@ export default function CauseFilters({ filters, areas, localCity }) {
               <RiArrowDownSLine className={styles.chevron} aria-hidden="true" />
             </div>
 
-            <Choices legend="Location scope" name="scope" options={scopeOptions} value={draft.scope} onChange={set("scope")} layout="row" />
+            <Choices
+              legend="Location scope"
+              name="scope"
+              options={scopeOptions}
+              value={draft.scope}
+              onChange={set("scope")}
+              layout="row"
+            />
 
             <div className={styles.actions}>
               <Button fullWidth onClick={apply}>
                 Apply filters
               </Button>
-              <Button variant="outlined" fullWidth onClick={closeSheet} className={styles.close}>
+              <Button
+                variant="outlined"
+                fullWidth
+                onClick={closeSheet}
+                className={styles.close}
+              >
                 Close
               </Button>
             </div>

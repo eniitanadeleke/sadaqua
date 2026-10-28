@@ -1,0 +1,47 @@
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-full);
+  color: var(--color-secondary);
+}
+
+.mint {
+  background-color: var(--color-primary-100);
+}
+
+.green {
+  background-color: rgba(20, 92, 44, 0.1);
+}
+
+/* Fraunces 24px; Figma draws it 2px lower in its line than the browser does */
+.title {
+  position: relative;
+  top: 2px;
+  margin-top: var(--title-gap, 19px);
+  font-family: var(--font-heading);
+  font-size: var(--text-h8);
+  line-height: var(--leading-h8);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+.message {
+  margin-top: var(--message-gap, 2px);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.empty .button {
+  margin-top: var(--button-gap, 31px);
+}

@@ -299,6 +299,12 @@
   color: var(--color-secondary);
 }
 
+/* Pending payment: orange, like the Pending pill in Giving history */
+.pillPending {
+  background-color: rgba(196, 86, 42, 0.2);
+  color: var(--color-urgent);
+}
+
 .factRow dd.pillCell {
   display: flex;
   top: 0;

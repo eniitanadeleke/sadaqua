@@ -24,6 +24,20 @@
   color: #a39a92;
 }
 
+/* Impact updates: 24px tall pill, 12px bold text, 16px shield */
+.tag {
+  height: 24px;
+  padding: 0 var(--space-2);
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  font-weight: var(--weight-bold);
+}
+
+.tag .icon {
+  width: 16px;
+  height: 16px;
+}
+
 /* Cause details: 28px tall pill, 14px bold text, 20px shield */
 .lg {
   height: 28px;

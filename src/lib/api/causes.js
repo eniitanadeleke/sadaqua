@@ -58,19 +58,39 @@ export async function getCauseAreas() {
  * simulateError: true pretends the server could not be reached (to show the error state)
  * Later: return fetch(`/api/causes?${query}`)
  */
-export async function searchCauses(filters, { homeState, simulateError = false } = {}) {
+export async function searchCauses(
+  filters,
+  { homeState, simulateError = false } = {},
+) {
   await wait(FAKE_DELAY_MS);
   if (simulateError) throw new Error("Could not reach the server");
 
-  const words = filters.q.toLowerCase();
-  const labelOf = (key) => CATEGORIES.find((c) => c.key === key)?.label.toLowerCase() ?? "";
+  return filterCauses(CAUSES, filters, homeState);
+}
 
-  const matches = CAUSES.filter((cause) => {
+/**
+ * Applies the search words, filters and sort to a list of causes.
+ * Used by Browse causes and by Saved causes (same filters, smaller list).
+ * sortKey(cause) lets a list sort "Most recent" by its own date (e.g. when it was saved).
+ */
+export function filterCauses(
+  causes,
+  filters,
+  homeState,
+  sortKey = (cause) => cause.createdAt,
+) {
+  const words = filters.q.toLowerCase();
+  const labelOf = (key) =>
+    CATEGORIES.find((c) => c.key === key)?.label.toLowerCase() ?? "";
+
+  const matches = causes.filter((cause) => {
     if (words) {
-      const text = `${cause.title} ${labelOf(cause.category)} ${cause.location}`.toLowerCase();
+      const text =
+        `${cause.title} ${labelOf(cause.category)} ${cause.location}`.toLowerCase();
       if (!text.includes(words)) return false;
     }
-    if (filters.category !== "all" && cause.category !== filters.category) return false;
+    if (filters.category !== "all" && cause.category !== filters.category)
+      return false;
     if (filters.urgency === "urgent" && !cause.urgent) return false;
     if (filters.urgency === "not-urgent" && cause.urgent) return false;
     if (filters.area !== "all" && cause.state !== filters.area) return false;
@@ -81,10 +101,13 @@ export async function searchCauses(filters, { homeState, simulateError = false }
 
   const progress = (cause) => cause.raised / cause.goal;
   const bySort = {
-    recent: (a, b) => b.createdAt.localeCompare(a.createdAt),
-    urgent: (a, b) => Number(b.urgent) - Number(a.urgent) || b.createdAt.localeCompare(a.createdAt),
+    recent: (a, b) => sortKey(b).localeCompare(sortKey(a)),
+    urgent: (a, b) =>
+      Number(b.urgent) - Number(a.urgent) ||
+      b.createdAt.localeCompare(a.createdAt),
     // Closest to the goal first; causes already fulfilled go last
-    "almost-funded": (a, b) => Number(a.fulfilled) - Number(b.fulfilled) || progress(b) - progress(a),
+    "almost-funded": (a, b) =>
+      Number(a.fulfilled) - Number(b.fulfilled) || progress(b) - progress(a),
   };
   return matches.sort(bySort[filters.sort]);
 }

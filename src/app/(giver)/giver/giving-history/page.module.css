@@ -1,0 +1,85 @@
+/* Measured from the Figma "Giving History" frames */
+
+.backRow {
+  margin-top: var(--space-5);
+}
+
+.heading {
+  position: relative;
+  top: -1px; /* Figma draws 16px text 1px higher in its line */
+  margin-top: var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-medium);
+  color: var(--color-secondary);
+}
+
+.subtitle {
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+/* All / Completed / Pending: 38px pills, 6px apart */
+.tabs {
+  display: flex;
+  gap: 6px;
+  margin: 14px 0 0 -1px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  height: 38px;
+  padding: 2px var(--space-4) 0;
+  border: var(--stroke-s) solid var(--color-border);
+  border-radius: 19px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.tab:hover {
+  border-color: var(--color-primary);
+}
+
+.tab:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+}
+
+.tabActive {
+  background-color: var(--color-primary);
+  font-weight: var(--weight-bold);
+  color: var(--color-white);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 15px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.none {
+  margin-top: var(--space-6);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+  text-align: center;
+}
+
+/* Empty: circle 171px under the back row, button 63px under the message */
+.empty {
+  --title-gap: 26px;
+  --message-gap: 2px;
+  --button-gap: 59px;
+  margin-top: 171px;
+}
+
+.emptyIcon {
+  width: 40px;
+  height: 40px;
+}

@@ -12,6 +12,7 @@ import {
   RiMailCheckLine,
   RiMapPinLine,
   RiMoneyDollarCircleLine,
+  RiTimeLine,
 } from "react-icons/ri";
 import { ReceiptButton } from "@/components/donations/DonationResult";
 import styles from "@/components/donations/DonationResult/DonationResult.module.css";
@@ -121,8 +122,14 @@ export default async function DonationDetailsPage({ params, searchParams }) {
               <span>Status</span>
             </dt>
             <dd className={styles.pillCell}>
-              <span className={styles.pill}>
-                <RiCheckboxCircleLine aria-hidden="true" />
+              <span
+                className={`${styles.pill} ${donation.status === "pending" ? styles.pillPending : ""}`}
+              >
+                {donation.status === "pending" ? (
+                  <RiTimeLine aria-hidden="true" />
+                ) : (
+                  <RiCheckboxCircleLine aria-hidden="true" />
+                )}
                 {donation.status === "completed" ? "Completed" : "Pending"}
               </span>
             </dd>

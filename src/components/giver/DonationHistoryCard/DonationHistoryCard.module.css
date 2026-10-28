@@ -1,0 +1,195 @@
+/* Measured from the Figma "Giving History" cards: 350 x 186, white, 12px corners */
+
+.card {
+  padding: var(--space-2) var(--space-2) 6px;
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-white);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  column-gap: var(--space-2);
+}
+
+.photo {
+  position: relative;
+  height: 121px;
+  overflow: hidden;
+  border-radius: var(--radius-2xl);
+}
+
+.photo img {
+  object-fit: cover;
+}
+
+.generalPhoto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-accent-300);
+  color: var(--color-accent);
+}
+
+.generalIcon {
+  width: 40px;
+  height: 40px;
+  background-color: currentColor;
+  -webkit-mask: url("/icons/general-donation-mask.png") center / contain
+    no-repeat;
+  mask: url("/icons/general-donation-mask.png") center / contain no-repeat;
+}
+
+.info {
+  min-width: 0;
+}
+
+/* Status pill on the left, "View details ->" on the right (4px past the padding) */
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-right: -4px;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  height: 28px;
+  padding: 0 9px 0 var(--space-2);
+  border-radius: 14px;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+}
+
+.status svg {
+  width: 20px;
+  height: 20px;
+}
+
+.pending {
+  background-color: rgba(196, 86, 42, 0.2);
+  color: var(--color-urgent);
+}
+
+.completed {
+  background-color: rgba(20, 92, 44, 0.1);
+  color: var(--color-secondary);
+}
+
+.details {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 3px;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-primary);
+}
+
+.details svg {
+  width: 16px;
+  height: 16px;
+}
+
+.details:hover {
+  color: var(--color-secondary);
+}
+
+.title {
+  position: relative;
+  top: -1px; /* Figma draws 16px text 1px higher in its line */
+  margin-top: 5px;
+  font-family: var(--font-body);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--space-4);
+  margin: -1px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.meta li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-0);
+}
+
+.metaIcon {
+  width: 16px;
+  height: 16px;
+}
+
+/* "Sadaqah" chip on the left, amount and date on the right */
+.bottom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: var(--space-3);
+}
+
+.typeChip {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: 3px;
+  height: 24px;
+  padding: 3px var(--space-2) 0 7px;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-accent-200);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-accent);
+}
+
+.typeChip svg {
+  flex-shrink: 0;
+  margin-top: 1.6px;
+}
+
+.amount {
+  display: flex;
+  flex-direction: column;
+  margin: 1px var(--space-1) 0 auto;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.amount strong {
+  margin-bottom: -1px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+}
+
+/* Two outlined buttons, 155 x 32, 13px in from the card edges */
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 19px 5px 0;
+}
+
+.actions .action {
+  min-height: 32px;
+  padding: 0;
+  border-radius: var(--radius-2xl);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-medium);
+}

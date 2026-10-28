@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { RiMapPinLine } from "react-icons/ri";
+import { RiBookmarkFill, RiMapPinLine } from "react-icons/ri";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
 import CauseProgress from "@/components/causes/CauseProgress";
 import { getCategory } from "@/lib/categories";
+import { formatDaysAgo } from "@/lib/format";
 import SaveButton from "./SaveButton";
 import styles from "./CauseCard.module.css";
 
@@ -13,10 +14,13 @@ import styles from "./CauseCard.module.css";
  * variant: "wide"    - photo on the left, summary, "Give now" (Figma: Urgent needs)
  *          "compact" - photo on top, "Give" outline button (Figma: Featured causes)
  *
+ * savedAt: on Saved causes, the date it was saved - the heart starts filled and
+ *          "Saved  Saved 1 day ago" shows next to the button (Figma: Saved Causes)
+ *
  * The title link stretches over the whole card, so tapping anywhere opens the cause;
  * the heart and the Give button sit above it and keep their own actions.
  */
-export default function CauseCard({ cause, variant = "wide" }) {
+export default function CauseCard({ cause, variant = "wide", savedAt }) {
   const category = getCategory(cause.category);
   const detailsHref = `/giver/causes/${cause.id}`;
   const giveHref = `/giver/donate/${cause.id}`;
@@ -39,10 +43,20 @@ export default function CauseCard({ cause, variant = "wide" }) {
 
   const header = (
     <div className={styles.header}>
-      {cause.verified ? <Badge variant="verified" size={compact ? "sm" : "md"} /> : <span />}
+      {cause.verified ? (
+        <Badge variant="verified" size={compact ? "sm" : "md"} />
+      ) : (
+        <span />
+      )}
       <div className={styles.headerEnd}>
-        {cause.fulfilled && <Badge variant="fulfilled" size={compact ? "sm" : "md"} />}
-        <SaveButton causeTitle={cause.title} size={compact ? 20 : 24} />
+        {cause.fulfilled && (
+          <Badge variant="fulfilled" size={compact ? "sm" : "md"} />
+        )}
+        <SaveButton
+          causeTitle={cause.title}
+          size={compact ? 20 : 24}
+          initialSaved={Boolean(savedAt)}
+        />
       </div>
     </div>
   );
@@ -73,7 +87,12 @@ export default function CauseCard({ cause, variant = "wide" }) {
                 Fulfilled
               </Button>
             ) : (
-              <Button href={giveHref} variant="outlined" fullWidth className={styles.give}>
+              <Button
+                href={giveHref}
+                variant="outlined"
+                fullWidth
+                className={styles.give}
+              >
                 Give
               </Button>
             )}
@@ -97,8 +116,23 @@ export default function CauseCard({ cause, variant = "wide" }) {
           <p className={styles.summary}>{cause.summary}</p>
         </div>
       </div>
-      <CauseProgress raised={cause.raised} goal={cause.goal} className={styles.progress} />
-      <div className={styles.actions}>
+      <CauseProgress
+        raised={cause.raised}
+        goal={cause.goal}
+        className={styles.progress}
+      />
+      <div
+        className={`${styles.actions} ${savedAt ? styles.actionsSaved : ""}`}
+      >
+        {savedAt && (
+          <p className={styles.saved}>
+            <RiBookmarkFill className={styles.savedIcon} aria-hidden="true" />
+            <strong>Saved</strong>
+            <span className={styles.savedAgo}>
+              Saved {formatDaysAgo(savedAt)}
+            </span>
+          </p>
+        )}
         {cause.fulfilled ? (
           // Goal reached: no more giving (Figma: Cause details - Fulfilled)
           <Button disabled className={styles.give}>

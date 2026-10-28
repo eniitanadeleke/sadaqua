@@ -152,6 +152,42 @@
   margin-top: 10px;
 }
 
+/* Saved causes: "Saved  Saved 1 day ago" on the left of the button */
+.actionsSaved {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.saved {
+  display: flex;
+  align-items: center;
+  margin-left: var(--space-1);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-accent);
+}
+
+.savedIcon {
+  position: relative;
+  top: -2px; /* Figma sits the bookmark and "Saved" a little above the button's middle */
+  width: 20px;
+  height: 20px;
+}
+
+.saved strong {
+  position: relative;
+  top: -1px;
+  margin-left: var(--space-0);
+  font-weight: var(--weight-bold);
+}
+
+.savedAgo {
+  margin-left: var(--space-1);
+  font-size: var(--text-label-2);
+  line-height: var(--leading-label-2);
+  color: var(--color-warm-grey);
+}
+
 .wide .give {
   min-height: 30px;
   width: 100px;

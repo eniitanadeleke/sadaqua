@@ -1,0 +1,96 @@
+/* Measured from the Figma "Saved Causes" frames */
+
+.backRow {
+  margin-top: var(--space-5);
+}
+
+.heading {
+  position: relative;
+  top: -1px; /* Figma draws 16px text 1px higher in its line */
+  margin-top: var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-medium);
+  color: var(--color-secondary);
+}
+
+.subtitle {
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+/* Saved causes draws the search 42px tall and the Filter button with an outline */
+.searchRow {
+  display: flex;
+  gap: 6px;
+  margin: 14px -1px 0;
+}
+
+.search.search {
+  flex: 1;
+  min-width: 0;
+  height: 42px;
+  gap: 6px;
+}
+
+.search > svg:first-child {
+  width: 28px;
+  height: 28px;
+}
+
+.filter.filter {
+  height: 42px;
+  padding: 0 12px;
+  border-color: var(--color-border);
+  gap: 4px;
+}
+
+.filter svg {
+  width: 20px;
+  height: 20px;
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 17px;
+}
+
+.count {
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.none {
+  margin-top: var(--space-6);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+  text-align: center;
+}
+
+/* Empty: circle 39px under the search row */
+.empty {
+  --title-gap: 19px;
+  --message-gap: 6px;
+  --button-gap: 31px;
+  margin-top: 39px;
+}
+
+.emptyIcon {
+  width: 48px;
+  height: 48px;
+}
