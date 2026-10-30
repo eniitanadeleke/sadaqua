@@ -1,0 +1,47 @@
+/* Measured from the Figma My request: 38px pills, 2px apart, beige outline */
+
+.tabs {
+  display: flex;
+  gap: 2px;
+  margin: 0 -20px;
+  padding: 0 20px 0 19px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 46px;
+  height: 38px;
+  padding: 0 8.25px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+  white-space: nowrap;
+}
+
+.tab:hover {
+  color: var(--color-ink);
+}
+
+/* Selected: green fill inside the beige outline, bold white text */
+.active,
+.active:hover {
+  background-color: var(--color-primary);
+  background-clip: padding-box;
+  font-weight: var(--weight-bold);
+  color: var(--color-white);
+}
+
+.tab:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+}

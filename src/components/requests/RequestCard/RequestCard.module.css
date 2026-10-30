@@ -83,6 +83,28 @@
   color: var(--color-warm-grey);
 }
 
+.amountRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+/* "N300,000 needed": bold deep-green amount, small grey word */
+.amount {
+  position: relative;
+  top: -1px; /* Figma: the amount sits 1px above the badge's centre */
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.amount strong {
+  font-size: var(--text-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+}
+
 /* Pale green box under the details: what happens next */
 .note {
   display: flex;
@@ -98,12 +120,77 @@
   color: var(--color-warm-grey);
 }
 
-/* 24px Remix icon: its circle is the 20px drawn in Figma */
+/* A 24px space for the icon; the drawings inside are the Figma sizes */
 .noteIcon {
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 24px;
   height: 24px;
+}
+
+.noteIcon svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Recipient Home: the "i" in a 20px circle */
+.info {
   color: var(--color-secondary);
+}
+
+/* My request: hourglass, tick or pencil */
+.review {
+  color: #c4562a;
+}
+
+.review svg {
+  width: 16px;
+  height: 16px;
+}
+
+.success {
+  color: var(--color-secondary);
+}
+
+.error {
+  color: var(--color-error);
+}
+
+.error svg {
+  width: 21.6px;
+  height: 21.6px;
+}
+
+/* My request: 9px under "View request" (195px cards, as in Figma) */
+.list {
+  padding-bottom: 9px;
+}
+
+/* My request: line, then "View request" with an arrow */
+.view {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 7px 3px 0;
+  padding: 7px 8px 0 8px;
+  border-top: 2px solid var(--color-border);
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+}
+
+.view:hover {
+  color: var(--color-primary);
+}
+
+.viewIcon {
+  position: relative;
+  top: 1px;
+  width: 18px;
+  height: 18px;
 }
 
 /* Each sentence starts on its own line, as in Figma */

@@ -1,6 +1,7 @@
 // The stages a help request goes through, with the words and colours
 // each one uses in Figma (Recipient Home, My request).
 // tone picks the badge colours in components/requests/RequestStatusBadge.
+// note: the lines in the pale green box on the request cards.
 
 export const REQUEST_STATUSES = {
   draft: { label: "Draft", tone: "neutral" },
@@ -16,7 +17,10 @@ export const REQUEST_STATUSES = {
   needs_changes: {
     label: "Needs changes",
     tone: "error",
-    note: ["Additional information is needed."],
+    note: [
+      "Additional information is needed.",
+      "Please check and update your request.",
+    ],
   },
   verified: {
     label: "Verified",
@@ -32,3 +36,15 @@ export const REQUEST_STATUSES = {
 export function getRequestStatus(key) {
   return REQUEST_STATUSES[key] ?? REQUEST_STATUSES.submitted;
 }
+
+// The tabs on My requests, in Figma's order. "Draft" only shows when the
+// recipient has a draft (Figma: My request has it, No request does not).
+export const REQUEST_TABS = [
+  { key: "all", label: "All" },
+  { key: "draft", label: "Draft" },
+  { key: "submitted", label: "Submitted" },
+  { key: "under_review", label: "Under review" },
+  { key: "needs_changes", label: "Needs changes" },
+  { key: "verified", label: "Verified" },
+  { key: "rejected", label: "Rejected" },
+];

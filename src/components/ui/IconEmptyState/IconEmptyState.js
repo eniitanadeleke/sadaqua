@@ -7,7 +7,9 @@ import styles from "./IconEmptyState.module.css";
  *
  * tone: "mint" (pale green circle) | "green" (green at 10%)
  * The gaps differ from screen to screen in Figma, so the page sets them with
- * className (--title-gap, --message-gap, --button-gap).
+ * className (--title-gap, --message-gap, --button-gap, --second-gap).
+ * secondaryLabel / secondaryHref: an optional outlined button under the first
+ * (Figma: No request - "Learn how it works").
  */
 export default function IconEmptyState({
   icon,
@@ -16,6 +18,8 @@ export default function IconEmptyState({
   children,
   actionLabel,
   actionHref,
+  secondaryLabel,
+  secondaryHref,
   className = "",
 }) {
   return (
@@ -28,6 +32,16 @@ export default function IconEmptyState({
       {actionHref && (
         <Button href={actionHref} fullWidth className={styles.button}>
           {actionLabel}
+        </Button>
+      )}
+      {secondaryHref && (
+        <Button
+          href={secondaryHref}
+          variant="outlined"
+          fullWidth
+          className={styles.secondButton}
+        >
+          {secondaryLabel}
         </Button>
       )}
     </section>

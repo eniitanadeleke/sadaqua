@@ -1,0 +1,819 @@
+/* Help request: measured from the Figma "Help Request - Need / Details /
+   Verify / Review" frames (390px wide). Figma draws field outlines outside
+   the 350px column, so those boxes are 352px wide (margin 0 -1px). */
+
+/* ---------- Frame: back row, privacy line, steps, title ---------- */
+.backRow {
+  margin-top: var(--space-5);
+}
+
+.private {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-warm-grey);
+}
+
+.privateIcon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: var(--color-secondary);
+}
+
+/* 1-2-3-4: 26px circles joined by 75px lines, labels centred underneath */
+.steps {
+  display: flex;
+  align-items: flex-start;
+  height: 45px;
+  margin: 20px 0 0;
+  padding: 0 0 0 4px;
+  list-style: none;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.stepLine {
+  width: 75px;
+  height: 0;
+  margin: 0 1px;
+  border-top: 1px dashed var(--color-border);
+}
+
+/* The line leading to a step the person has reached is solid green */
+.done .stepLine,
+.current .stepLine {
+  border-top-style: solid;
+  border-top-color: var(--color-primary);
+}
+
+.stepCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-body-3);
+  line-height: 1;
+  color: var(--color-border);
+}
+
+.current .stepCircle {
+  border-color: transparent;
+  background-color: var(--color-primary);
+  background-clip: padding-box;
+  color: var(--color-white);
+}
+
+.done .stepCircle {
+  border-color: var(--color-primary);
+}
+
+.stepTick {
+  width: 20px;
+  height: 20px;
+  color: var(--color-primary);
+}
+
+.stepLabel {
+  position: absolute;
+  top: 28px;
+  right: 13px;
+  transform: translateX(50%);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+  white-space: nowrap;
+}
+
+.done .stepLabel,
+.current .stepLabel {
+  color: var(--color-primary);
+}
+
+.title {
+  margin-top: 23px;
+  font-family: var(--font-body);
+  font-size: var(--text-body-2);
+  line-height: 28px;
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+  text-align: center;
+}
+
+/* Figma's text box is about 306px wide, which decides where the lines break */
+.subtitle {
+  max-width: 306px;
+  margin: 7px auto 0;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-ink);
+  text-align: center;
+}
+
+/* ---------- Form parts shared by the steps ---------- */
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 19px;
+}
+
+.label {
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+.nextLabel {
+  margin-top: 12px;
+}
+
+/* Text box: 352 x 50 with a beige outline */
+.field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 50px;
+  margin: 6px -1px 0;
+  padding: 0 15px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.field:focus-within,
+.selectBox:focus-within,
+.textarea:focus {
+  border-color: var(--color-primary);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  height: 20px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-ink);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--color-warm-grey);
+  opacity: 1;
+}
+
+/* Figma: the naira sign and placeholder sit 1px above the box's centre */
+.amountField {
+  padding-bottom: 2px;
+}
+
+.naira {
+  font-size: var(--text-body-2);
+  line-height: 20px;
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+}
+
+/* Area/City: the words sit at the top of the box, 8px in */
+.areaField {
+  align-items: flex-start;
+  padding: 6px 8px;
+}
+
+.areaField .input::placeholder {
+  opacity: 0.6;
+}
+
+.hint {
+  margin-top: 1px;
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-warm-grey);
+}
+
+/* Drop-down: native select inside a beige outline, Remix chevron on the right */
+.selectBox {
+  position: relative;
+  height: 50px;
+  margin: 6px -1px 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.select {
+  width: 100%;
+  height: 100%;
+  padding: 0 48px 0 12px;
+  border: 0;
+  outline: none;
+  border-radius: inherit;
+  background: transparent;
+  appearance: none;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+/* "--Select a category--" is grey until something is picked */
+.placeholder {
+  color: var(--color-warm-grey);
+}
+
+.select option {
+  color: var(--color-ink);
+}
+
+.chevron {
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  transform: translateY(-50%);
+  color: var(--color-warm-grey);
+  pointer-events: none;
+}
+
+/* Category: a 48px green square on the left, then the drop-down */
+.categoryRow {
+  display: flex;
+  height: 50px;
+  margin: 6px -1px 0 0;
+}
+
+.categoryIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-top: 1px;
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  background-color: rgba(20, 92, 44, 0.1);
+  color: var(--color-secondary);
+}
+
+/* Figma's grid icon is 24px of drawing, i.e. a 32px Remix icon */
+.categoryIcon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.categoryRow .categorySelect {
+  flex: 1;
+  margin: 0 0 0 -1px;
+  border-color: #d1d1d1;
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+
+.invalid,
+.categoryRow .invalid {
+  border-color: var(--color-error);
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-error);
+}
+
+.errorIcon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+/* Continue sits lower on Need than on the other steps (Figma) */
+.continueNeed {
+  margin-top: 119px;
+}
+
+.continue {
+  margin-top: 30px;
+}
+
+/* ---------- Details ---------- */
+.textarea {
+  display: block;
+  height: 114px;
+  margin: 6px -1px 0;
+  padding: 6px 7px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  outline: none;
+  background: transparent;
+  resize: none;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-ink);
+}
+
+.textarea::placeholder {
+  opacity: 0.6;
+}
+
+.counter {
+  margin-top: 1px;
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-warm-grey);
+  text-align: right;
+}
+
+.urgency {
+  margin: 15px 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.urgencyLegend {
+  padding: 0;
+}
+
+/* White card with the two choices and a line between them */
+.urgencyCard {
+  margin-top: 7px;
+  padding: 4px 8px 12px 10px;
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Figma card shadow */
+}
+
+.urgencyOption {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.urgencyOption + .urgencyOption {
+  margin-top: 5px;
+  padding-top: 6px;
+  border-top: 2px solid var(--color-border);
+}
+
+.radio {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin: 4px 0 0;
+  border: 2px solid var(--color-warm-grey);
+  border-radius: var(--radius-full);
+  appearance: none;
+  cursor: pointer;
+}
+
+.radio:checked {
+  border-color: var(--color-primary);
+  background: radial-gradient(
+    circle,
+    var(--color-primary) 0 5px,
+    transparent 5.5px
+  );
+}
+
+.radio:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.urgencyText {
+  flex: 1;
+  margin-top: 2px;
+  margin-bottom: -2px;
+  display: flex;
+  flex-direction: column;
+}
+
+.urgencyLabel {
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+}
+
+.urgencyHint {
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-warm-grey);
+}
+
+.urgencyIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-top: 4px;
+  border-radius: var(--radius-full);
+}
+
+.urgencyIcon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.calm {
+  background-color: rgba(20, 92, 44, 0.1);
+  color: var(--color-secondary);
+}
+
+.alarm {
+  background-color: rgba(179, 38, 30, 0.2);
+  color: var(--color-error);
+}
+
+/* ---------- Verify ---------- */
+.documentLabel {
+  margin-top: 15px;
+}
+
+.documentHelp {
+  margin-top: 5px;
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-warm-grey);
+}
+
+.fileInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Pale green box with a dashed beige outline */
+.upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  height: 66px;
+  margin: 9px -1px 0;
+  padding-top: 9px;
+  border: 1px dashed var(--color-border);
+  border-radius: 5px;
+  background-color: rgba(30, 138, 62, 0.1);
+  background-clip: padding-box;
+  color: var(--color-warm-grey);
+  cursor: pointer;
+}
+
+.upload:hover {
+  border-color: var(--color-primary);
+}
+
+.upload:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+}
+
+.uploadTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+}
+
+.uploadIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.uploadTypes {
+  font-size: var(--text-label-1);
+  line-height: 16px;
+}
+
+.chosen {
+  margin-top: 10px;
+}
+
+.remove {
+  flex-shrink: 0;
+  padding: 4px;
+  border: 0;
+  background: none;
+  font-size: var(--text-label-1);
+  font-weight: var(--weight-bold);
+  color: var(--color-error);
+  cursor: pointer;
+}
+
+/* Lock and two centred lines under the upload box */
+.lockNote {
+  display: flex;
+  padding-right: 4px; /* Figma's block sits 2px left of centre */
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 6px;
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-warm-grey);
+}
+
+.lockNoteIcon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+}
+
+.reviewButton {
+  margin-top: 34px;
+}
+
+/* ---------- File row (Verify and Review) ---------- */
+.document {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 56px;
+  padding: 0 9px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+}
+
+.documentIcon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--color-secondary);
+}
+
+.pdf {
+  color: var(--color-error);
+}
+
+.documentText {
+  flex: 1;
+  min-width: 0;
+}
+
+.documentName {
+  overflow: hidden;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.documentSize {
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-warm-grey);
+}
+
+.documentTick {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--color-secondary);
+}
+
+/* ---------- Review ---------- */
+.review {
+  margin-top: 42px;
+}
+
+.reviewCard {
+  padding: 6px 8px 11px;
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Figma card shadow */
+}
+
+.locationCard {
+  margin-top: 31px;
+}
+
+.documentCard {
+  margin-top: 16px;
+}
+
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin-top: -1px;
+}
+
+.reviewIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background-color: rgba(20, 92, 44, 0.1);
+  color: var(--color-secondary);
+}
+
+.reviewIcon svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* The traced hand-and-heart drawing is a little larger (Figma) */
+.reviewIcon svg[viewBox="0 0 27 27"] {
+  width: 27px;
+  height: 27px;
+}
+
+.reviewTitle {
+  margin-left: 4px;
+  font-family: var(--font-body);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+.edit {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  align-self: flex-start;
+  margin: 1px 0.25px 0 auto;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+}
+
+.edit:hover {
+  text-decoration: underline;
+}
+
+.editIcon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Label-value pairs under a 2px beige line */
+.facts {
+  margin: 6px 0 0;
+  padding-top: 7px;
+  border-top: 2px solid var(--color-border);
+}
+
+.fact dt {
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-warm-grey);
+}
+
+.fact dd {
+  margin: 5px 0 0;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+}
+
+.fact + .fact,
+.fact + .factPair {
+  margin-top: 11px;
+}
+
+.factPair + .fact {
+  margin-top: 10px;
+}
+
+/* Amount and urgency side by side; urgency starts at x211 in Figma */
+.factPair {
+  display: grid;
+  grid-template-columns: 183px 1fr;
+}
+
+.factPair > .fact {
+  margin-top: 0;
+}
+
+.urgencyBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 24px;
+  margin-top: -1px;
+  padding: 0 8px 0 7px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-100);
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  font-weight: var(--weight-regular);
+  color: var(--color-primary);
+}
+
+.urgencyBadge svg {
+  width: 16px;
+  height: 16px;
+}
+
+.urgentBadge {
+  background-color: rgba(179, 38, 30, 0.2);
+  color: var(--color-error);
+}
+
+.description {
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+/* Line under the header, then the file row (drawn 1px wider, as in Figma) */
+.reviewDocument {
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 2px solid var(--color-border);
+}
+
+.reviewDocument > .document {
+  margin: 0 -1px;
+}
+
+.smallNote {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+  margin-top: 7px;
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-warm-grey);
+}
+
+.smallNote svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.documentCard .smallNote {
+  margin-top: 7px;
+}
+
+/* Pale green consent box with the "i" */
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 56px;
+  margin-top: 14px;
+  padding: 2px 10px 6px 8px;
+  border-radius: var(--radius-lg);
+  background-color: rgba(30, 138, 62, 0.1);
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-warm-grey);
+}
+
+.consentIcon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--color-secondary);
+}
+
+.submit {
+  margin-top: 16px;
+}
+
+.protected {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.protectedIcon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}

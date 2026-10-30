@@ -45,3 +45,7 @@
 .empty .button {
   margin-top: var(--button-gap, 31px);
 }
+
+.empty .secondButton {
+  margin-top: var(--second-gap, 20px);
+}

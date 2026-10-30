@@ -1,0 +1,63 @@
+/* Spacing measured from the Figma "My request" and "No request" frames */
+
+.backRow {
+  margin-top: var(--space-5);
+}
+
+.heading {
+  margin-top: 15px;
+  font-family: var(--font-body);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-medium);
+  color: var(--color-secondary);
+}
+
+.intro {
+  margin-top: 1px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.tabs {
+  margin-top: 15px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.none {
+  margin-top: 40px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+  text-align: center;
+}
+
+.empty {
+  --title-gap: 31px;
+  --message-gap: 2px;
+  --button-gap: 30px;
+  --second-gap: 19px;
+  margin-top: 38px;
+}
+
+/* Figma draws this outline outside the 350 x 48 button */
+.empty a:last-child {
+  min-height: 50px;
+  margin-left: -1px;
+  margin-right: -1px;
+  width: calc(100% + 2px);
+}
+
+.emptyIcon {
+  width: 40px;
+  height: 40px;
+}

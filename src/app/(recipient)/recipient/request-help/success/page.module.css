@@ -1,0 +1,67 @@
+/* Measured from the Figma "Request Submitted" frame */
+
+.done {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-full);
+  background-color: rgba(20, 92, 44, 0.1);
+  color: var(--color-secondary);
+}
+
+.circle svg {
+  position: relative;
+  top: -1px;
+  width: 48px;
+  height: 48px;
+}
+
+/* Fraunces 24px; Figma draws it 2px lower in its line than the browser does */
+.title {
+  position: relative;
+  top: 2px;
+  margin-top: 22px;
+  font-size: var(--text-h8);
+  line-height: var(--leading-h8);
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+}
+
+.text {
+  margin-top: 4px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.card {
+  margin-top: 22px;
+}
+
+.track {
+  margin-top: 32px;
+}
+
+.home {
+  display: block;
+  width: fit-content;
+  margin: 13px auto 0;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+}
+
+.home:hover {
+  text-decoration: underline;
+}

@@ -107,3 +107,17 @@ export function formatPhone(countryCode, phone) {
       : [digits];
   return `${countryCode} ${groups.join(" ")}`;
 }
+
+/** 1468006 -> "1.4 MB", 52000 -> "51 KB" (Figma: "1.4 MB" under the file name) */
+export function formatFileSize(bytes) {
+  if (bytes >= 1024 * 1024) {
+    return `${(bytes / (1024 * 1024)).toFixed(1).replace(/\.0$/, "")} MB`;
+  }
+  return `${Math.max(1, Math.round(bytes / 1024))} KB`;
+}
+
+/** "300,000" or "N300000" typed in a box -> 300000 (0 when empty) */
+export function parseNaira(text) {
+  const digits = String(text ?? "").replace(/\D/g, "");
+  return digits ? Number(digits) : 0;
+}

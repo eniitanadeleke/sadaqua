@@ -1,0 +1,124 @@
+/* Measured from the Figma "Request Submitted" card (350 x 501) */
+
+.card {
+  padding: 5px 8px 8px;
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Figma card shadow */
+}
+
+.heading {
+  font-family: var(--font-body);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+/* 2px beige line above "Other possible outcomes" */
+.other {
+  margin-top: 19px;
+  padding-top: 7px;
+  border-top: 2px solid var(--color-border);
+}
+
+.list {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Each stage: 40px circle, 2px gap, 32px joining line, 2px gap */
+.other + .list {
+  margin-top: 12px;
+}
+
+.item {
+  display: flex;
+  gap: 8px;
+}
+
+.marker {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40px;
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+}
+
+.circle svg {
+  position: relative;
+  top: -1px;
+  width: 24px;
+  height: 24px;
+}
+
+.line {
+  width: 1px;
+  height: 32px;
+  margin: 2px 0;
+}
+
+.green {
+  background-color: var(--color-secondary);
+}
+
+.beige {
+  background-color: var(--color-border);
+}
+
+.done {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.review {
+  background-color: rgba(227, 164, 23, 0.1);
+  color: var(--color-accent);
+}
+
+.later {
+  background-color: rgba(107, 93, 80, 0.2);
+  color: rgba(107, 93, 80, 0.6);
+}
+
+.changes {
+  background-color: rgba(196, 86, 42, 0.2);
+  color: #c4562a;
+}
+
+.rejected {
+  background-color: rgba(179, 38, 30, 0.2);
+  color: var(--color-error);
+}
+
+.rejected svg {
+  width: 21.6px;
+  height: 21.6px;
+}
+
+.title {
+  display: block;
+  margin-top: 1px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-medium);
+  color: var(--color-ink);
+}
+
+.text {
+  display: block;
+  margin-top: 1px;
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-warm-grey);
+}
