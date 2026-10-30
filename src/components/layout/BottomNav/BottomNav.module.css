@@ -19,7 +19,8 @@
 
 .list {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  /* One equal column per link: five for givers, four for recipients */
+  grid-template-columns: repeat(var(--count, 5), 1fr);
   height: 76px;
   padding: 0 7.5px;
   list-style: none;

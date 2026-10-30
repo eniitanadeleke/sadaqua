@@ -1,0 +1,12 @@
+.backRow {
+  margin-top: var(--space-5);
+}
+
+.empty {
+  margin-top: 48px;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+}

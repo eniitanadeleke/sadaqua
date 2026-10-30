@@ -1,4 +1,4 @@
-// Navigation for the logged-in giver screens.
+// Navigation for the logged-in giver and recipient screens.
 
 /**
  * The navigation every logged-in screen uses. Figma has both:
@@ -18,4 +18,13 @@ export const GIVER_MENU = [
   { label: "My Giving", href: "/giver/giving-history", icon: "giving" },
   { label: "Profile", href: "/giver/profile", icon: "profile" },
   { label: "Support", href: "/giver/support", icon: "support" },
+];
+
+// The recipient's four links (Figma: Recipient Home menu).
+// They use the same bottom bar as the giver screens (NAV_STYLE above).
+export const RECIPIENT_MENU = [
+  { label: "Home", href: "/recipient", icon: "home" },
+  { label: "My Requests", href: "/recipient/requests", icon: "requests" },
+  { label: "Profile", href: "/recipient/profile", icon: "profile" },
+  { label: "Support", href: "/recipient/support", icon: "support" },
 ];

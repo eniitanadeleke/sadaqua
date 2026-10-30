@@ -1,0 +1,41 @@
+/* Measured from the Figma Recipient Home: 24px tall, 12px text, 6.7px dot */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 24px;
+  padding: 0 8px 0 8.7px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  white-space: nowrap;
+}
+
+.dot {
+  width: 6.7px;
+  height: 6.7px;
+  border-radius: var(--radius-full);
+  background-color: currentColor;
+}
+
+/* Under review: terracotta on terracotta at 20% */
+.review {
+  background-color: rgba(196, 86, 42, 0.2);
+  color: #c4562a;
+}
+
+.success {
+  background-color: var(--color-primary-100);
+  color: var(--color-primary);
+}
+
+.error {
+  background-color: rgba(179, 38, 30, 0.12);
+  color: var(--color-error);
+}
+
+.neutral {
+  background-color: #ebe8e5;
+  color: var(--color-warm-grey);
+}

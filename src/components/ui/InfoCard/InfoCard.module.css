@@ -39,6 +39,8 @@
 }
 
 .body {
+  position: relative;
+  top: 1px; /* Figma: the message sits 1px lower under the title */
   font-size: var(--text-body-4);
   line-height: var(--leading-body-4);
   color: var(--color-ink);

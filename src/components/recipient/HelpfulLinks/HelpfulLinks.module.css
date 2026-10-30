@@ -1,0 +1,84 @@
+/* Measured from the Figma Recipient Home "Helpful information" card (350 x 150) */
+
+.list {
+  margin: 0;
+  padding: 6px var(--space-2) 10px;
+  list-style: none;
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Figma card shadow */
+}
+
+/* 2px beige line between the rows, 5px under one row and 6px over the next */
+.list li + li {
+  margin-top: 5px;
+  padding-top: 6px;
+  border-top: 2px solid var(--color-border);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  border-radius: var(--radius-lg);
+}
+
+.link:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+}
+
+.iconCircle {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background-color: rgba(20, 92, 44, 0.1);
+  color: var(--color-secondary);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Figma sets both lines a little lower than the browser does */
+.title {
+  position: relative;
+  top: 2px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+}
+
+.link:hover .title {
+  color: var(--color-primary);
+}
+
+.subtitle {
+  position: relative;
+  top: 1px;
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-warm-grey);
+}
+
+.arrow {
+  position: relative;
+  top: 2px;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-right: 3.8px;
+  color: var(--color-warm-grey);
+}

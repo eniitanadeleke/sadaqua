@@ -1,0 +1,112 @@
+/* Measured from the Figma Recipient Home "Your request" card (350 x 160) */
+
+.card {
+  padding: var(--space-2);
+  border-radius: 20px;
+  background-color: var(--color-white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Figma card shadow */
+}
+
+.top {
+  display: flex;
+  gap: var(--space-2);
+}
+
+/* 72px circle, deep green at 10% */
+.picture {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-full);
+  background-color: rgba(20, 92, 44, 0.1);
+  color: var(--color-secondary);
+}
+
+.bigIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.details {
+  min-width: 0;
+}
+
+.title {
+  font-family: var(--font-body);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 17px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.meta li,
+.date {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.metaIcon {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+}
+
+/* Figma: the pin starts 1px further left; the place name stays put */
+.meta li:last-child .metaIcon {
+  margin: 0 1px 0 -1px;
+}
+
+.badge {
+  margin-top: 8px;
+}
+
+.date {
+  margin-top: 8px;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+/* Pale green box under the details: what happens next */
+.note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 40px;
+  margin-top: 8px;
+  padding: 4px 8px;
+  border-radius: var(--radius-lg);
+  background-color: rgba(30, 138, 62, 0.1);
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-warm-grey);
+}
+
+/* 24px Remix icon: its circle is the 20px drawn in Figma */
+.noteIcon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--color-secondary);
+}
+
+/* Each sentence starts on its own line, as in Figma */
+.noteLine {
+  display: block;
+}

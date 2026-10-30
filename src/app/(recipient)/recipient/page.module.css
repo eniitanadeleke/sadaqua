@@ -1,0 +1,97 @@
+/* Spacing measured from the Figma "Recipient Home" (390 x 876)
+   and "Recipient Home - Empty State" frames */
+
+/* ---------- Greeting, headline, button and the hands drawing ---------- */
+.hero {
+  position: relative;
+  margin-top: var(--space-5);
+}
+
+.greeting {
+  position: relative;
+  z-index: 1;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-medium);
+  color: var(--color-ink);
+}
+
+.heading {
+  position: relative;
+  z-index: 1;
+  font-size: var(--text-h8);
+  line-height: var(--leading-h8);
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+}
+
+.tagline {
+  position: relative;
+  z-index: 1;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+/* 124 x 30, 14px medium text */
+.hero .heroButton {
+  position: relative;
+  z-index: 1;
+  min-height: 30px;
+  margin-top: 12px;
+  padding: 0 19.2px;
+  font-weight: var(--weight-medium);
+}
+
+/* Hands passing a gift: top right, running off the right edge, as in Figma */
+.hands {
+  position: absolute;
+  top: -50px;
+  right: -20px;
+  width: 181px;
+  height: auto;
+  pointer-events: none;
+}
+
+/* ---------- Sections ---------- */
+.section {
+  margin-top: 22px;
+}
+
+.requestBody {
+  margin-top: 9px;
+}
+
+.helpBody {
+  margin-top: 5px;
+}
+
+/* "Helpful information" sits 19px under the request card or the empty state */
+.section + .section {
+  margin-top: 19px;
+}
+
+/* ---------- Empty state (no requests yet) ---------- */
+.empty {
+  --title-gap: 7px;
+  --message-gap: 2px;
+  --button-gap: 6px;
+  margin-top: 10px;
+}
+
+.emptyIcon {
+  position: relative;
+  top: -1px; /* Figma: the document sits 1px above the circle's centre */
+  width: 40px;
+  height: 40px;
+}
+
+/* After the empty state, "Helpful information" sits 23px lower */
+.emptySection + .section {
+  margin-top: 23px;
+}
+
+/* ---------- Your privacy matters ---------- */
+.privacy {
+  margin: 20px 8px 0;
+}

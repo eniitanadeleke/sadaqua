@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
+  RiFileTextFill,
+  RiFileTextLine,
   RiHandHeartFill,
   RiHandHeartLine,
   RiHeadphoneFill,
@@ -30,6 +32,8 @@ const ICONS = {
   home: { line: RiHomeHeartLine, fill: RiHomeHeartFill },
   causes: { mask: "/icons/need-help.svg" },
   giving: { line: RiHandHeartLine, fill: RiHandHeartFill },
+  // Recipient "My Requests": the document drawn on Recipient Home's empty state
+  requests: { line: RiFileTextLine, fill: RiFileTextFill },
   profile: { line: RiUserLine, fill: RiUserFill },
   support: { line: RiHeadphoneLine, fill: RiHeadphoneFill },
 };
@@ -39,12 +43,14 @@ export default function BottomNav({ items }) {
 
   // The longest matching address wins, so /giver/causes does not also light up Home.
   const active = items
-    .filter((item) => pathname === item.href || pathname.startsWith(`${item.href}/`))
+    .filter(
+      (item) => pathname === item.href || pathname.startsWith(`${item.href}/`),
+    )
     .sort((a, b) => b.href.length - a.href.length)[0];
 
   return (
     <nav className={styles.nav} aria-label="Main" data-bottom-nav>
-      <ul className={styles.list}>
+      <ul className={styles.list} style={{ "--count": items.length }}>
         {items.map((item) => {
           const isActive = item === active;
           return (
@@ -70,7 +76,11 @@ function NavIcon({ name, active }) {
   if (!icon) return null;
   if (icon.mask) {
     return (
-      <span className={styles.maskIcon} style={{ "--icon": `url(${icon.mask})` }} aria-hidden="true" />
+      <span
+        className={styles.maskIcon}
+        style={{ "--icon": `url(${icon.mask})` }}
+        aria-hidden="true"
+      />
     );
   }
   const Icon = active ? icon.fill : icon.line;

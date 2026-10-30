@@ -1,0 +1,31 @@
+/* Measured from the Figma Recipient Home: 334 x 72, green at 10% */
+
+.notice {
+  display: flex;
+  gap: 8px;
+  min-height: 72px;
+  padding: 8px 8px 8px 8px;
+  border-radius: var(--radius-lg);
+  background-color: rgba(30, 138, 62, 0.1);
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--color-secondary);
+}
+
+.title {
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+}
+
+.text {
+  margin-top: 3.5px;
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-warm-grey);
+}

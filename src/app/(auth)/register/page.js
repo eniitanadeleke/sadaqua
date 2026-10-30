@@ -13,7 +13,14 @@ const BY_ROLE = {
     backHref: "/",
   },
   recipient: {
-    subtitle: "Join Sadaqua and receive help in times of need, with dignity.",
+    // Figma breaks this line after "times of"
+    subtitle: (
+      <>
+        Join Sadaqua and receive help in times of
+        <br />
+        need, with dignity.
+      </>
+    ),
     backHref: "/need-help",
   },
 };
