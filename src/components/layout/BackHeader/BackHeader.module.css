@@ -3,17 +3,20 @@
 .row {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   height: 24px;
 }
 
+/* Figma: the arrow's drawing starts 4px in from the margin and sits 1px above the title's middle */
 .back {
+  position: relative;
+  top: -1px;
   display: flex;
-  margin-left: -6px;
-  padding: 3px;
+  margin-left: -4px;
+  padding: 4px;
   border-radius: var(--radius-full);
   color: var(--color-warm-grey);
-  font-size: 26px;
+  font-size: 24px; /* Remix arrow: a 16px drawing, as in Figma */
 }
 
 .back:hover {

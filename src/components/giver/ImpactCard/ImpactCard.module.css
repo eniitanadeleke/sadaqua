@@ -36,7 +36,9 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  margin-top: -2px; /* Figma: 2px under the title's line box */
   font-size: var(--text-label-2);
+  letter-spacing: 0.01em; /* Figma's 10px text is 1% wider */
   line-height: 14px;
   color: var(--color-warm-grey);
 }
@@ -57,7 +59,7 @@
 }
 
 .update {
-  margin-top: var(--space-2);
+  margin-top: 7px;
   padding: var(--space-2);
   border-radius: var(--radius-2xl);
   background-color: var(--color-accent-100);

@@ -66,8 +66,11 @@
 /* Small card: 23px tall pill, 10px text, 16px shield */
 .sm {
   height: 23px;
-  padding: 0 var(--space-2) 0 6px;
+  margin-left: 1px; /* Figma: the small pill starts 1px further in */
+  gap: 5px;
+  padding: 0 6px;
   font-size: var(--text-label-2);
+  letter-spacing: 0.01em; /* Figma's 10px text is 1% wider */
 }
 
 .sm .icon {

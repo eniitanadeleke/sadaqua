@@ -95,7 +95,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: var(--space-2);
+  padding: var(--space-2) var(--space-2) 7px; /* Figma: 7px under "Give now" */
   border-radius: var(--radius-2xl); /* 12px in Figma */
 }
 
@@ -124,8 +124,10 @@
 }
 
 .wide .meta {
+  position: relative;
+  top: -1px; /* Figma: the category and place sit 1px higher */
   margin-top: 1px;
-  column-gap: var(--space-4);
+  column-gap: 17px;
   font-size: var(--text-label-1);
   line-height: var(--leading-label-1);
 }
@@ -143,7 +145,7 @@
 }
 
 .wide .progress {
-  margin-top: 10px;
+  margin-top: 11px;
 }
 
 .actions {
@@ -224,8 +226,11 @@
 }
 
 .compact .meta {
-  column-gap: var(--space-2);
+  position: relative;
+  top: -1px; /* Figma: the category and place sit 1px higher */
+  column-gap: 9px;
   font-size: var(--text-label-2);
+  letter-spacing: 0.01em; /* Figma's 10px text is 1% wider */
   line-height: 14px;
 }
 
@@ -241,7 +246,7 @@
 
 .compact .give {
   min-height: 30px;
-  margin-top: 13px;
+  margin-top: 14px;
   padding: 0;
   border-radius: var(--radius-lg);
   font-size: var(--text-body-4);

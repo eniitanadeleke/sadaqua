@@ -1,4 +1,4 @@
-/* Measured from the Figma "Browse causes" category row: 36px pills, 7px apart */
+/* Measured from the Figma "Browse causes" category row: 38px outlined pills, 6px apart */
 
 /* Runs to the screen edge and scrolls sideways */
 .wrapper {
@@ -7,9 +7,9 @@
 
 .tabs {
   display: flex;
-  gap: var(--space-2);
+  gap: 6.4px;
   margin: 0;
-  padding: 0 var(--space-5);
+  padding: 0 var(--space-5) 0 19px;
   list-style: none;
   overflow-x: auto;
   scrollbar-width: none;
@@ -22,10 +22,10 @@
 .tab {
   display: flex;
   align-items: center;
-  height: 36px;
-  padding: 0 15.3px; /* + 1px border: text 16.3px from the edge, as in Figma */
-  /* Unselected tabs are plain text in the updated Figma */
-  border: 1px solid transparent;
+  height: 38px;
+  /* + the 1px border: text 17px from the edge and 1px below the middle, as in Figma */
+  padding: 2px var(--space-4) 0;
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
   white-space: nowrap;
   font-size: var(--text-body-4);
@@ -41,8 +41,8 @@
   outline: var(--stroke-m) solid var(--color-accent);
 }
 
+/* Current tab: green inside the same light outline, as in Figma */
 .active {
-  border-color: var(--color-primary);
   background-color: var(--color-primary);
   font-weight: var(--weight-bold);
   color: var(--color-white);

@@ -10,7 +10,9 @@
 .title {
   display: flex;
   align-items: center;
-  gap: var(--space-1);
+  gap: 5px;
+  position: relative;
+  top: 1px; /* Figma: the words sit 1px lower; the icon stays (see .info) */
   font-family: var(--font-body);
   font-size: var(--text-body-4);
   line-height: var(--leading-body-4);
@@ -19,6 +21,8 @@
 }
 
 .info {
+  position: relative;
+  top: -1px;
   width: 16px;
   height: 16px;
 }

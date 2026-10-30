@@ -10,7 +10,11 @@ import GivingSummary from "@/components/giver/GivingSummary";
 import ImpactCard from "@/components/giver/ImpactCard";
 import MobileHeader from "@/components/layout/MobileHeader";
 import MobileScreen from "@/components/layout/MobileScreen";
-import { getCausesByIds, getFeaturedCauses, getUrgentCauses } from "@/lib/api/causes";
+import {
+  getCausesByIds,
+  getFeaturedCauses,
+  getUrgentCauses,
+} from "@/lib/api/causes";
 import { getGiverSummary } from "@/lib/api/giver";
 import { GIVER_MENU } from "@/lib/navigation";
 import styles from "./page.module.css";
@@ -34,7 +38,12 @@ export default async function GiverHomePage({ searchParams }) {
   return (
     <MobileScreen top="flush">
       {/* Home uses the bottom bar instead of the hamburger (Figma: Giver Home-1) */}
-      <MobileHeader homeHref="/giver" profileHref="/giver/profile" menuItems={GIVER_MENU} nav="bottom" />
+      <MobileHeader
+        homeHref="/giver"
+        profileHref="/giver/profile"
+        menuItems={GIVER_MENU}
+        nav="bottom"
+      />
 
       <section className={styles.hero}>
         <p className={styles.greeting}>Assalamu alaikum, {giver.firstName}</p>
@@ -57,11 +66,21 @@ export default async function GiverHomePage({ searchParams }) {
       <CauseSearch className={styles.search} />
 
       <div className={styles.summary}>
-        <GivingSummary totalDonated={giver.totalDonated} causesSupported={giver.causesSupported} />
+        <GivingSummary
+          totalDonated={giver.totalDonated}
+          causesSupported={giver.causesSupported}
+        />
       </div>
 
-      <section className={styles.section} aria-labelledby="urgent-needs">
-        <SectionHeader id="urgent-needs" title="Urgent needs" actionHref="/giver/causes?urgent=1" />
+      <section
+        className={`${styles.section} ${styles.urgent}`}
+        aria-labelledby="urgent-needs"
+      >
+        <SectionHeader
+          id="urgent-needs"
+          title="Urgent needs"
+          actionHref="/giver/causes?urgent=1"
+        />
         <ul className={`${styles.carousel} ${styles.wideCards}`}>
           {urgent.map((cause) => (
             <li key={cause.id}>
@@ -90,7 +109,11 @@ export default async function GiverHomePage({ searchParams }) {
       </section>
 
       <section className={styles.section} aria-labelledby="featured">
-        <SectionHeader id="featured" title="Featured causes" actionHref="/giver/causes" />
+        <SectionHeader
+          id="featured"
+          title="Featured causes"
+          actionHref="/giver/causes"
+        />
         <ul className={`${styles.carousel} ${styles.compactCards}`}>
           {featured.map((cause) => (
             <li key={cause.id}>
@@ -101,7 +124,10 @@ export default async function GiverHomePage({ searchParams }) {
       </section>
 
       {supported.length > 0 && (
-        <section className={`${styles.section} ${styles.impact}`} aria-labelledby="impact">
+        <section
+          className={`${styles.section} ${styles.impact}`}
+          aria-labelledby="impact"
+        >
           <SectionHeader
             id="impact"
             title="Your impact"
@@ -116,7 +142,9 @@ export default async function GiverHomePage({ searchParams }) {
         </section>
       )}
 
-      <div className={supported.length > 0 ? styles.notice : styles.noticeNoImpact}>
+      <div
+        className={supported.length > 0 ? styles.notice : styles.noticeNoImpact}
+      >
         <VerifiedNotice />
       </div>
 
@@ -124,7 +152,9 @@ export default async function GiverHomePage({ searchParams }) {
         <h2 id="explore" className={styles.exploreTitle}>
           Explore more causes
         </h2>
-        <p className={styles.exploreText}>Find more verified causes to Support</p>
+        <p className={styles.exploreText}>
+          Find more verified causes to Support
+        </p>
         <Button href="/giver/causes" className={styles.exploreButton}>
           Browse all causes
         </Button>

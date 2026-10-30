@@ -26,6 +26,12 @@
   line-height: var(--leading-label-1);
 }
 
+/* Figma: the bold percentage sits 1px higher than the amount */
+.md .percent {
+  position: relative;
+  top: -1px;
+}
+
 .md .bar {
   margin-top: 3px;
 }
@@ -33,6 +39,7 @@
 /* Small card: 8px text, as in Figma */
 .sm .text {
   font-size: 8px;
+  letter-spacing: 0.01em; /* Figma's small text is 1% wider */
   line-height: 14px;
   font-weight: var(--weight-medium);
   color: var(--color-ink);
@@ -45,6 +52,7 @@
 /* Impact card: 10px text */
 .xs .text {
   font-size: var(--text-label-2);
+  letter-spacing: 0.01em;
   line-height: 14px;
 }
 

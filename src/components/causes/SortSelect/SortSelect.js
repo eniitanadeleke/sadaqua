@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { RiArrowDownSLine } from "react-icons/ri";
+import { RiArrowDownSFill } from "react-icons/ri";
 import { SORT_OPTIONS, causesHref } from "@/lib/causeFilters";
 import styles from "./SortSelect.module.css";
 
@@ -27,7 +27,7 @@ export default function SortSelect({ filters, basePath = "/giver/causes" }) {
           </option>
         ))}
       </select>
-      <RiArrowDownSLine className={styles.icon} aria-hidden="true" />
+      <RiArrowDownSFill className={styles.icon} aria-hidden="true" />
     </label>
   );
 }

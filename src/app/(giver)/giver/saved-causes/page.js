@@ -75,7 +75,6 @@ export default async function SavedCausesPage({ searchParams }) {
           areas={areas}
           localCity={giver.city}
           basePath={BASE}
-          className={styles.filter}
         />
       </div>
 

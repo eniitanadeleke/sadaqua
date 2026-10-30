@@ -37,6 +37,8 @@
 
 .search {
   margin-top: 15px;
+  gap: 8.25px;
+  padding-left: 10.8px; /* Figma: the icon sits 1px further left here than on Browse causes */
 }
 
 .summary {
@@ -107,6 +109,16 @@
 
 .compactCards {
   gap: var(--space-2);
+  margin-top: 9px;
+}
+
+/* Urgent needs: Figma puts its heading 1px lower and the cards 10px under it */
+.urgent {
+  margin-top: 23px;
+}
+
+.urgent .carousel {
+  margin-top: 9px;
 }
 
 .compactCards > li {
@@ -119,7 +131,7 @@
 }
 
 .impact {
-  margin-top: 11px;
+  margin-top: 10px;
 }
 
 .impactBody {
@@ -127,7 +139,7 @@
 }
 
 .notice {
-  margin-top: 17px;
+  margin-top: 18px;
 }
 
 .noticeNoImpact {

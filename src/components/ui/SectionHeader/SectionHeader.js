@@ -2,9 +2,15 @@ import Link from "next/link";
 import styles from "./SectionHeader.module.css";
 
 /** Section title on the left, optional "View all" link on the right. */
-export default function SectionHeader({ title, subtitle, actionHref, actionLabel = "View all", id }) {
+export default function SectionHeader({
+  title,
+  subtitle,
+  actionHref,
+  actionLabel = "View all",
+  id,
+}) {
   return (
-    <div className={styles.header}>
+    <div className={`${styles.header} ${subtitle ? styles.withSubtitle : ""}`}>
       <div>
         <h2 id={id} className={styles.title}>
           {title}

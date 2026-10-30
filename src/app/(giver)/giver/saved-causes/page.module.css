@@ -21,7 +21,7 @@
   color: var(--color-warm-grey);
 }
 
-/* Saved causes draws the search 42px tall and the Filter button with an outline */
+/* Search box (42px tall) and Filter button, as on Browse causes */
 .searchRow {
   display: flex;
   gap: 6px;
@@ -32,24 +32,6 @@
   flex: 1;
   min-width: 0;
   height: 42px;
-  gap: 6px;
-}
-
-.search > svg:first-child {
-  width: 28px;
-  height: 28px;
-}
-
-.filter.filter {
-  height: 42px;
-  padding: 0 12px;
-  border-color: var(--color-border);
-  gap: 4px;
-}
-
-.filter svg {
-  width: 20px;
-  height: 20px;
 }
 
 .summary {

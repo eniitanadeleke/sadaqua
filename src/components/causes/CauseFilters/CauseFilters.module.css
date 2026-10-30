@@ -6,10 +6,9 @@
   flex-shrink: 0;
   align-items: center;
   gap: var(--space-1);
-  height: 40px;
-  padding: 0 11px 0 12px;
-  /* No outline in the updated Figma; the transparent border keeps the size */
-  border: 1px solid transparent;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
   background: none;
   font-family: var(--font-body);
@@ -28,8 +27,8 @@
 }
 
 .triggerIcon {
-  width: 21px;
-  height: 21px;
+  width: 20px;
+  height: 20px;
 }
 
 /* ---------- The sheet ---------- */
@@ -40,14 +39,15 @@
   z-index: 30;
 }
 
+/* Figma: the sheet starts just under the search row (163px from the top of the screen) */
 .sheet {
   position: fixed;
+  top: 163px;
   bottom: 0;
   left: 50%;
   z-index: 31;
   width: 100%;
   max-width: var(--mobile-max-width);
-  max-height: 100dvh;
   overflow-y: auto;
   padding: var(--space-2) var(--space-5) 56px;
   border-radius: 20px 20px 0 0;
@@ -63,7 +63,7 @@
   height: 6px;
   margin: 0 auto;
   border-radius: var(--radius-full);
-  background-color: #d2d4d6;
+  background-color: #f0f2f4;
 }
 
 .group {
@@ -78,7 +78,7 @@
 
 .group + .group,
 .selectBox + .group {
-  margin-top: 17px;
+  margin-top: 16px;
 }
 
 .legend {
@@ -92,14 +92,15 @@
 
 /* "Areas" label comes after the Urgency group */
 .group + .legend {
-  margin-top: 17px;
+  margin-top: 16px;
 }
 
+/* Three equal columns, 6px apart, 1px wider than the margins on each side (Figma) */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-2);
-  margin-top: 11px;
+  gap: 6px;
+  margin: 10px -1px 0;
 }
 
 /* Location scope: three pills spread across the full width, as in Figma */
@@ -107,11 +108,7 @@
   display: flex;
   justify-content: space-between;
   gap: var(--space-2);
-  margin-top: 11px;
-}
-
-.row .choice {
-  padding: 2px var(--space-3) 0;
+  margin: 10px -1px 0;
 }
 
 /* A pill: the round radio button itself is hidden, the whole pill is the target */
@@ -120,12 +117,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 36px;
+  height: 38px;
   /* 2px on top lowers the label 1px, to Figma's position */
   padding: 2px var(--space-4) 0;
-  /* Unselected options are plain text in the updated Figma;
-     only the chosen one gets the green pill */
-  border: 1px solid transparent;
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
   font-size: var(--text-body-4);
   line-height: var(--leading-body-4);
@@ -138,8 +133,8 @@
   background-color: var(--color-secondary-100);
 }
 
+/* Chosen: green inside the same light outline, as in Figma */
 .choice:has(.radio:checked) {
-  border-color: var(--color-primary);
   background-color: var(--color-primary);
   font-weight: var(--weight-bold);
   color: var(--color-white);
@@ -160,17 +155,17 @@
   position: relative;
   display: flex;
   align-items: center;
-  margin-top: 11px;
+  margin: 10px -1px 0;
 }
 
 .select {
   width: 100%;
-  height: 40px;
-  padding: 0 40px 0 44px;
+  height: 42px;
+  padding: 0 40px 0 44.5px;
   appearance: none;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  background-color: #fbfaf8;
+  background-color: var(--color-white);
   font-family: var(--font-body);
   font-size: var(--text-body-4);
   color: var(--color-warm-grey);
@@ -185,23 +180,26 @@
 .pin,
 .chevron {
   position: absolute;
-  width: 20px;
-  height: 20px;
   color: var(--color-warm-grey);
   pointer-events: none;
 }
 
+/* Remix map pin, 19 x 22 drawing as in Figma */
 .pin {
-  left: 14px;
+  left: 12.7px;
+  width: 24.8px;
+  height: 24.8px;
 }
 
 .chevron {
-  right: 14px;
+  right: 17.4px;
+  width: 16px;
+  height: 16px;
 }
 
 /* ---------- Buttons ---------- */
 .actions {
-  margin-top: var(--space-8);
+  margin-top: 39px;
 }
 
 .actions .close {

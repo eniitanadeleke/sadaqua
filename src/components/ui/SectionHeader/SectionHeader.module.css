@@ -24,10 +24,17 @@
 
 .action {
   flex-shrink: 0;
+  margin-right: 1px; /* Figma ends "View all" 1px short of the edge */
   font-size: var(--text-body-4);
   line-height: var(--leading-body-4);
   font-weight: var(--weight-medium);
   color: var(--color-primary);
+}
+
+/* With a subtitle, Figma centres "View all" 1px higher */
+.withSubtitle .action {
+  position: relative;
+  top: -1px;
 }
 
 .action:hover {

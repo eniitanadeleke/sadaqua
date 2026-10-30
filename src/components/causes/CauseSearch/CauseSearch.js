@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { MdOutlineSearch } from "react-icons/md";
-import { RiCloseLine } from "react-icons/ri";
+import { RiCloseLine, RiSearchLine } from "react-icons/ri";
 import styles from "./CauseSearch.module.css";
 
 /**
@@ -19,8 +18,12 @@ export default function CauseSearch({
   className = "",
 }) {
   return (
-    <form action={action} role="search" className={`${styles.search} ${className}`}>
-      <MdOutlineSearch className={styles.icon} aria-hidden="true" />
+    <form
+      action={action}
+      role="search"
+      className={`${styles.search} ${className}`}
+    >
+      <RiSearchLine className={styles.icon} aria-hidden="true" />
       <input
         type="search"
         name="q"
@@ -33,7 +36,11 @@ export default function CauseSearch({
         <input key={name} type="hidden" name={name} value={value} />
       ))}
       {defaultValue && clearHref && (
-        <Link href={clearHref} className={styles.clear} aria-label="Clear search">
+        <Link
+          href={clearHref}
+          className={styles.clear}
+          aria-label="Clear search"
+        >
           <RiCloseLine aria-hidden="true" />
         </Link>
       )}

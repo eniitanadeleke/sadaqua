@@ -3,9 +3,9 @@
 .search {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 8.25px;
   height: 40px;
-  padding: 0 var(--space-2) 0 10px;
+  padding: 0 4px 0 11.8px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
   background-color: transparent;
@@ -15,10 +15,11 @@
   border-color: var(--color-primary);
 }
 
+/* Remix search icon: a 20px circle-and-handle drawing, as in Figma */
 .icon {
   flex-shrink: 0;
-  width: 26px;
-  height: 26px;
+  width: 24.4px;
+  height: 24.4px;
   color: var(--color-warm-grey);
 }
 

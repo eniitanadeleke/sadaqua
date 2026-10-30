@@ -4,9 +4,12 @@
   align-items: center;
 }
 
+/* The words sit against the arrow (right-aligned), as in Figma, whichever option is longest */
 .select {
   appearance: none;
-  padding: 0 22px 0 0;
+  padding: 0 24.3px 0 0;
+  text-align: right;
+  text-align-last: right;
   border: 0;
   background: none;
   font-family: var(--font-body);
@@ -21,11 +24,12 @@
   border-radius: var(--radius-sm);
 }
 
+/* Small solid arrow (Figma: 7 x 5) */
 .icon {
   position: absolute;
-  right: 2px;
-  width: 16px;
-  height: 16px;
+  right: 3px;
+  width: 14px;
+  height: 14px;
   color: var(--color-warm-grey);
   pointer-events: none;
 }
