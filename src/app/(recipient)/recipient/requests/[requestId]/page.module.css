@@ -1,0 +1,38 @@
+/* Same top as My request (Figma: My request details) */
+
+.backRow {
+  margin-top: var(--space-5);
+}
+
+.heading {
+  margin-top: 15px;
+  font-family: var(--font-body);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-medium);
+  color: var(--color-secondary);
+}
+
+.intro {
+  margin-top: 1px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.tabs {
+  margin-top: 15px;
+}
+
+.card {
+  margin-top: 14px;
+}
+
+.empty {
+  margin-top: 38px;
+}
+
+.emptyIcon {
+  width: 40px;
+  height: 40px;
+}

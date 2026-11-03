@@ -105,6 +105,17 @@
   color: var(--color-secondary);
 }
 
+/* Details page: no badge beside the amount, so the line is 20px tall */
+.amountAlone {
+  top: 0;
+  margin-top: 9px;
+  line-height: 20px;
+}
+
+.detail .date {
+  margin-top: 7px;
+}
+
 /* Pale green box under the details: what happens next */
 .note {
   display: flex;

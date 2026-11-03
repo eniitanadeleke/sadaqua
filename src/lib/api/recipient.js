@@ -3,6 +3,9 @@
 // Only the inside of each function changes.
 
 import { RECIPIENT, REQUESTS } from "@/lib/mock/requests";
+import { REQUEST_STATUSES } from "@/lib/requestStatus";
+
+const getRequestStatusKeys = () => Object.keys(REQUEST_STATUSES);
 
 const FAKE_DELAY_MS = 300;
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -45,6 +48,60 @@ export async function getMyRequests({ status = "all", demo = false } = {}) {
       b.submittedAt.localeCompare(a.submittedAt) ||
       REQUESTS.indexOf(a) - REQUESTS.indexOf(b),
   );
+}
+
+/**
+ * One of the recipient's requests, with its history (Figma: My request details).
+ * Returns null when there is no such request.
+ * demo: true looks in the sample requests. In demo mode, status lets you
+ * preview the same request at any stage, e.g. ?preview=demo&status=fulfilled
+ * Later: return fetch(`/api/me/requests/${id}`)
+ */
+export async function getMyRequest(id, { demo = false, status } = {}) {
+  await wait(FAKE_DELAY_MS);
+  if (!demo) return null;
+  const request = REQUESTS.find((r) => r.id === id);
+  if (!request) return null;
+  if (!status || !getRequestStatusKeys().includes(status)) return request;
+  return {
+    ...request,
+    status,
+    received: status === "fulfilled" ? request.amount : request.received,
+  };
+}
+
+/**
+ * Uploads a document for a reply to "More information needed".
+ * onProgress(percent) is called as the upload goes (Figma: "Uploading.... 60%").
+ * Returns an id the reply can point to.
+ * Later: an XMLHttpRequest / fetch upload that reports progress events.
+ */
+export function uploadRequestDocument(file, onProgress) {
+  return new Promise((resolve) => {
+    let percent = 0;
+    const timer = setInterval(() => {
+      percent = Math.min(100, percent + 20);
+      onProgress?.(percent);
+      if (percent === 100) {
+        clearInterval(timer);
+        resolve({ documentId: `doc-${Date.now().toString(36)}` });
+      }
+    }, 300);
+  });
+}
+
+/**
+ * Sends the recipient's answer to "More information needed"
+ * (Figma: Submit information). The request then goes back to review.
+ * response: { message, documentId }
+ * Later: return fetch(`/api/me/requests/${id}/responses`, { method: "POST", ... })
+ */
+export async function sendMoreInformation(id, response) {
+  await wait(1200);
+  if (!response?.message?.trim()) {
+    throw new Error("Please tell us the information we asked for.");
+  }
+  return { id, status: "under_review" };
 }
 
 /**

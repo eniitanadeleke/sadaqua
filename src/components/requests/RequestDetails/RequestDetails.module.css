@@ -1,0 +1,489 @@
+/* Measured from the Figma "My request details" frames (390px wide) */
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Status box inside the request card (334 x 68) ---------- */
+.panel {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 8px;
+  border-radius: var(--radius-lg);
+}
+
+.panelIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.panelIcon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.panelBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.panelTitle {
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+.panelText {
+  margin-top: 4px;
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-warm-grey);
+}
+
+/* Each sentence starts on its own line, as in Figma */
+.panelText span {
+  display: block;
+}
+
+/* Under review: terracotta at 20%, hourglass */
+.review {
+  background-color: rgba(196, 86, 42, 0.2);
+}
+
+.review .panelTitle,
+.panelIcon.review {
+  color: #c4562a;
+}
+
+.review .panelIcon svg,
+.panelIcon.review svg {
+  width: 16px;
+  height: 16px;
+}
+
+.panelIcon.review {
+  background: none;
+}
+
+/* More information needed / not approved: red at 20% */
+.changes,
+.rejected {
+  background-color: rgba(179, 38, 30, 0.2);
+}
+
+.changes .panelTitle,
+.changes .panelIcon,
+.rejected .panelTitle,
+.rejected .panelIcon {
+  color: var(--color-error);
+}
+
+.changes .panelIcon svg {
+  width: 21.6px;
+  height: 21.6px;
+}
+
+/* Verified and fulfilled: deep green at 10%, green tick */
+.verified {
+  background-color: rgba(20, 92, 44, 0.1);
+}
+
+.verified .panelIcon {
+  color: var(--color-secondary);
+}
+
+/* In progress: pale gold, gold hand with a heart */
+.progress {
+  background-color: #f7e4b9;
+}
+
+.progress .panelIcon {
+  color: var(--color-accent, #e3a417);
+}
+
+.progress .panelIcon svg {
+  width: 27px;
+  height: 27px;
+}
+
+.provide {
+  width: 260px;
+  margin-top: 2px;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+}
+
+/* "Next step" inside "Your request" (334 x 60) */
+.nextStep {
+  margin-top: 6px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.nextStep .panelIcon {
+  color: #c4562a; /* Figma: the hourglass stays terracotta on the green box */
+}
+
+/* ---------- Request Progress ---------- */
+.sectionTitle,
+.cardTitle {
+  font-family: var(--font-body);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+.progressSection {
+  margin-top: 20px;
+}
+
+.progressCard {
+  margin-top: 7px;
+  padding: 6px 9px 7px 10px;
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-white);
+}
+
+.roomy {
+  padding-bottom: 33px;
+}
+
+.steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* A 20px marker on the left, the words 10px to its right */
+.step {
+  position: relative;
+  padding-left: 30px;
+}
+
+.step + .step {
+  margin-top: 16px;
+}
+
+.marker,
+.markerIcon {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+}
+
+/* Remix draws its ring 20px wide inside a 24px box */
+.markerIcon {
+  top: 4px;
+  left: -2px;
+  width: 24px;
+  height: 24px;
+  color: var(--color-secondary);
+}
+
+.failed .markerIcon {
+  color: #c4562a;
+}
+
+/* Not reached yet: an empty pale ring */
+.pending .marker {
+  border: 2px solid var(--color-secondary-100);
+}
+
+/* The stage the request is at: a ring with a dot, on a white halo that
+   covers the line behind it */
+.current .marker {
+  border: 2px solid #c4562a;
+  background: radial-gradient(circle, #c4562a 0 5px, transparent 5.5px);
+  box-shadow: 0 0 0 2px var(--color-white);
+}
+
+.current.green .marker {
+  border-color: var(--color-secondary);
+  background: radial-gradient(
+    circle,
+    var(--color-secondary) 0 6px,
+    transparent 6.5px
+  );
+}
+
+/* The 1px line down to the next marker */
+.stepLine {
+  position: absolute;
+  top: 27px;
+  bottom: -21px;
+  left: 9px;
+  width: 1px;
+  background-color: rgba(20, 92, 44, 0.1);
+}
+
+.lineDone {
+  background-color: var(--color-secondary);
+}
+
+.stepHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.stepTitle {
+  font-family: var(--font-body);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+.stepDate {
+  flex-shrink: 0;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-ink);
+}
+
+.stepText {
+  margin-top: 2px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.reason {
+  margin: 20px 0 0 -2px;
+}
+
+.reasonTitle {
+  font-family: var(--font-body);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+.reasonText {
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+/* ---------- "Your request" card ---------- */
+.yourRequest {
+  margin-top: 20px;
+  padding: 7px 8px 5px;
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-white);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.edit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+}
+
+.edit:hover {
+  text-decoration: underline;
+}
+
+.editIcon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Two columns; the right one starts 207px in (Figma x235) */
+.facts {
+  display: grid;
+  grid-template-columns: 207px 1fr;
+  row-gap: 11px;
+  margin: 9px 0 0;
+}
+
+.fact dt {
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-warm-grey);
+}
+
+.fact dd {
+  margin: 5px 0 0;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+}
+
+.wide {
+  grid-column: 1 / -1;
+  margin-top: -1px; /* the urgency badge makes the row above 1px taller */
+}
+
+.description {
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.urgency {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 24px;
+  margin-top: -1px;
+  padding: 0 8px 0 7px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-100);
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  font-weight: var(--weight-regular);
+  color: var(--color-primary);
+}
+
+.urgency svg {
+  width: 16px;
+  height: 16px;
+}
+
+.urgent {
+  background-color: rgba(179, 38, 30, 0.2);
+  color: var(--color-error);
+}
+
+/* The file row is drawn 1px wider than the card's content (Figma) */
+.factsDocument {
+  margin: 9px -1px 0;
+}
+
+/* ---------- Money received (350 x 84) ---------- */
+.funding {
+  margin-top: 20px;
+  padding: 16px 8px 16px;
+  border-radius: var(--radius-2xl);
+  background-color: rgba(30, 138, 62, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Figma card shadow */
+}
+
+.fundingLabel {
+  font-family: var(--font-body);
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  font-weight: var(--weight-regular);
+  color: var(--color-ink);
+}
+
+.fundingRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-top: 4px;
+  font-size: var(--text-body-4);
+  line-height: 24px;
+  color: var(--color-warm-grey);
+}
+
+.fundingRow strong {
+  font-size: var(--text-body-3);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+/* Figma: the amount sits 2px lower than the percentage */
+.fundingRow span {
+  position: relative;
+  top: 2px;
+}
+
+.fundingBar {
+  margin-top: 2px;
+}
+
+/* ---------- Notes under the cards ---------- */
+.infoNote,
+.needHelp {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 21px;
+  padding: 6px 10px 10px 8px;
+  border-radius: var(--radius-lg);
+  background-color: rgba(20, 92, 44, 0.1);
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-warm-grey);
+}
+
+.infoIcon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-top: 2px;
+  color: var(--color-secondary);
+}
+
+/* Figma breaks after "will", so the words are a little narrower */
+.infoNote span {
+  max-width: 284px;
+}
+
+.needHelp {
+  margin-top: 22px;
+  padding-top: 7px;
+}
+
+.needHelpTitle {
+  font-family: var(--font-body);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-warm-grey);
+}
+
+.needHelpText {
+  margin-top: -1px;
+  max-width: 260px;
+}
+
+.contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 5px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+}
+
+.contact:hover {
+  text-decoration: underline;
+}
+
+.contactIcon {
+  width: 16px;
+  height: 16px;
+}

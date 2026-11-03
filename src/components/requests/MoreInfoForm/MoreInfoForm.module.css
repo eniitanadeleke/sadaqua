@@ -1,0 +1,388 @@
+/* Measured from the Figma "More information need form" frames (390px wide).
+   Figma draws field outlines outside the 350px column, so those boxes are
+   352px wide (margin 0 -1px). */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 22px;
+}
+
+/* "What we need from you": pale green box with an "i" (350 x 67) */
+.needed {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px 10px 10px 8px;
+  border-radius: var(--radius-lg);
+  background-color: rgba(20, 92, 44, 0.1);
+}
+
+.neededIcon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-top: 2px;
+  color: var(--color-secondary);
+}
+
+.neededTitle {
+  font-family: var(--font-body);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-warm-grey);
+}
+
+.neededText {
+  max-width: 262px;
+  margin-top: -1px;
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-warm-grey);
+}
+
+.heading {
+  margin-top: 17px;
+  font-family: var(--font-body);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+.label,
+.uploadLabel {
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+.label {
+  margin-top: 21px;
+}
+
+.textarea {
+  display: block;
+  height: 114px;
+  margin: 5px -1px 0;
+  padding: 6px 7px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  outline: none;
+  background: transparent;
+  resize: none;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-ink);
+}
+
+.textarea:focus,
+.textarea:not(:placeholder-shown) {
+  border-color: var(--color-primary);
+}
+
+.textarea::placeholder {
+  color: var(--color-warm-grey);
+  opacity: 0.6;
+}
+
+.invalid,
+.textarea.invalid {
+  border-color: var(--color-error);
+}
+
+.counter {
+  margin-top: 1px;
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-warm-grey);
+  text-align: right;
+}
+
+.uploadLabel {
+  margin-top: 20px;
+}
+
+.uploadLabel span {
+  font-size: var(--text-label-1);
+  font-weight: var(--weight-regular);
+  color: var(--color-warm-grey);
+}
+
+/* Figma lets this line run 3px past the column rather than wrap */
+.uploadHelp {
+  margin: 4px -4px 0 0;
+  white-space: nowrap;
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-warm-grey);
+}
+
+.fileInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Pale green box with a dashed beige outline (352 x 66) */
+.upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  height: 66px;
+  margin: 9px -1px 0;
+  padding-top: 9px;
+  border: 1px dashed var(--color-border);
+  border-radius: 5px;
+  background-color: rgba(30, 138, 62, 0.1);
+  background-clip: padding-box;
+  color: var(--color-warm-grey);
+  cursor: pointer;
+}
+
+.upload:hover {
+  border-color: var(--color-primary);
+}
+
+.upload:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+}
+
+.uploadTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+}
+
+.uploadIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.uploadTypes {
+  font-size: var(--text-label-1);
+  line-height: 16px;
+}
+
+/* The chosen file, with its upload bar (352 x 88) */
+.file {
+  margin: 9px -1px 0;
+  padding: 7px 8px 12px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+}
+
+.fileTop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fileIcon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--color-secondary);
+}
+
+.pdf {
+  color: var(--color-error);
+}
+
+.fileText {
+  flex: 1;
+  min-width: 0;
+}
+
+.fileName {
+  overflow: hidden;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.fileSize {
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-warm-grey);
+}
+
+.fileTick {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--color-secondary);
+}
+
+.fileBar {
+  margin: 10px 0 0 -1px;
+}
+
+.fileBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: -1px;
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-ink);
+}
+
+.remove {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  font-weight: var(--weight-bold);
+  color: var(--color-error);
+  cursor: pointer;
+}
+
+.remove:hover {
+  text-decoration: underline;
+}
+
+/* "Your original request": white card that opens to show the request */
+.original {
+  margin-top: 19px;
+  padding: 6px 8px 14px;
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Figma card shadow */
+}
+
+.originalTop {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.originalIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-top: 2px;
+  border-radius: var(--radius-full);
+  background-color: rgba(20, 92, 44, 0.1);
+  color: var(--color-secondary);
+}
+
+.originalIcon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.originalTitle {
+  font-family: var(--font-body);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+.originalText {
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-warm-grey);
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  align-self: flex-start;
+  margin-top: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.toggle:hover {
+  text-decoration: underline;
+}
+
+.toggleIcon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-warm-grey);
+  transition: transform 0.15s ease;
+}
+
+.open {
+  transform: rotate(180deg);
+}
+
+.originalDetails {
+  margin-top: 8px;
+  padding-top: 1px;
+  border-top: 2px solid var(--color-border);
+}
+
+.submit,
+.busy {
+  margin-top: 29px;
+}
+
+/* Figma: the button sits closer once a file is chosen */
+.submit.afterFile,
+.busy.afterFile {
+  margin-top: 17px;
+}
+
+/* While the document uploads (Figma: "Uploading" with the dotted spinner) */
+.busy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  min-height: 48px;
+  border: 0;
+  border-radius: var(--radius-3xl);
+  background-color: var(--color-primary-200);
+  font-family: var(--font-body);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-semibold);
+  color: var(--color-warm-grey);
+  cursor: progress;
+}
+
+.busySpinner {
+  color: var(--color-warm-grey);
+}
+
+.lockNote {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  font-size: var(--text-label-1);
+  line-height: 16px;
+  color: var(--color-warm-grey);
+}
+
+.lockIcon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}

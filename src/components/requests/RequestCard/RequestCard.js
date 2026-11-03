@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   RiArrowRightLine,
   RiCheckboxCircleLine,
+  RiCloseCircleLine,
   RiEditLine,
   RiErrorWarningLine,
   RiMapPinLine,
@@ -25,6 +26,10 @@ const LIST_NOTE_ICONS = {
   under_review: { Icon: HourglassIcon, tone: "review" },
   verified: { Icon: RiCheckboxCircleLine, tone: "success" },
   needs_changes: { Icon: RiEditLine, tone: "error" },
+  published: { Icon: RiCheckboxCircleLine, tone: "success" },
+  in_progress: { Icon: RiCheckboxCircleLine, tone: "success" },
+  fulfilled: { Icon: RiCheckboxCircleLine, tone: "success" },
+  rejected: { Icon: RiCloseCircleLine, tone: "error" },
 };
 
 /**
@@ -32,9 +37,12 @@ const LIST_NOTE_ICONS = {
  *
  * variant: "home" - Recipient Home's "Your request" (no amount, no link)
  *          "list" - My request: adds the amount, a line and "View request"
+ *          "detail" - My request details: the amount without a badge; the
+ *                     status box is passed in as children
  */
-export default function RequestCard({ request, variant = "home" }) {
+export default function RequestCard({ request, variant = "home", children }) {
   const isList = variant === "list";
+  const isDetail = variant === "detail";
   const category = getCategory(request.category);
   const BigIcon = BIG_ICONS[request.category] ?? category.Icon;
   const CategoryIcon = category.Icon;
@@ -70,6 +78,10 @@ export default function RequestCard({ request, variant = "home" }) {
               </p>
               <RequestStatusBadge status={request.status} />
             </div>
+          ) : isDetail ? (
+            <p className={`${styles.amount} ${styles.amountAlone}`}>
+              <strong>{formatNaira(request.amount)}</strong> needed
+            </p>
           ) : (
             <RequestStatusBadge
               status={request.status}
@@ -84,7 +96,9 @@ export default function RequestCard({ request, variant = "home" }) {
         </div>
       </div>
 
-      {note && (
+      {children}
+
+      {note && !isDetail && (
         <div className={styles.note}>
           {noteIcon && (
             <span

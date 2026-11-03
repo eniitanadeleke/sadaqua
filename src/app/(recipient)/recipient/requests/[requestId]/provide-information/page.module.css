@@ -1,0 +1,25 @@
+/* Figma: More information need form */
+
+.backRow {
+  margin-top: var(--space-5);
+}
+
+.title {
+  margin-top: 21px;
+  font-family: var(--font-body);
+  font-size: var(--text-body-2);
+  line-height: 28px;
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+  text-align: center;
+}
+
+/* Figma's text box is about 290px wide, which decides where the line breaks */
+.subtitle {
+  max-width: 300px;
+  margin: 7px auto 0;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-ink);
+  text-align: center;
+}
