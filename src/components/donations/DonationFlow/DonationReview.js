@@ -1,11 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  RiArrowRightUpLine,
-  RiInformationLine,
-  RiLockLine,
-} from "react-icons/ri";
+import { RiErrorWarningLine } from "react-icons/ri";
 import ImagePlaceholderIcon from "@/components/icons/ImagePlaceholderIcon";
 import Button from "@/components/ui/Button";
 import { startPayment } from "@/lib/api/donations";
@@ -14,10 +10,9 @@ import DonationSummary from "./DonationSummary";
 import SecureNote from "./SecureNote";
 import styles from "./DonationFlow.module.css";
 
-const PAYSTACK_INFO = "https://paystack.com/what-is-paystack";
-
 /**
- * Review your donation: summary, payment note and "Make Payment".
+ * Review your donation: summary, top-up note and "Make Payment".
+ * (The "Payment / What is Paystack?" card was removed at the client's request.)
  * On Make Payment the screen turns into the grey loading version
  * (Figma: Make Payment Loading) until the payment page is ready.
  *
@@ -62,22 +57,9 @@ export default function DonationReview({ type, causeId, card, quote }) {
         total={quote.total}
       />
 
-      <h3 className={styles.sectionTitle}>Payment</h3>
-      <div className={styles.payCard}>
-        <RiLockLine className={styles.payLock} aria-hidden="true" />
-        <div>
-          <p className={styles.payText}>
-            You will securely complete your payment with Paystack.
-          </p>
-          <a
-            href={PAYSTACK_INFO}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.payLink}
-          >
-            What is Paystack? <RiArrowRightUpLine aria-hidden="true" />
-          </a>
-        </div>
+      <div className={`${styles.goalNote} ${styles.topUpNote}`}>
+        <RiErrorWarningLine className={styles.goalIcon} aria-hidden="true" />
+        <p>The platform top-up is optional and separate from your donation.</p>
       </div>
 
       <Button fullWidth onClick={handlePay} className={styles.makePayment}>
@@ -171,18 +153,7 @@ function ReviewSkeleton({ type }) {
         </div>
       </div>
 
-      <span
-        className={`${styles.bone} ${styles.skPayTitle}`}
-        aria-hidden="true"
-      />
-      <div className={styles.skPayCard} aria-hidden="true">
-        <RiLockLine />
-        <div>
-          {bone(302, { maxWidth: "100%" })}
-          {bone(82, { marginTop: 4 })}
-          {bone(143, { marginTop: 8 })}
-        </div>
-      </div>
+      <span className={`${styles.bone} ${styles.skNote}`} aria-hidden="true" />
 
       <BusyButton label="Preparing payment" className={styles.skButton} />
       <SecureNote size="large" />
