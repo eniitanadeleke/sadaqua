@@ -1,4 +1,4 @@
-import EditProfileForm from "@/components/giver/EditProfileForm";
+import EditProfileForm from "@/components/profile/EditProfileForm";
 import BackHeader from "@/components/layout/BackHeader";
 import MobileHeader from "@/components/layout/MobileHeader";
 import MobileScreen from "@/components/layout/MobileScreen";

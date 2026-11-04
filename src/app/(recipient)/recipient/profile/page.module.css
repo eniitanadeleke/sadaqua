@@ -1,0 +1,10 @@
+/* Room for the bottom bar under "Log out" (Figma: Profile) */
+
+.screen {
+  padding-bottom: 86px;
+}
+
+/* Figma: "Log out" sits 35px under Support on this screen */
+.logout.logout {
+  margin-top: 35px;
+}

@@ -1,4 +1,4 @@
-/* Measured from the Figma "Giver Edit Profile" frame */
+/* Measured from the Figma "Giver Edit Profile" frame (givers and recipients) */
 
 .form {
   display: flex;
@@ -159,4 +159,81 @@
 
 .cancel {
   margin-top: var(--space-5);
+}
+
+/* ---------- Name display (recipients) ---------- */
+.nameDisplay {
+  margin: 25px 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.nameDisplay legend {
+  padding: 0;
+}
+
+.nameDisplay legend + .option {
+  margin-top: 7px;
+}
+
+.required {
+  color: var(--color-error);
+}
+
+.option {
+  display: flex;
+  margin-top: 12px;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+/* 20px green ring; the chosen one has a dot */
+.radio {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin: 2px 0 0 2px;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-full);
+  appearance: none;
+  cursor: pointer;
+}
+
+.radio:checked {
+  background: radial-gradient(
+    circle,
+    var(--color-primary) 0 5px,
+    transparent 5.5px
+  );
+}
+
+.radio:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Green note with a padlock under the choices (350 x 48) */
+.choiceNote {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 8px 10px 8px 8px;
+  border-radius: var(--radius-lg);
+  background-color: #e9edde;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.choiceIcon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-top: 4px;
+  color: var(--color-secondary);
 }

@@ -1,0 +1,182 @@
+/* Measured from the Figma "Contact us" frame (Help & Support-1) */
+
+/* Email us / WhatsApp: white 350 x 74 cards with a send arrow */
+.channel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 74px;
+  margin-top: 20px;
+  padding: 17px 10px 16px 8px;
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-white);
+  color: inherit;
+}
+
+.channel:first-of-type {
+  margin-top: 23px;
+}
+
+.channel:hover .send {
+  color: var(--color-primary);
+}
+
+.channel:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+}
+
+.icon {
+  flex-shrink: 0;
+  align-self: flex-start;
+  width: 20px;
+  height: 20px;
+  color: var(--color-warm-grey);
+}
+
+.text {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  display: block;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+}
+
+.line {
+  display: block;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.send {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-top: 6px;
+  color: var(--color-warm-grey);
+}
+
+/* ---------- Send a message ---------- */
+.formWrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  margin-top: 20px;
+  padding: 18px 8px 8px;
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-white);
+}
+
+.formTitle {
+  font-family: var(--font-body);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+}
+
+/* Label 2px above a 336 x 50 box (drawn 1px past the card's content) */
+.field.field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 12px;
+}
+
+.form > .field.field:first-of-type {
+  margin-top: 15px;
+}
+
+.field > div:has(> input) {
+  min-height: 50px;
+  margin: 0 -1px;
+}
+
+.field input::placeholder {
+  color: rgba(107, 93, 80, 0.6);
+}
+
+.label {
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+}
+
+.required {
+  color: var(--color-error);
+}
+
+.textarea {
+  display: block;
+  height: 114px;
+  margin: 0 -1px;
+  padding: 9px 8px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  outline: none;
+  background: transparent;
+  resize: none;
+  font-family: var(--font-body);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-ink);
+}
+
+.textarea::placeholder {
+  color: rgba(107, 93, 80, 0.6);
+}
+
+.textarea:focus,
+.textarea:not(:placeholder-shown) {
+  border-color: var(--color-primary);
+}
+
+.textarea.invalid {
+  border-color: var(--color-error);
+}
+
+.counter {
+  margin-top: 1px;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+  text-align: right;
+}
+
+.error {
+  margin-top: 6px;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-error);
+}
+
+.sent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 10px 12px;
+  border-radius: var(--radius-lg);
+  background-color: rgba(30, 138, 62, 0.1);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-secondary);
+}
+
+.sent svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.submit {
+  margin-top: 39px;
+}

@@ -2,6 +2,8 @@
 // Screens call these; today they use mock values, later they call the backend.
 // Only the inside of each function changes.
 
+import { RECIPIENT_PROFILE } from "@/lib/mock/profile";
+import { NAME_DISPLAY_OPTIONS } from "@/lib/nameDisplay";
 import { RECIPIENT, REQUESTS } from "@/lib/mock/requests";
 import { REQUEST_STATUSES } from "@/lib/requestStatus";
 
@@ -27,6 +29,36 @@ export const DOCUMENT_TYPES = {
 export async function getRecipientSummary() {
   await wait(FAKE_DELAY_MS);
   return RECIPIENT;
+}
+
+/**
+ * The recipient's account details (Figma: Profile).
+ * Later: return fetch("/api/me")
+ */
+export async function getRecipientProfile() {
+  await wait(FAKE_DELAY_MS);
+  return { ...RECIPIENT_PROFILE };
+}
+
+const NAME_DISPLAYS = NAME_DISPLAY_OPTIONS.map((option) => option.key);
+
+/**
+ * Saves the name, phone and name display (the email can only be changed by
+ * support). Throws an Error with a message the form can show.
+ * Later: return fetch("/api/me", { method: "PATCH", body: JSON.stringify(changes) })
+ */
+export async function updateRecipientProfile({ fullName, phone, nameDisplay }) {
+  await wait(800);
+  if (!fullName.trim()) throw new Error("Please enter your name");
+  const digits = phone.replace(/\D/g, "").replace(/^0/, "");
+  if (digits.length !== 10)
+    throw new Error("Enter a valid phone number, like 8123456789");
+  if (!NAME_DISPLAYS.includes(nameDisplay))
+    throw new Error("Please choose how your name is shown");
+  RECIPIENT_PROFILE.fullName = fullName.trim();
+  RECIPIENT_PROFILE.phone = digits;
+  RECIPIENT_PROFILE.nameDisplay = nameDisplay;
+  return { ...RECIPIENT_PROFILE };
 }
 
 /**
