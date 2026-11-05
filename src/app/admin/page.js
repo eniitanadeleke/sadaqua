@@ -1,3 +1,6 @@
-export default function Page() {
-  return <main>Coming soon</main>;
+import { redirect } from "next/navigation";
+
+// The admin home is the request queue (first item in the side menu)
+export default function AdminHome() {
+  redirect("/admin/requests");
 }

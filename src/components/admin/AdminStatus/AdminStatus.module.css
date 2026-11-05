@@ -1,0 +1,47 @@
+/* Figma: Status - 28px pill, 12px each side, 14px text */
+.status {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 12px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  white-space: nowrap;
+}
+
+/* Submitted */
+.neutral {
+  background-color: var(--color-border);
+  color: var(--color-ink);
+}
+
+/* Under review */
+.gold {
+  background-color: rgba(227, 164, 23, 0.2);
+  color: var(--color-accent);
+}
+
+/* Approved */
+.green {
+  background-color: rgba(20, 92, 44, 0.3);
+  color: var(--color-secondary);
+}
+
+/* More info needed */
+.orange {
+  background-color: rgba(196, 86, 42, 0.2);
+  color: var(--color-urgent);
+}
+
+/* Rejected */
+.red {
+  background-color: rgba(179, 38, 30, 0.2);
+  color: var(--color-error);
+}
+
+/* Active / Completed (light green) */
+.active {
+  background-color: rgba(30, 138, 62, 0.1);
+  color: var(--color-primary);
+}

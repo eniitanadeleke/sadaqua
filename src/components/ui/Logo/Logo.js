@@ -7,11 +7,12 @@ import styles from "./Logo.module.css";
  *
  * size: "lg" (Welcome screen) | "md" (sign up, log in and other auth screens)
  *       | "sm" (app header: mark on the left, words on the right)
+ *       | "admin" (admin side menu and admin log-in header)
  */
 
 // Size of the mark's box in px, as placed in Figma (the image has a little
 // transparent space around the circle, exactly like the designer's file).
-const MARK_SIZE = { lg: 102, md: 56, sm: 40 };
+const MARK_SIZE = { lg: 102, md: 56, sm: 40, admin: 40 };
 
 export default function Logo({ size = "lg", className = "" }) {
   const width = MARK_SIZE[size];

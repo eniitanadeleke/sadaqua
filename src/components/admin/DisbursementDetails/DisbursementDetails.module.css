@@ -1,0 +1,178 @@
+/* Measured from the Figma "Disbursements details" panel (521 wide) */
+.title {
+  display: block;
+  margin-top: 1px;
+  font-size: var(--text-body-2);
+  line-height: var(--leading-body-2);
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+}
+
+.cause {
+  display: flex;
+  gap: 8px;
+  margin-top: 23px;
+  padding-bottom: 15px;
+  border-bottom: var(--stroke-s) solid var(--color-border);
+}
+
+.photo {
+  flex-shrink: 0;
+  width: 84px;
+  height: 84px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+}
+
+.causeTitle {
+  margin-top: 0;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+}
+
+.meta {
+  display: flex;
+  gap: 21px;
+  margin-top: 4px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta svg {
+  width: 21px;
+  height: 21px;
+}
+
+.causeStatus {
+  margin-top: 7px;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px 0 19px;
+  border-bottom: var(--stroke-s) solid #e5e9eb;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 24px;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+}
+
+.row dt {
+  color: var(--color-warm-grey);
+}
+
+.row dd {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 4px;
+  color: var(--color-warm-grey);
+  text-align: right;
+}
+
+/* The status pill (28px) sits in a 24px row, as in the Figma */
+.row dd > span {
+  position: relative;
+  top: -2px;
+  margin: -2px 0;
+}
+
+.role {
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+}
+
+.evidenceTitle {
+  margin-top: 20px;
+  font-family: var(--font-body);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-semibold);
+  color: var(--color-warm-grey);
+}
+
+.file {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  height: 56px;
+  margin: 9px -1px 0;
+  padding: 0 11px 0 12px;
+  border: var(--stroke-s) solid var(--color-border);
+  border-radius: var(--radius-2xl);
+}
+
+.pdf {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  color: var(--color-error);
+}
+
+.fileText {
+  flex: 1;
+  min-width: 0;
+}
+
+.fileName {
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+}
+
+.fileSize {
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.download {
+  display: flex;
+  font-size: 24px;
+  color: var(--color-primary);
+}
+
+.note {
+  margin-top: 9px;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 352px;
+  max-width: 100%;
+  height: 50px;
+  margin: 73px auto 0;
+  border: var(--stroke-s) solid var(--color-primary);
+  border-radius: var(--radius-3xl);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+}
+
+.close:hover {
+  background-color: var(--color-primary-100);
+}

@@ -1,0 +1,54 @@
+/* Figma: Pagination - 44 x 50 buttons, 2px apart, current one green */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 54px;
+}
+
+.showing {
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-ink);
+}
+
+.pages {
+  display: flex;
+  gap: 2px;
+  margin-right: -1px;
+  list-style: none;
+}
+
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 50px;
+  border: var(--stroke-s) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-soft-cream);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+}
+
+.page svg {
+  width: 20px;
+  height: 20px;
+}
+
+a.page:hover {
+  border-color: var(--color-primary);
+}
+
+.current {
+  background-color: var(--color-primary);
+  background-clip: padding-box;
+  color: var(--color-white);
+}
+
+.disabled {
+  color: var(--color-border);
+}

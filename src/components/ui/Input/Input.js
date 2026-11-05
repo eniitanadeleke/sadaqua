@@ -8,6 +8,8 @@ import styles from "./Input.module.css";
  * error:    red message under the field; also turns the border red
  * prefix:   something shown inside the field on the left, e.g. the naira sign
  * suffix:   something on the right, e.g. a show/hide password button
+ * plain:    admin look (Figma admin frames): a filled field keeps its normal
+ *           border instead of turning green, and a locked field is beige
  */
 export default function Input({
   id,
@@ -18,6 +20,7 @@ export default function Input({
   error,
   prefix,
   suffix,
+  plain = false,
   className = "",
   ...rest
 }) {
@@ -26,7 +29,9 @@ export default function Input({
   const errorId = error ? `${inputId}-error` : undefined;
 
   return (
-    <div className={`${styles.field} ${className}`}>
+    <div
+      className={`${styles.field} ${plain ? styles.plain : ""} ${className}`}
+    >
       {label && (
         <label htmlFor={inputId} className={styles.label}>
           {label}
@@ -42,7 +47,9 @@ export default function Input({
           required={required}
           className={styles.input}
           aria-invalid={error ? true : undefined}
-          aria-describedby={[errorId, hintId].filter(Boolean).join(" ") || undefined}
+          aria-describedby={
+            [errorId, hintId].filter(Boolean).join(" ") || undefined
+          }
           {...rest}
         />
         {suffix && <span className={styles.suffix}>{suffix}</span>}

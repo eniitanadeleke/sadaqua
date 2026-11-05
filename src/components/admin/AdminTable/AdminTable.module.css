@@ -1,0 +1,65 @@
+/* Figma: 1138px wide, 1px border, sage header 48px, rows 64px */
+.wrap {
+  margin: 26px -1px 0;
+  border: var(--stroke-s) solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  min-width: 960px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.th {
+  height: 48px;
+  padding: 0 0 0 16px;
+  background-color: var(--color-secondary-100);
+  border-bottom: var(--stroke-s) solid var(--color-border);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.td {
+  height: 64px;
+  padding: 0 8px 0 16px;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-warm-grey);
+  vertical-align: middle;
+}
+
+.row + .row .td {
+  border-top: var(--stroke-s) solid var(--color-border);
+}
+
+.twoLines {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.main {
+  font-weight: var(--weight-medium);
+  color: var(--color-ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sub {
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.empty {
+  padding: 48px 16px;
+  text-align: center;
+}

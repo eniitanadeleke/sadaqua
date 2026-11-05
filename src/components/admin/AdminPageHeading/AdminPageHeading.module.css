@@ -1,0 +1,29 @@
+/* Figma: title 24px Fraunces, 31px under the top bar; subtitle 20px */
+.heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 33px;
+}
+
+.title {
+  font-size: var(--text-h8);
+  line-height: var(--leading-h8);
+  font-weight: var(--weight-bold);
+  letter-spacing: -0.01em;
+  color: var(--color-secondary);
+}
+
+.subtitle {
+  margin-top: 0;
+  font-size: var(--text-body-2);
+  line-height: var(--leading-body-2);
+  color: var(--color-warm-grey);
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  flex-shrink: 0;
+}

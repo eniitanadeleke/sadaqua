@@ -1,0 +1,122 @@
+/* Figma: white card 1138 x 84; search 557 x 42; pills 48 tall; button 84 x 30 */
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 30px -1px 0;
+  padding: 17px 17px 17px 16px;
+  background-color: var(--color-white);
+  border: var(--stroke-s) solid var(--color-border);
+  border-radius: var(--radius-2xl);
+}
+
+.search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 200px;
+  height: 42px;
+  padding: 0 15px;
+  border: var(--stroke-s) solid var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+.search:focus-within {
+  border-color: var(--color-primary);
+}
+
+.searchIcon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--color-warm-grey);
+}
+
+.searchInput {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-ink);
+}
+
+.searchInput::placeholder {
+  color: var(--color-warm-grey);
+  opacity: 0.6;
+}
+
+.filter {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 48px;
+  padding: 0 20px 0 16px;
+  border-radius: 24px;
+  background-color: var(--color-primary-100);
+  cursor: pointer;
+}
+
+.filter:focus-within {
+  outline: var(--stroke-m) solid var(--color-accent);
+}
+
+.filterLabel {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-left: 14px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+}
+
+.chevron {
+  width: 16px;
+  height: 16px;
+  color: var(--color-warm-grey);
+}
+
+.filterValue {
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+/* The real dropdown is invisible and covers the pill */
+.select {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.submit {
+  flex-shrink: 0;
+  width: 84px;
+  height: 30px;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-primary);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.06);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-semibold);
+  color: var(--color-white);
+}
+
+.submit:hover {
+  background-color: var(--color-secondary);
+}
+
+@media (max-width: 1100px) {
+  .bar {
+    flex-wrap: wrap;
+  }
+}

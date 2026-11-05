@@ -1,0 +1,131 @@
+/* Measured from the Figma "Approved Causes" and "Disbursements" rows */
+.cause {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.thumb {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+}
+
+.causeText {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.causeTitle {
+  font-weight: var(--weight-medium);
+  color: var(--color-ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.causeMeta {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.place {
+  margin-top: 1px;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+  white-space: nowrap;
+}
+
+/* Green 10% pill with the shield */
+.verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 24px;
+  padding: 0 9px 0 10px;
+  border-radius: var(--radius-full);
+  background-color: rgba(20, 92, 44, 0.1);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+  white-space: nowrap;
+}
+
+.verifiedLarge {
+  height: 28px;
+  gap: 7px;
+  padding: 0 8px 0 10px;
+}
+
+.shield {
+  flex-shrink: 0;
+  width: 14px;
+  height: 16px;
+}
+
+.verifiedLarge .shield {
+  width: 17px;
+  height: 20px;
+}
+
+.progress {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 116px;
+}
+
+.percent {
+  margin-top: 0;
+  color: var(--color-warm-grey);
+}
+
+.track {
+  display: block;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: #d9dbdd;
+  overflow: hidden;
+}
+
+.fill {
+  display: block;
+  height: 100%;
+  border-radius: var(--radius-full);
+  background-color: #125327;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+}
+
+.action svg {
+  width: 20px;
+  height: 20px;
+}
+
+.action:hover {
+  text-decoration: underline;
+}
+
+/* Gold at 10%: "Fully funded", "Pending" (stronger selector so it wins
+   over the shared status colour) */
+.pending.pending {
+  background-color: rgba(227, 164, 23, 0.1);
+  color: var(--color-accent);
+}

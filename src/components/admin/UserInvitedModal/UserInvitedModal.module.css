@@ -1,0 +1,47 @@
+/* Figma "Add Users-1": 434 x 320 card, 72px tick circle */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 41px 40px 40px;
+}
+
+/* The Figma has no X on this card */
+.card > a[aria-label="Close"] {
+  display: none;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-full);
+  background-color: rgba(20, 92, 44, 0.1);
+  font-size: 42px;
+  color: var(--color-secondary);
+}
+
+.title {
+  margin-top: 25px;
+  font-size: var(--text-h8);
+  line-height: var(--leading-h8);
+  font-weight: var(--weight-bold);
+  letter-spacing: -0.01em;
+  color: var(--color-secondary);
+  text-align: center;
+}
+
+.text {
+  max-width: 340px;
+  margin-top: 0;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+  text-align: center;
+}
+
+.button {
+  margin-top: 23px;
+}

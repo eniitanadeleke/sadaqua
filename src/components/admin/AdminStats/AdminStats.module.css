@@ -1,0 +1,86 @@
+/* Figma: four 271 x 90 white cards, 18px apart, 40px icon circle */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin: 30px -1px 0;
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 90px;
+  padding: 19px 16px 15px;
+  background-color: var(--color-white);
+  border: var(--stroke-s) solid var(--color-border);
+  border-radius: var(--radius-3xl);
+}
+
+.icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  font-size: 20px;
+}
+
+.deep {
+  background-color: rgba(20, 92, 44, 0.1);
+  color: var(--color-secondary);
+}
+
+.gold {
+  background-color: rgba(227, 164, 23, 0.2);
+  color: var(--color-accent);
+}
+
+.orange {
+  background-color: rgba(196, 86, 42, 0.2);
+  color: var(--color-urgent);
+}
+
+.green {
+  background-color: rgba(30, 138, 62, 0.1);
+  color: var(--color-primary);
+}
+
+.red {
+  background-color: rgba(179, 38, 30, 0.2);
+  color: var(--color-error);
+}
+
+.card > div {
+  align-self: flex-start;
+}
+
+.label {
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.value {
+  margin-top: 4px;
+  font-family: var(--font-heading);
+  font-size: var(--text-h8);
+  line-height: var(--leading-h8);
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+}
+
+.note {
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+@media (max-width: 1100px) {
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

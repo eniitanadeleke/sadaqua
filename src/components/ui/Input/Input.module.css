@@ -46,6 +46,19 @@
   border-color: var(--color-border);
 }
 
+/* Admin look: filled fields keep the normal border; locked fields are beige */
+.plain .box:has(.input:not(:placeholder-shown)) {
+  border-color: var(--color-border);
+}
+
+.plain .box:focus-within {
+  border-color: var(--color-primary);
+}
+
+.plain .box:has(.input:disabled) {
+  background-color: var(--color-border);
+}
+
 /* Red outline when there is an error - must come last so it wins.
    It checks aria-invalid on the input, so it is as specific as the green rules above. */
 .box:has(.input[aria-invalid="true"]) {

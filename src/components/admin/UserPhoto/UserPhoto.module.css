@@ -1,0 +1,28 @@
+/* Figma: 1px #6b7280 ring around the photo */
+.ring {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  background-color: #6b7280;
+  overflow: hidden;
+}
+
+.photo {
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  border-radius: var(--radius-full);
+  object-fit: cover;
+}
+
+.initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  border-radius: var(--radius-full);
+  background-color: var(--color-border);
+  color: var(--color-ink);
+}

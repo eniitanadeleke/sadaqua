@@ -1,0 +1,109 @@
+/* Figma: Nav bar - Admin (1200 x 80, white, 1px border) */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  height: 80px;
+  padding-right: 44px;
+  background-color: var(--color-white);
+  border-bottom: var(--stroke-s) solid var(--color-border);
+}
+
+/* Search box: 352 x 42, ends 41px before the bell */
+.search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 352px;
+  height: 42px;
+  margin-left: auto;
+  padding: 0 15px;
+  border: var(--stroke-s) solid var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+.search:focus-within {
+  border-color: var(--color-primary);
+}
+
+.searchIcon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--color-warm-grey);
+}
+
+.searchInput {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-ink);
+}
+
+.searchInput::placeholder {
+  color: var(--color-warm-grey);
+  opacity: 0.6;
+}
+
+.bell {
+  display: flex;
+  margin-left: 39px;
+  font-size: 24px;
+  color: var(--color-warm-grey);
+}
+
+.bell:hover {
+  color: var(--color-primary);
+}
+
+.divider {
+  width: 1px;
+  height: 40px;
+  margin-left: 25px;
+  background-color: var(--color-border);
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  margin-left: 23px;
+}
+
+/* 40px photo in a 42px gold ring */
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-accent);
+}
+
+.photo {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+}
+
+.name {
+  margin-left: 14px;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+}
+
+.chevron {
+  width: 17px;
+  height: 17px;
+  margin-left: 16px;
+  color: var(--color-warm-grey);
+}

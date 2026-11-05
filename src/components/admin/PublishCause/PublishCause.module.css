@@ -1,0 +1,634 @@
+/* Measured from the Figma "Publish Approved Cause" and
+   "Publish Cause Successful" frames (1440 wide) */
+
+/* ---------- Heading ---------- */
+.back {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 4px;
+  margin-top: 33px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.back svg {
+  width: 20px;
+  height: 20px;
+}
+
+.back:hover {
+  color: var(--color-primary);
+}
+
+.title {
+  font-size: var(--text-h8);
+  line-height: var(--leading-h8);
+  font-weight: var(--weight-bold);
+  letter-spacing: -0.01em;
+  color: var(--color-secondary);
+}
+
+.subtitle {
+  font-size: var(--text-body-2);
+  line-height: var(--leading-body-2);
+  color: var(--color-warm-grey);
+}
+
+/* ---------- Two cards: form and preview ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  align-items: start;
+  margin: 30px -1px 0;
+}
+
+.card {
+  min-width: 0;
+  padding: 17px 17px 17px;
+  background-color: var(--color-white);
+  border: var(--stroke-s) solid var(--color-border);
+  border-radius: var(--radius-3xl);
+}
+
+.cardTitle {
+  padding-bottom: 7px;
+  border-bottom: 2px solid var(--color-border);
+  font-family: var(--font-body);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+}
+
+/* ---------- Form fields ---------- */
+.field {
+  margin-top: 12px;
+}
+
+.cardTitle + .field {
+  margin-top: 9px;
+}
+
+.label {
+  display: block;
+  padding: 0;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+}
+
+.required {
+  color: var(--color-error);
+}
+
+.input {
+  display: block;
+  width: 100%;
+  height: 42px;
+  margin-top: 2px;
+  padding: 0 7px;
+  border: var(--stroke-s) solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-white);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-ink);
+}
+
+.input:focus,
+.amount:focus-within,
+.selectBox:focus-within {
+  outline: var(--stroke-m) solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+.input[aria-invalid="true"],
+.amount:has([aria-invalid="true"]) {
+  border-color: var(--color-error);
+}
+
+.story {
+  height: 82px;
+  padding: 10px 7px;
+  resize: vertical;
+}
+
+.counter {
+  margin-top: 4px;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+  text-align: right;
+}
+
+.error {
+  margin-top: 4px;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-error);
+}
+
+.pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.selectBox {
+  position: relative;
+  margin-top: 2px;
+}
+
+.select {
+  display: block;
+  width: 100%;
+  height: 42px;
+  padding: 0 40px 0 11px;
+  appearance: none;
+  border: var(--stroke-s) solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-white);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-warm-grey);
+  cursor: pointer;
+}
+
+.select:focus {
+  outline: none;
+}
+
+.selectIcon {
+  position: absolute;
+  top: 50%;
+  right: 7px;
+  width: 24px;
+  height: 24px;
+  transform: translateY(-50%);
+  color: var(--color-warm-grey);
+  pointer-events: none;
+}
+
+.amount {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 15px;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-warm-grey);
+}
+
+.amount input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+  font: inherit;
+  color: var(--color-warm-grey);
+}
+
+/* Name display: four radio buttons in a row */
+.names {
+  margin-top: 12px;
+  border: 0;
+}
+
+.nameOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 7.5px;
+}
+
+.nameOption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 2px;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+.radio {
+  flex-shrink: 0;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-full);
+  background-color: var(--color-white);
+  cursor: pointer;
+}
+
+.radio:checked {
+  box-shadow: inset 0 0 0 3px var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.radio:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.names + .label {
+  margin-top: 12.5px;
+}
+
+/* Cause image with "Change Image" beside it */
+.imageRow {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  margin-top: 7px;
+}
+
+.thumb {
+  position: relative;
+  flex-shrink: 0;
+  width: 186px;
+  height: 144px;
+  overflow: hidden;
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-brand-cream);
+}
+
+.cover {
+  object-fit: cover;
+}
+
+.change {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  height: 39px;
+  padding: 0 10px 0 11px;
+  border: var(--stroke-s) solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.change svg {
+  width: 18px;
+  height: 18px;
+}
+
+.change:hover {
+  background-color: var(--color-primary-100);
+}
+
+.change:focus-within {
+  outline: var(--stroke-m) solid var(--color-accent);
+}
+
+.fileHint,
+.fileError {
+  margin-top: 3px;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.fileError {
+  color: var(--color-error);
+}
+
+/* Light green note with an icon (Publishing confirmation, Public information) */
+.info {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8.5px 16px 7px 16.5px;
+  border-radius: var(--radius-2xl);
+  background-color: rgba(30, 138, 62, 0.1);
+}
+
+.infoIcon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--color-secondary);
+}
+
+.infoTitle {
+  margin-top: 0.5px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-semibold);
+  color: var(--color-warm-grey);
+}
+
+.infoText {
+  margin-top: 4px;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.confirm {
+  margin-top: 16px;
+}
+
+/* ---------- Preview: the giver's cause card ---------- */
+.preview {
+  position: relative;
+  height: 188px;
+  margin-top: 24px;
+  overflow: hidden;
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-brand-cream);
+}
+
+.donors {
+  position: absolute;
+  right: 15px;
+  bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 28px;
+  padding: 0 5px 0 4px;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-white);
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-ink);
+}
+
+.faces {
+  display: flex;
+}
+
+.faces span {
+  width: 22.8px;
+  height: 22.8px;
+  border: 1.4px solid var(--color-white);
+  border-radius: var(--radius-full);
+  background-color: #e7e7ee;
+}
+
+.faces span + span {
+  margin-left: -8.8px;
+}
+
+.badges {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 28px;
+  padding: 0 8px;
+  border-radius: var(--radius-full);
+  background-color: rgba(20, 92, 44, 0.1);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-semibold);
+  color: var(--color-secondary);
+}
+
+.verified svg {
+  width: 20px;
+  height: 20px;
+}
+
+.save {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-semibold);
+  color: var(--color-warm-grey);
+}
+
+.save svg {
+  width: 20px;
+  height: 20px;
+  color: var(--color-accent);
+}
+
+.previewTitle {
+  margin-top: 16px;
+  font-family: var(--font-body);
+  font-size: var(--text-body-2);
+  line-height: var(--leading-body-2);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+}
+
+.previewMeta {
+  display: flex;
+  gap: 16px;
+  margin-top: 1px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.previewMeta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.previewMeta svg {
+  width: 16px;
+  height: 16px;
+}
+
+.previewStory {
+  margin-top: 15px;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-warm-grey);
+}
+
+.raised {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 17px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.raised strong {
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+.track {
+  height: 6px;
+  margin-top: 1px;
+  border-radius: var(--radius-full);
+  background-color: #d3d5d7;
+}
+
+.giveNow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  margin-top: 16px;
+  border-radius: var(--radius-3xl);
+  background-color: var(--color-primary);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.06);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-medium);
+  color: var(--color-white);
+}
+
+/* ---------- Bottom buttons ---------- */
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 38px;
+}
+
+.footerRight {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: auto;
+}
+
+.note {
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-secondary);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 0 24px;
+  border: var(--stroke-s) solid transparent;
+  border-radius: var(--radius-2xl);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-medium);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.outline {
+  border-color: var(--color-primary);
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+.outline:hover {
+  background-color: var(--color-primary-100);
+}
+
+.filled {
+  border: 0;
+  background-color: var(--color-primary);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.06);
+  color: var(--color-white);
+}
+
+.button.filled {
+  min-width: 149px;
+  height: 40px;
+}
+
+.footerRight .outline {
+  min-width: 125px;
+}
+
+.footer > .outline {
+  min-width: 157px;
+}
+
+.filled:hover:not(:disabled) {
+  background-color: var(--color-secondary);
+}
+
+/* ---------- "Cause published successfully" pop-up ---------- */
+.success.success {
+  padding: 39px 79px 38px;
+  text-align: center;
+}
+
+.successIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-100);
+  font-size: 40px;
+  color: var(--color-secondary);
+}
+
+.successTitle {
+  margin-top: 33px;
+  font-size: var(--text-h8);
+  line-height: var(--leading-h8);
+  font-weight: var(--weight-bold);
+  letter-spacing: -0.01em;
+  color: var(--color-ink);
+}
+
+.successText {
+  max-width: 270px;
+  margin: 0 auto;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.wide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  border-radius: var(--radius-3xl);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-medium);
+}
+
+.wide.filled {
+  margin-top: 31px;
+}
+
+.wide.outline {
+  height: 50px;
+  margin: 19px -1px 0;
+  border: var(--stroke-s) solid var(--color-primary);
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

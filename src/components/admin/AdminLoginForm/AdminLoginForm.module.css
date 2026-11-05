@@ -1,0 +1,56 @@
+/* Measured from the Figma "Admin Log in" card. Also used by Admin Forgot
+   Password (title, notice). */
+.title {
+  font-size: var(--text-h7);
+  line-height: var(--leading-h7);
+  font-weight: var(--weight-bold);
+  letter-spacing: -0.01em;
+  color: var(--color-secondary);
+  text-align: center;
+}
+
+.subtitle {
+  margin-top: -1px;
+  font-size: var(--text-body-2);
+  line-height: var(--leading-body-2);
+  color: var(--color-warm-grey);
+  text-align: center;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 79px;
+}
+
+/* White card: the fields are white too */
+.fields :global(input) {
+  background-color: transparent;
+}
+
+.forgot {
+  display: block;
+  width: fit-content;
+  margin: 12px 0 0 auto;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-primary);
+}
+
+.forgot:hover {
+  text-decoration: underline;
+}
+
+.submit {
+  margin-top: 80px;
+}
+
+.notice {
+  margin-top: 24px;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-medium);
+  color: var(--color-ink);
+  text-align: center;
+}

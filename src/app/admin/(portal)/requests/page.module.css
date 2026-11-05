@@ -1,0 +1,29 @@
+.person {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* "View ->" in green (Figma: Action column) */
+.view {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+}
+
+.view svg {
+  width: 20px;
+  height: 20px;
+}
+
+.view:hover {
+  text-decoration: underline;
+}
+
+.empty {
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-warm-grey);
+}

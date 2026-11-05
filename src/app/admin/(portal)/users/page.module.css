@@ -1,0 +1,78 @@
+/* Figma "Users" frame */
+
+/* "+ Add user": 131 x 40, overhangs the subtitle line by 15px */
+.add {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 131px;
+  height: 40px;
+  margin-bottom: -15px;
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-primary);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.06);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-semibold);
+  color: var(--color-white);
+  white-space: pre;
+}
+
+.add:hover {
+  background-color: var(--color-secondary);
+}
+
+.plus {
+  font-size: var(--text-body-2);
+  line-height: 1;
+}
+
+/* Users rows are 72px and use the Figma's grey text */
+.table :global(td) {
+  height: 72px;
+  color: #6b7280;
+}
+
+.table :global(tr + tr td) {
+  border-top-color: #9b9894;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: -1px;
+}
+
+.name {
+  color: #111826;
+  white-space: nowrap;
+}
+
+.status {
+  height: 30px;
+  padding: 0 16px;
+}
+
+.manage {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+}
+
+.manage svg {
+  width: 20px;
+  height: 20px;
+}
+
+.manage:hover {
+  text-decoration: underline;
+}
+
+.empty {
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-warm-grey);
+}

@@ -1,0 +1,105 @@
+/* Measured from the Figma "Admin Log in" frame (1440 x 1024) */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-soft-cream);
+}
+
+.header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  height: 80px;
+  padding-left: 80px;
+  background-color: var(--color-white);
+  box-shadow: 0 2px 4px rgba(58, 38, 23, 0.1);
+}
+
+.body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 944px;
+}
+
+/* Left half: the marble art with the green, white and gold bands */
+.art {
+  position: relative;
+  overflow: hidden;
+}
+
+.artImage {
+  object-fit: cover;
+  object-position: right top;
+}
+
+.portal {
+  position: absolute;
+  top: 436px;
+  left: 80px;
+}
+
+.portalTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-h7);
+  line-height: var(--leading-h7);
+  font-weight: var(--weight-bold);
+  letter-spacing: -0.01em;
+  color: var(--color-secondary);
+}
+
+.portalText {
+  font-size: var(--text-body-1);
+  line-height: var(--leading-body-1);
+  font-weight: var(--weight-semibold);
+  color: var(--color-accent);
+}
+
+.copyright {
+  position: absolute;
+  bottom: 83px;
+  left: 80px;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-warm-grey);
+}
+
+/* Right half: the card, 112px below the bar, centred */
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 112px 24px 48px;
+}
+
+.card {
+  width: 434px; /* 432 + the 1px border */
+  padding: 41px 40px 41px;
+  background-color: var(--color-white);
+  border: var(--stroke-s) solid var(--color-border);
+  border-radius: 40px;
+}
+
+/* Smaller screens: the art goes, the card stays */
+@media (max-width: 900px) {
+  .body {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .art {
+    display: none;
+  }
+
+  .main {
+    padding-top: 48px;
+  }
+
+  .card {
+    width: auto;
+    max-width: 434px;
+    flex: 1;
+  }
+}

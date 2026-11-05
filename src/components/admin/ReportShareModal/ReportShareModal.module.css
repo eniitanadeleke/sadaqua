@@ -1,0 +1,330 @@
+/* Figma: Share Reports (545 x 596 card) and Share Reports-2 (434 x 392) */
+
+/* Doubled class names win over the shared pop-up's own padding */
+.card.card {
+  margin-left: 21px; /* Figma: this card sits 10px right of centre */
+  padding: 33px 32px 31px;
+}
+
+.readyCard.readyCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 41px 40px 40px;
+}
+
+/* The shared pop-up's own X; this design has a round one in another spot */
+.card.card > a:first-child,
+.readyCard.readyCard > a:first-child {
+  display: none;
+}
+
+.close {
+  position: absolute;
+  top: 34px;
+  right: 42px;
+  display: flex;
+  font-size: 22px;
+  color: var(--color-warm-grey);
+}
+
+.close:hover {
+  color: var(--color-ink);
+}
+
+.title {
+  font-family: var(--font-body);
+  font-size: var(--text-body-2);
+  line-height: var(--leading-body-2);
+  font-weight: var(--weight-semibold);
+  color: var(--color-secondary);
+}
+
+.subtitle {
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.heading {
+  margin-top: 24px;
+  font-family: var(--font-body);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+}
+
+.period {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 42px;
+  margin-top: 7px;
+  padding-left: 16px;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-primary-100);
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-ink);
+}
+
+/* Figma draws the date a little below the middle of the box */
+.period span {
+  position: relative;
+  top: 5px;
+}
+
+.calendar {
+  position: relative;
+  top: 2px;
+  width: 24px;
+  height: 24px;
+  color: var(--color-warm-grey);
+}
+
+.includesHeading {
+  margin-top: 17px;
+}
+
+.includes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 9px;
+  list-style: none;
+}
+
+.includes li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+}
+
+.check {
+  width: 20px;
+  height: 20px;
+  color: var(--color-primary);
+}
+
+.formats {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.formatHeading {
+  float: left;
+  width: 100%;
+  margin-top: 26px;
+  padding: 0;
+}
+
+.formatRow {
+  clear: both;
+  display: grid;
+  grid-template-columns: 230px 229px;
+  justify-content: space-between;
+  padding-top: 6px;
+}
+
+/* Each choice: radio, file icon, name, then a line of help under them */
+.format {
+  position: relative;
+  display: grid;
+  grid-template-columns: 20px auto 1fr;
+  grid-template-rows: 20px auto;
+  column-gap: 0;
+  align-items: center;
+  height: 78px;
+  padding: 19px 12px 0 19px;
+  border: var(--stroke-s) solid var(--color-border);
+  border-radius: var(--radius-3xl);
+  cursor: pointer;
+}
+
+.format:has(.radio:checked) {
+  border-color: var(--color-border);
+}
+
+.radio {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  border: 2px solid var(--color-warm-grey);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+}
+
+.radio:checked {
+  border-color: var(--color-primary);
+  background: radial-gradient(
+    circle,
+    var(--color-primary) 0 5px,
+    transparent 5.5px
+  );
+}
+
+.radio:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.fileIcon {
+  width: 22px;
+  height: 22px;
+  margin-left: 18px;
+}
+
+.pdf {
+  color: var(--color-error);
+}
+
+.excel {
+  color: var(--color-primary);
+}
+
+.formatLabel {
+  position: relative;
+  top: 2px;
+  margin-left: 10px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+}
+
+.formatText {
+  grid-column: 1 / -1;
+  margin: 3px 0 0 38px;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+  white-space: nowrap;
+}
+
+.error {
+  margin-top: 12px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-error);
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 23px;
+  margin-top: 32px;
+}
+
+.cancel,
+.primary,
+.outline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  border-radius: var(--radius-3xl);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-medium);
+}
+
+.cancel {
+  width: 207px;
+  border: var(--stroke-s) solid var(--color-warm-grey);
+  color: var(--color-warm-grey);
+}
+
+.cancel:hover {
+  color: var(--color-ink);
+  border-color: var(--color-ink);
+}
+
+.primary {
+  width: 350px;
+  height: 48px;
+  background-color: var(--color-primary);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.06);
+  color: var(--color-white);
+}
+
+.primary:hover:not(:disabled) {
+  background-color: var(--color-secondary);
+}
+
+.download {
+  width: 205px;
+  margin-top: 1px;
+}
+
+/* Figma: Share Reports-1 - pale green, grey words, dotted spinner */
+.busy {
+  gap: 41px;
+  background-color: #d1e7d8;
+  box-shadow: none;
+  color: rgba(107, 93, 80, 0.6);
+  cursor: progress;
+}
+
+.spinner {
+  color: var(--color-warm-grey);
+}
+
+.outline {
+  width: 352px;
+  margin-top: 23px;
+  border: var(--stroke-s) solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.outline:hover {
+  background-color: var(--color-primary-100);
+}
+
+.cancel:focus-visible,
+.primary:focus-visible,
+.outline:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Report ready */
+.tick {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-full);
+  background-color: rgba(20, 92, 44, 0.1);
+  font-size: 46px;
+  color: var(--color-secondary);
+}
+
+.readyTitle {
+  margin-top: 25px;
+  font-size: var(--text-h8);
+  line-height: var(--leading-h8);
+  font-weight: var(--weight-bold);
+  letter-spacing: -0.01em;
+  color: var(--color-secondary);
+}
+
+.readyText {
+  max-width: 320px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+  text-align: center;
+}
+
+.readyCard .primary {
+  margin-top: 23px;
+}

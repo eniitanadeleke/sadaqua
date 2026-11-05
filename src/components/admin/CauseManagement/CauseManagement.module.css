@@ -1,0 +1,115 @@
+/* Cause status (Figma: 454 x 40 box with a green border, note under it) */
+.selectBox {
+  position: relative;
+  margin-top: 5px;
+}
+
+.select {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 0 44px 0 11px;
+  border: var(--stroke-s) solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-white);
+  appearance: none;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-warm-grey);
+  cursor: pointer;
+}
+
+.select:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+}
+
+.selectChevron {
+  position: absolute;
+  top: 8px;
+  right: 13px;
+  width: 24px;
+  height: 24px;
+  color: var(--color-warm-grey);
+  pointer-events: none;
+}
+
+.statusNote {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 32px;
+  margin-top: 12px;
+  padding: 0 9px;
+  border-radius: var(--radius-2xl);
+  background-color: rgba(30, 138, 62, 0.1);
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.statusNote svg {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  color: var(--color-secondary);
+}
+
+.saved {
+  min-height: 0;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-primary);
+}
+
+.saved:not(:empty) {
+  margin-top: 6px;
+}
+
+/* Pop-ups */
+.modalText {
+  margin-top: 12px;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-warm-grey);
+  text-align: center;
+}
+
+.modalFields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.modalError {
+  margin-top: 12px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-error);
+}
+
+.modalActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.modalCancel {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  border: var(--stroke-s) solid var(--color-primary);
+  border-radius: var(--radius-3xl);
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+}
+
+.modalConfirm {
+  flex: 1;
+}
+
+.modalButton {
+  margin-top: 32px;
+}

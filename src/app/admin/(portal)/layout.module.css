@@ -1,0 +1,14 @@
+/* Figma: 240px side menu, 80px top bar, page content 32px in from each side */
+.portal {
+  min-height: 100vh;
+  background-color: var(--color-soft-cream);
+}
+
+.column {
+  min-width: 0;
+  margin-left: 240px;
+}
+
+.main {
+  padding: 0 32px 48px;
+}

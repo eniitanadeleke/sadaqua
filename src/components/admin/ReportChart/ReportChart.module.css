@@ -1,0 +1,117 @@
+/* Figma: Reports chart cards, 558 x 338 with a 1px border */
+.card {
+  position: relative;
+  aspect-ratio: 558 / 338;
+  min-width: 0;
+  background-color: var(--color-white);
+  border: var(--stroke-s) solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+}
+
+.svg {
+  position: absolute;
+  inset: -1px;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+}
+
+.tick {
+  font-family: var(--font-body);
+  font-size: 10px;
+  fill: var(--color-warm-grey);
+}
+
+.date {
+  font-family: var(--font-body);
+  fill: var(--color-warm-grey);
+}
+
+.grid {
+  stroke: var(--color-border);
+  stroke-width: 0.4;
+}
+
+.title {
+  position: relative;
+  margin: 24px 0 0 24px;
+  font-family: var(--font-body);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+}
+
+.subtitle {
+  position: relative;
+  margin: 7px 0 0 24px;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+/* Totals and legend, bottom right */
+.footer {
+  position: absolute;
+  right: 24px;
+  top: 282px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.total {
+  display: flex;
+  flex-direction: column;
+}
+
+.totalLabel {
+  font-size: 8px;
+  line-height: 12px;
+  color: var(--color-warm-grey);
+}
+
+.totalValue {
+  margin-top: 1px;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.strong {
+  color: var(--color-ink);
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-left: 8px;
+  list-style: none;
+}
+
+.legendRow {
+  display: flex;
+  align-items: center;
+  height: 16px;
+}
+
+.swatch {
+  width: 16px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+.legendLabel {
+  width: 66px;
+  margin-left: 8px;
+  font-size: var(--text-label-2);
+  line-height: var(--leading-label-2);
+  color: var(--color-warm-grey);
+}
+
+.legendValue {
+  font-size: var(--text-label-2);
+  line-height: var(--leading-label-2);
+  color: var(--color-ink);
+}

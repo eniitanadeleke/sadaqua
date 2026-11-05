@@ -1,0 +1,137 @@
+/* Figma "Manage user": 520px panel, 32px in from each side */
+
+/* Fit the shared panel to this frame: title 26px from the top (by its
+   glyphs), dark X */
+:global(aside):has(> .body) {
+  padding-top: 33px;
+}
+
+:global(aside):has(> .body) :global(a[aria-label="Close"]) {
+  margin-right: 3px;
+  font-size: 18px;
+  color: #111827;
+}
+
+.title {
+  color: var(--color-secondary);
+}
+
+.person {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 15px 0 0 -1px;
+  padding-bottom: 17px;
+  border-bottom: var(--stroke-s) solid var(--color-border);
+}
+
+.name {
+  margin-top: 7px;
+  font-size: var(--text-body-2);
+  line-height: var(--leading-body-2);
+  font-weight: var(--weight-bold);
+  color: var(--color-ink);
+}
+
+.role {
+  margin-top: -1px;
+  font-size: var(--text-label-1);
+  line-height: var(--leading-label-1);
+  color: var(--color-warm-grey);
+}
+
+.badge {
+  margin-top: 7px;
+}
+
+.section {
+  padding-top: 16px;
+}
+
+.access {
+  margin-top: 18px;
+  padding-top: 20px;
+  border-top: var(--stroke-s) solid #e5e9eb;
+}
+
+.heading {
+  font-family: var(--font-body);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-semibold);
+  color: var(--color-warm-grey);
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 24px;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-warm-grey);
+}
+
+.row dd {
+  text-align: right;
+}
+
+.completed {
+  margin: -2px 0;
+}
+
+.action {
+  display: block;
+  width: 352px;
+  max-width: 100%;
+  height: 50px;
+  margin: 48px auto 0;
+  border: var(--stroke-s) solid var(--color-error);
+  border-radius: var(--radius-3xl);
+  background-color: var(--color-white);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  font-weight: var(--weight-semibold);
+  color: var(--color-error);
+}
+
+.action:hover:not(:disabled) {
+  background-color: rgba(179, 38, 30, 0.06);
+}
+
+.action:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.activate {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.activate:hover:not(:disabled) {
+  background-color: var(--color-primary-100);
+}
+
+.error {
+  margin-top: 16px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-error);
+  text-align: center;
+}
+
+.missing {
+  margin-top: 24px;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-warm-grey);
+}

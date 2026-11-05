@@ -1,0 +1,57 @@
+/* Measured from the Figma "Disbursements" rows */
+.cause {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.thumb {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+}
+
+.causeText {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.causeTitle {
+  font-weight: var(--weight-medium);
+  color: var(--color-ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.causeMeta {
+  display: flex;
+  gap: 23px;
+  margin-top: 1px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-warm-grey);
+  white-space: nowrap;
+}
+
+.causeMeta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.causeMeta svg {
+  flex-shrink: 0;
+  width: 21px;
+  height: 21px;
+}
+
+.empty {
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-warm-grey);
+}

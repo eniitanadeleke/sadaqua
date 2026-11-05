@@ -1,0 +1,52 @@
+/* Figma: the page under the top bar dimmed to 50% black, white card with
+   40px corners, centred over the page area */
+.backdrop {
+  position: fixed;
+  inset: 80px 0 0 240px;
+  z-index: 30;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.place {
+  position: fixed;
+  inset: 0 0 0 240px;
+  z-index: 31;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-bottom: 24px;
+  overflow-y: auto;
+  pointer-events: none;
+}
+
+.card {
+  position: relative;
+  max-width: calc(100% - 48px);
+  padding: 40px;
+  background-color: var(--color-white);
+  border: var(--stroke-s) solid var(--color-border);
+  border-radius: 40px;
+  pointer-events: auto;
+}
+
+.close {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  display: flex;
+  font-size: 24px;
+  color: var(--color-warm-grey);
+}
+
+.close:hover {
+  color: var(--color-ink);
+}
+
+.title {
+  font-family: var(--font-body);
+  font-size: var(--text-body-2);
+  line-height: var(--leading-body-2);
+  font-weight: var(--weight-semibold);
+  color: var(--color-ink);
+  text-align: center;
+}

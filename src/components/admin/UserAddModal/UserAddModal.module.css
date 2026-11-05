@@ -1,0 +1,90 @@
+/* Figma "Add Users": 434 x 428 card, fields 350 x 48, 12px apart */
+.card {
+  padding: 42px 40px 40px;
+}
+
+/* The shared X is swapped for the Figma's circled X, 26px in from the corner */
+.card > a[aria-label="Close"]:not(.close) {
+  display: none;
+}
+
+.close {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  display: flex;
+  font-size: 22px;
+  color: var(--color-warm-grey);
+}
+
+.close:hover {
+  color: var(--color-ink);
+}
+
+.title {
+  font-family: var(--font-body);
+  font-size: var(--text-body-2);
+  line-height: var(--leading-body-2);
+  font-weight: var(--weight-bold);
+  color: var(--color-secondary);
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 47px;
+}
+
+.form input {
+  background-color: transparent;
+}
+
+.selectWrap {
+  position: relative;
+}
+
+.select {
+  width: 100%;
+  height: 48px;
+  padding: 0 44px 0 11px;
+  border: var(--stroke-s) solid #d1d1d1;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-white);
+  appearance: none;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-warm-grey);
+  cursor: pointer;
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.invalid {
+  border-color: var(--color-error);
+}
+
+.chevron {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 24px;
+  height: 24px;
+  color: var(--color-warm-grey);
+  pointer-events: none;
+}
+
+.error {
+  margin-top: 4px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-error);
+}
+
+.submit {
+  margin-top: 36px;
+}

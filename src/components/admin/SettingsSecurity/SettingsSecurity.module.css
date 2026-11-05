@@ -1,0 +1,55 @@
+/* Figma: Settings - Security, two rows split by a 2px line */
+.rows {
+  grid-column: 2 / -1;
+  margin: -1px 0 0 -2px;
+  list-style: none;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 67px;
+  padding: 1px 0 0;
+  border-bottom: var(--stroke-m) solid var(--color-border);
+  font-family: var(--font-body);
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-warm-grey);
+  text-align: left;
+}
+
+li + li .row {
+  height: 46px;
+  padding: 0;
+  border-bottom: 0;
+}
+
+.row:hover {
+  color: var(--color-ink);
+}
+
+.row:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+}
+
+.row:disabled {
+  cursor: progress;
+}
+
+.chevron {
+  width: 20px;
+  height: 20px;
+  margin-right: 3px;
+}
+
+.note {
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-secondary);
+}
+
+.error {
+  color: var(--color-error);
+}

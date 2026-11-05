@@ -1,0 +1,127 @@
+/* Figma: Reports - period box 200 x 48, date boxes 185 x 50, button 166 x 40 */
+.row {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.period {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 48px;
+  padding: 0 11px 0 11px;
+  border: var(--stroke-s) solid #d1d1d1;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.periodText {
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  letter-spacing: 0.05em;
+  color: var(--color-warm-grey);
+}
+
+.chevron {
+  width: 24px;
+  height: 24px;
+  color: var(--color-warm-grey);
+}
+
+.select,
+.dateInput {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.period:focus-within,
+.date:focus-within {
+  outline: var(--stroke-m) solid var(--color-accent);
+}
+
+.date {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  align-content: start;
+  align-items: center;
+  width: 185px;
+  height: 50px;
+  margin-left: 39px;
+  padding: 7px 17px 0 16px;
+  border: var(--stroke-s) solid var(--color-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+}
+
+.date + .date {
+  margin-left: 38px;
+}
+
+.dateLabel {
+  grid-column: 1;
+  margin-top: 0;
+  font-size: var(--text-label-2);
+  line-height: var(--leading-label-2);
+  color: var(--color-warm-grey);
+}
+
+.dateValue {
+  grid-column: 1;
+  margin-top: 1px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-ink);
+}
+
+.calendar {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  width: 22px;
+  height: 22px;
+  margin-top: 6px;
+  color: var(--color-warm-grey);
+}
+
+.share {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 166px;
+  height: 40px;
+  margin: 9px 0 0 auto;
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-primary);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.06);
+  font-size: var(--text-body-2);
+  line-height: var(--leading-body-2);
+  font-weight: var(--weight-semibold);
+  color: var(--color-white);
+}
+
+.share:hover {
+  background-color: var(--color-secondary);
+}
+
+.share:focus-visible {
+  outline: var(--stroke-m) solid var(--color-accent);
+}
+
+@media (max-width: 1100px) {
+  .row {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .date,
+  .date + .date {
+    margin-left: 0;
+  }
+}

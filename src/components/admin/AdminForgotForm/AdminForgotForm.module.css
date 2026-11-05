@@ -1,0 +1,36 @@
+/* Measured from the Figma "Admin Forgot Password" card */
+.title {
+  text-align: left;
+}
+
+.text {
+  margin-top: -1px;
+  font-size: var(--text-body-3);
+  line-height: var(--leading-body-3);
+  color: var(--color-warm-grey);
+}
+
+.field {
+  margin-top: 79px;
+}
+
+.sent {
+  margin-top: 12px;
+  font-size: var(--text-body-4);
+  line-height: var(--leading-body-4);
+  color: var(--color-secondary);
+}
+
+.sent a {
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.submit {
+  margin-top: 80px;
+}
+
+.sent + .submit {
+  margin-top: 48px;
+}
